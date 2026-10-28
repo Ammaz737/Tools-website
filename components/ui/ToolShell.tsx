@@ -89,9 +89,9 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         ]}
       />
 
-      {/* Tool Header */}
-      <header className="mt-6 max-w-3xl">
-        <div className="flex flex-wrap items-center gap-2 mb-3">
+      {/* Tool Header — centered, like a SmallPDF tool page */}
+      <header className="mx-auto mt-6 max-w-3xl text-center">
+        <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
           <Badge variant="accent">{tool.category}</Badge>
           <ToolUsageBadge
             key={tool.id}
@@ -100,17 +100,28 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           />
         </div>
 
-        <h1 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold tracking-tight text-[var(--ink)]">
+        <h1 className="text-4xl font-bold tracking-tight text-[var(--ink)] sm:text-5xl">
           {tool.name}
         </h1>
 
-        <p className="mt-3 text-lg leading-relaxed text-[var(--ink-soft)]">
+        <p className="mx-auto mt-3 max-w-2xl text-lg leading-relaxed text-[var(--ink-soft)]">
           {tool.blurb}
         </p>
 
-        <div className="mt-4 flex items-center gap-2.5 rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] px-4 py-2.5 text-xs text-[var(--ink-soft)]">
-          <ShieldCheck className="w-4 h-4 text-[var(--success)] shrink-0" />
-          <span>{trustNotice}</span>
+        <div className="mt-4 flex justify-center">
+          <div className="flex items-center gap-2.5 rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] px-4 py-2.5 text-xs text-[var(--ink-soft)]">
+            <ShieldCheck className="w-4 h-4 shrink-0 text-[var(--success)]" />
+            <span>{trustNotice}</span>
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <Link
+            href={`/blog/${tool.id}`}
+            className="text-sm font-medium text-[var(--accent)] hover:underline"
+          >
+            Learn how to use {tool.name} →
+          </Link>
         </div>
       </header>
 

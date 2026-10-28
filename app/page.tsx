@@ -1,9 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { AdSlot } from "@/components/layout/AdSlot";
 import { CategoryCard } from "@/components/tool-cards/CategoryCard";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { categories } from "@/lib/tools";
+import { languageAlternates, ogImageUrl } from "@/lib/seo";
+import { generateWebSiteJsonLd } from "@/lib/jsonld";
 import {
   getPublicCategoryCounts,
   getPublicFeaturedTools,
@@ -12,6 +15,44 @@ import {
 } from "@/lib/public-tools";
 
 export const dynamic = "force-dynamic";
+
+export function generateMetadata(): Metadata {
+  const path = "/";
+  const ogImage = ogImageUrl(
+    "137 Free Online Tools, No Signup",
+    "PDF, image, AI, text, developer, SEO, security, converter, calculator & utility tools.",
+  );
+  return {
+    robots: { index: true, follow: true },
+    title: {
+      absolute:
+        "Free Online Tools — PDF, Image, AI & More | Quiet Workshop Tools",
+    },
+    description:
+      "137 free online tools: merge, split, and compress PDFs, convert images, check AI writing, calculate loans, and more. No signup, no watermark. Most tools run in your browser.",
+    alternates: {
+      canonical: path,
+      languages: languageAlternates(path),
+    },
+    openGraph: {
+      title: "Free Online Tools — PDF, Image, AI & More",
+      description:
+        "137 free online tools with no signup: PDF, image, AI, text, developer, SEO, security, converter, calculator, and utility tools.",
+      type: "website",
+      url: path,
+      locale: "en_US",
+      siteName: "Quiet Workshop Tools",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: "Quiet Workshop Tools — 137 Free Online Tools" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Free Online Tools — PDF, Image, AI & More",
+      description:
+        "137 free online tools with no signup: PDF, image, AI, text, developer, SEO, security, converter, calculator, and utility tools.",
+      images: [ogImage],
+    },
+  };
+}
 
 const trustChips = [
   "No signup",
@@ -27,70 +68,72 @@ export default async function HomePage() {
     getPublicTools(),
     getPublicCategoryCounts(),
   ]);
+  const webSiteLd = generateWebSiteJsonLd();
 
   return (
-    <div className="grain">
-      <section className="mx-auto grid w-full max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-24">
-        <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-[var(--ink-faint)]">
-            Quiet Workshop
-          </p>
-          <h1 className="mt-4 max-w-3xl font-[family-name:var(--font-display)] text-5xl leading-tight text-[var(--ink)] sm:text-6xl">
-            A quiet workshop for {publicTools.length} small jobs.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--ink-soft)]">
-            A browser-first toolbox for PDFs, images, developer tasks, and
-            everyday utilities. Build fast, stay private, and avoid unnecessary
-            uploads.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/tools"
-              className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-medium text-[var(--accent-ink)]"
-            >
-              Explore all tools
-            </Link>
-            <Link
-              href="/category/pdf"
-              className="rounded-full border border-[var(--line)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--ink)]"
-            >
-              Browse PDF tools
-            </Link>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {trustChips.map((chip) => (
-              <span
-                key={chip}
-                className="rounded-full border border-[var(--line)] bg-[var(--surface)] px-3 py-1 text-sm text-[var(--ink-soft)]"
-              >
-                {chip}
-              </span>
-            ))}
-          </div>
+    <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webSiteLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      {/* SmallPDF-style centered hero */}
+      <section className="mx-auto w-full max-w-7xl bg-gradient-to-b from-[var(--accent-soft)] to-transparent px-4 pb-10 pt-16 text-center sm:px-6 lg:px-8 lg:pt-20">
+        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">
+          {publicTools.length} free tools · No signup
+        </p>
+        <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-[var(--ink)] sm:text-5xl">
+          Every tool you need, in one place.
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-[var(--ink-soft)]">
+          A browser-first toolbox for PDFs, images, developer tasks, and
+          everyday utilities. Build fast, stay private, and avoid unnecessary
+          uploads.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/tools"
+            className="rounded-lg bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            Explore all tools
+          </Link>
+          <Link
+            href="/category/pdf"
+            className="rounded-lg border border-[var(--line-strong)] bg-[var(--surface)] px-6 py-3 text-sm font-semibold text-[var(--ink)] transition-colors hover:border-[var(--accent)]"
+          >
+            Browse PDF tools
+          </Link>
         </div>
-
-        <div className="rounded-[14px] border border-[var(--line)] bg-[var(--surface)] p-6">
-          <p className="text-sm uppercase tracking-[0.2em] text-[var(--ink-faint)]">
-            Live mini-tool
-          </p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
-            Word counter
-          </h2>
-          <div className="mt-5 rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] p-4 text-sm leading-6 text-[var(--ink-soft)]">
-            This architecture pass keeps the mini-tool presentational for now.
-            The real logic can be added later without changing the homepage
-            layout.
-          </div>
-          <div className="mt-5 grid grid-cols-2 gap-3">
-            <div className="rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] p-4">
-              <p className="font-mono text-2xl text-[var(--ink)]">0</p>
-              <p className="mt-1 text-sm text-[var(--ink-soft)]">Words</p>
-            </div>
-            <div className="rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] p-4">
-              <p className="font-mono text-2xl text-[var(--ink)]">0</p>
-              <p className="mt-1 text-sm text-[var(--ink-soft)]">Characters</p>
-            </div>
-          </div>
+        <form
+          action="/tools"
+          method="get"
+          role="search"
+          className="mx-auto mt-8 flex max-w-xl items-center gap-2 rounded-full border border-[var(--line-strong)] bg-[var(--surface)] p-1.5 shadow-sm focus-within:border-[var(--accent)]"
+        >
+          <input
+            type="search"
+            name="q"
+            placeholder="Search 137 tools — try “merge pdf”…"
+            aria-label="Search tools"
+            className="min-w-0 flex-1 bg-transparent px-4 py-2 text-sm text-[var(--ink)] outline-none placeholder:text-[var(--ink-faint)]"
+          />
+          <button
+            type="submit"
+            className="shrink-0 rounded-full bg-[var(--accent)] px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            Search
+          </button>
+        </form>
+        <div className="mt-8 flex flex-wrap justify-center gap-2">
+          {trustChips.map((chip) => (
+            <span
+              key={chip}
+              className="rounded-full bg-[var(--surface-sunk)] px-3 py-1 text-sm text-[var(--ink-soft)]"
+            >
+              {chip}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -100,19 +143,17 @@ export default async function HomePage() {
 
       <section className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-6">
-          <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--ink-faint)]">
-              Popular tools
-            </p>
-            <h2 className="mt-2 font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
-              Start with the essentials
-            </h2>
-          </div>
-          <Link href="/tools" className="text-sm text-[var(--accent)]">
-            View all tools
+          <h2 className="text-3xl font-bold tracking-tight text-[var(--ink)]">
+            Most popular tools
+          </h2>
+          <Link
+            href="/tools"
+            className="shrink-0 text-sm font-medium text-[var(--accent)] hover:underline"
+          >
+            View all tools →
           </Link>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {featured.map((tool) => (
             <ToolCard
               key={tool.id}
@@ -124,11 +165,8 @@ export default async function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <p className="text-sm uppercase tracking-[0.2em] text-[var(--ink-faint)]">
-          Categories
-        </p>
-        <h2 className="mt-2 font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
-          Ten focused shelves
+        <h2 className="text-3xl font-bold tracking-tight text-[var(--ink)]">
+          Browse by category
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {categories.map((category) => (
@@ -142,11 +180,8 @@ export default async function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <p className="text-sm uppercase tracking-[0.2em] text-[var(--ink-faint)]">
+        <h2 className="text-3xl font-bold tracking-tight text-[var(--ink)]">
           Recently added
-        </p>
-        <h2 className="mt-2 font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
-          Newer, more ambitious tools
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {recent.map((tool) => (

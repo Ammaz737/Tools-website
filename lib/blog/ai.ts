@@ -1,0 +1,521 @@
+import type { BlogPost } from "@/lib/blog";
+
+export const aiPosts: BlogPost[] = [
+  {
+    slug: "ai-detector",
+    toolId: "ai-detector",
+    toolName: "AI Detector",
+    category: "ai",
+    seoTitle: "AI Detector Online Free — Check Text for AI Writing",
+    seoDescription: "Use the free AI Detector online with no signup to estimate whether text reads like AI output. Paste your text, review the estimate, and decide what to revise.",
+    intro: [
+      "The AI Detector estimates whether a piece of text reads like AI output. Paste an essay, article, email, or social post and it looks for patterns commonly associated with generated writing, such as unusually even sentence length, predictable phrasing, and low variation in tone. It is a quick first check, not a verdict.",
+      "It is useful for teachers reviewing student work, editors screening submissions, hiring managers reading cover letters, and writers checking their own drafts before publication. If a passage feels generic or oddly smooth, the detector can help you decide where to look more closely and which sentences deserve a human rewrite.",
+      "One honest limit matters: this AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, treat every result as a probabilistic estimate. It can suggest that text resembles AI writing, but it can never prove who or what wrote it.",
+    ],
+    steps: [
+      "Open the AI Detector tool and paste the text you want to check into the input box.",
+      "Remove any private details, such as names, addresses, or unpublished work, before you submit it.",
+      "Submit the text and wait for the analysis to finish.",
+      "Read the overall estimate alongside any highlighted or flagged passages.",
+      "Compare the result with what you know about the text, including its source and author.",
+      "Rewrite or verify any passages you are unsure about, rather than relying on the score alone.",
+      "Run a shorter excerpt again if you want to narrow down which section triggered the estimate.",
+    ],
+    benefits: [
+      "Fast screening: get a quick sense of whether text resembles AI output without installing software.",
+      "Targeted revision: flagged passages show you exactly where to add detail, voice, or evidence.",
+      "Free and simple: check text online with no signup and no cost for a basic review.",
+      "Fairer decisions: an estimate prompts a closer human read instead of an instant accusation.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive or unpublished information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Does the AI Detector prove text was written by AI?",
+        a: "No. It gives a probabilistic estimate based on writing patterns, not proof. Human writing can resemble AI output, and AI output can be edited to look human, so always combine the result with context and a careful read.",
+      },
+      {
+        q: "What kinds of text work best with the detector?",
+        a: "Longer, continuous prose works best, such as essays and articles. Very short texts, lists, heavily quoted passages, and technical writing with fixed phrasing can produce less reliable estimates.",
+      },
+      {
+        q: "Why might I see an error instead of a result?",
+        a: "The detector needs a configured AI provider on the site. If no provider is enabled, the tool shows an error rather than inventing a score. Try again once a provider has been configured.",
+      },
+      {
+        q: "Is the AI Detector free to use?",
+        a: "Yes, it is free to use online with no signup. You only need to paste your text, keeping in mind that server tools process input remotely, so sensitive material should be left out.",
+      },
+    ],
+  },
+  {
+    slug: "plagiarism-checker",
+    toolId: "plagiarism-checker",
+    toolName: "Plagiarism Checker",
+    category: "ai",
+    seoTitle: "Plagiarism Checker Online Free — Check Text Similarity",
+    seoDescription: "Try the free Plagiarism Checker online with no signup to review text similarity. Learn what a simulated result means and how to check original work properly.",
+    intro: [
+      "The Plagiarism Checker reviews your text against configured similarity sources and highlights passages that closely match existing material. It is designed for students polishing an essay, writers checking a draft, and editors screening submissions before publication. Used well, it helps you catch accidental copying, missing citations, and over-reliance on a single source.",
+      "The important distinction is between a real similarity check and a labelled simulation. Without a configured similarity provider (Copyleaks), this tool shows SIMULATED, labelled results only. A simulated score is a demonstration of the format, not evidence that your text does or does not match real sources, and it must never be presented as a real plagiarism check.",
+      "When a similarity provider is configured, the checker becomes a genuinely useful review step. Even then, it is a starting point: it flags similarity, while only you can judge whether a match is a proper quotation, a common phrase, or material that needs rewriting and citation.",
+    ],
+    steps: [
+      "Open the Plagiarism Checker and paste the text you want to review.",
+      "Check whether the result is labelled as simulated or as a real provider check before you act on it.",
+      "Submit the text and wait for the similarity review to complete.",
+      "Read the highlighted passages and any source information shown.",
+      "For each match, decide whether it is a quotation, a common phrase, or text that needs rewriting.",
+      "Add citations for quoted or closely paraphrased material and rewrite passages in your own words.",
+      "Re-check the revised text if you want to confirm the highlighted passages have changed.",
+    ],
+    benefits: [
+      "Catch accidental copying early, before an essay or article is submitted or published.",
+      "Spot overused sources so you can broaden your research and strengthen your argument.",
+      "Learn good citation habits by seeing exactly which passages need attribution.",
+      "Free to try online with no signup, making it an easy step in any drafting routine.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive, unpublished, or confidential work. Without a configured similarity provider (Copyleaks), results are SIMULATED and labelled, and they are not a real plagiarism check.",
+    faqs: [
+      {
+        q: "Is a simulated result a real plagiarism check?",
+        a: "No. Without a configured similarity provider (Copyleaks), the tool shows simulated, labelled results only. A simulated score does not compare your text against real sources and must never be quoted as proof of originality or copying.",
+      },
+      {
+        q: "What should I do when a passage is flagged?",
+        a: "Read the passage in context first. If it is a quotation, make sure it is cited correctly. If it is too close to the source, rewrite it in your own words and add a citation where the idea still comes from that source.",
+      },
+      {
+        q: "Does a low similarity score guarantee original work?",
+        a: "No. A low score means little matching text was found in the sources checked, not that every idea is original. Proper citation still matters, and a real check depends on having a similarity provider configured.",
+      },
+      {
+        q: "Is the Plagiarism Checker free with no signup?",
+        a: "Yes, you can try it free online with no signup. Just remember to check the label on your result: simulated results are demonstrations only, while a provider-backed check is the real similarity review.",
+      },
+    ],
+  },
+  {
+    slug: "grammar-checker",
+    toolId: "grammar-checker",
+    toolName: "Grammar Checker",
+    category: "ai",
+    seoTitle: "Grammar Checker Online Free — Fix Grammar and Punctuation",
+    seoDescription: "Use the free Grammar Checker online with no signup to improve grammar, punctuation, and wording. Paste your draft, review each suggestion, and polish it fast.",
+    intro: [
+      "The Grammar Checker improves grammar, punctuation, and wording in your writing. Paste an email, essay, report, or post and it points out problems such as subject-verb disagreement, misplaced commas, awkward phrasing, and unclear sentences, then suggests cleaner alternatives. It is built for anyone who wants writing that reads smoothly without a long editing session.",
+      "Students, job seekers, professionals, and non-native English speakers all benefit from a second pair of eyes. A cover letter with a misplaced modifier, a client email with a run-on sentence, or a report with inconsistent tense can all distract from the message. The checker helps you fix those issues before anyone else sees them.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, review each suggestion rather than accepting everything blindly: grammar tools can miss context, tone, and deliberate style choices that only you understand.",
+    ],
+    steps: [
+      "Open the Grammar Checker and paste your draft into the input box.",
+      "Remove sensitive details, such as personal data or confidential company information, before submitting.",
+      "Submit the text and wait for the grammar and wording suggestions to appear.",
+      "Work through the suggestions one by one, starting with the clearest errors.",
+      "Accept fixes that improve clarity and reject any that change your intended meaning.",
+      "Read the revised text aloud to catch awkward rhythm or remaining unclear sentences.",
+      "Copy the polished version back into your document or email and give it a final read.",
+    ],
+    benefits: [
+      "Cleaner first impressions: polished grammar makes emails, applications, and reports look professional.",
+      "Faster editing: spot common errors in seconds instead of proofreading line by line.",
+      "Clearer meaning: better punctuation and wording help readers follow your argument without confusion.",
+      "Free and easy: check writing online with no signup, whenever you need a quick review.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Should I accept every grammar suggestion?",
+        a: "No. Suggestions are a helpful guide, but they can misread context, names, technical terms, or deliberate style. Accept changes that clearly improve clarity and keep anything that reflects your intended voice or meaning.",
+      },
+      {
+        q: "What kinds of writing can I check?",
+        a: "The checker works well for emails, essays, reports, cover letters, blog drafts, and social posts. Very technical or legal writing still needs a human editor, since exact wording can carry important meaning there.",
+      },
+      {
+        q: "Why do I see an error instead of suggestions?",
+        a: "The grammar feature needs a configured AI provider on the site. If no provider is enabled, the tool shows an error instead of results. It will work once a provider has been configured.",
+      },
+      {
+        q: "Is the Grammar Checker free with no signup?",
+        a: "Yes, it is free to use online with no signup. Paste your text, review the suggestions, and copy the improved version back into your own document.",
+      },
+    ],
+  },
+  {
+    slug: "spell-checker",
+    toolId: "spell-checker",
+    toolName: "Spell Checker",
+    category: "ai",
+    seoTitle: "Spell Checker Online Free — Find and Fix Spelling Errors",
+    seoDescription: "Use the free Spell Checker online with no signup to find spelling mistakes and get corrections. Paste your text, fix errors fast, and send it with confidence.",
+    intro: [
+      "The Spell Checker finds spelling mistakes in your text and suggests corrections. Paste an essay, email, application, or article and it highlights misspelled words, typos, and words that look right but are spelled incorrectly for the context. It is a fast safety net for writing you want to send without embarrassment.",
+      "Spelling errors are easy to miss, especially in text you have read many times. Your brain fills in the intended word, while a reader notices the mistake immediately. That is why a dedicated spelling pass matters for job applications, school assignments, business proposals, and anything published under your name.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, treat suggestions as help, not orders: proper names, brand terms, slang, and regional spellings may be flagged even when they are correct for your audience.",
+    ],
+    steps: [
+      "Open the Spell Checker and paste the text you want to review.",
+      "Remove any sensitive information, such as passwords, addresses, or private details, before submitting.",
+      "Submit the text and wait for the spelling review to finish.",
+      "Go through each flagged word and check the suggested correction.",
+      "Accept corrections for genuine typos and keep names or terms that are intentionally spelled that way.",
+      "Watch for words that are spelled correctly but used wrongly, such as their, there, and they are.",
+      "Copy the corrected text back into your document and read it once more before sending.",
+    ],
+    benefits: [
+      "Fewer embarrassing mistakes in applications, emails, and published work.",
+      "Faster proofreading: flagged words let you focus on real errors instead of rereading everything.",
+      "Better credibility: clean spelling signals care and attention to detail to any reader.",
+      "Free and instant: check spelling online with no signup, as often as you need.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Does the Spell Checker also fix grammar?",
+        a: "Its focus is spelling mistakes and suggested corrections. For grammar, punctuation, and wording, use the Grammar Checker as well, since the two tools catch different kinds of errors.",
+      },
+      {
+        q: "Why is a correct word flagged as a mistake?",
+        a: "Proper names, brand names, technical terms, and regional spellings are often flagged because they are uncommon or differ by country. If the spelling is right for your audience, keep it and move on.",
+      },
+      {
+        q: "What if the tool shows an error?",
+        a: "The spelling feature needs a configured AI provider on the site. Without one, it shows an error rather than results. Once a provider is configured, the checker will run normally.",
+      },
+      {
+        q: "Is the Spell Checker free with no signup?",
+        a: "Yes, it is free to use online with no signup. Paste your text, correct the flagged words, and copy the clean version back into your work.",
+      },
+    ],
+  },
+  {
+    slug: "paraphrasing-tool",
+    toolId: "paraphrasing-tool",
+    toolName: "Paraphrasing Tool",
+    category: "ai",
+    seoTitle: "Paraphrasing Tool Online Free — Rewrite Sentences Clearly",
+    seoDescription: "Try the free Paraphrasing Tool online with no signup to rewrite sentences while keeping the meaning. Paste a sentence, choose a clearer version, and refine it.",
+    intro: [
+      "The Paraphrasing Tool rewrites sentences while keeping the original meaning. Paste a sentence that feels clumsy, repetitive, or too close to a source, and it offers a clearer version with different wording and sentence structure. It is ideal for short passages: a single sentence, a definition, or a paragraph that needs a fresh phrasing.",
+      "Writers use paraphrasing to avoid repetition, simplify dense academic language, and adapt a message for a different audience. A student might restate a textbook idea in their own words, while a marketer might rework a product sentence for a new page. In both cases, the meaning must stay intact, even as the words change.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, always check the rewrite against the original: paraphrasing is only successful if it preserves facts, emphasis, and nuance, and borrowed ideas still need citation where appropriate.",
+    ],
+    steps: [
+      "Open the Paraphrasing Tool and paste the sentence or short passage you want to rewrite.",
+      "Remove sensitive details from the text before you submit it.",
+      "Submit the passage and wait for the rewritten version to appear.",
+      "Compare the rewrite with the original, checking facts, tone, and emphasis line by line.",
+      "Pick the version that reads most naturally, or edit the rewrite further in your own words.",
+      "Add a citation if the idea still comes from another source, even after rewording.",
+      "Paste the final version into your document and read it in context to confirm it fits.",
+    ],
+    benefits: [
+      "Clearer sentences: turn awkward or wordy phrasing into smooth, readable language.",
+      "Less repetition: find fresh wording when the same idea appears several times in a draft.",
+      "Better source use: restate ideas in your own words instead of copying a source too closely.",
+      "Free and quick: paraphrase sentences online with no signup, one passage at a time.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Does paraphrasing remove the need for citation?",
+        a: "No. If the idea comes from another source, it still needs a citation even after rewording. Paraphrasing changes the words, not the ownership of the idea, so cite the original source.",
+      },
+      {
+        q: "How is paraphrasing different from rewriting an article?",
+        a: "Paraphrasing focuses on short passages and keeps the meaning and structure fairly close to the original. Rewriting a whole article, by contrast, reshapes longer text in a new voice and often reorganizes it.",
+      },
+      {
+        q: "Why might the tool show an error?",
+        a: "The paraphrasing feature needs a configured AI provider on the site. If no provider is enabled, it shows an error instead of a rewrite. It will work once a provider has been configured.",
+      },
+      {
+        q: "Is the Paraphrasing Tool free with no signup?",
+        a: "Yes, it is free to use online with no signup. Paste a sentence or short passage, review the rewrite, and use the version that best preserves your meaning.",
+      },
+    ],
+  },
+  {
+    slug: "article-rewriter",
+    toolId: "article-rewriter",
+    toolName: "Article Rewriter",
+    category: "ai",
+    seoTitle: "Article Rewriter Online Free — Rewrite Articles in New Voice",
+    seoDescription: "Use the free Article Rewriter online with no signup to rewrite longer articles in a new voice. Paste your draft, reshape the wording, and edit it carefully.",
+    intro: [
+      "The Article Rewriter rewrites longer articles in a new voice. Unlike a sentence-level paraphraser, it works across a full draft, changing wording, sentence structure, and tone so the result reads differently while keeping the core information. It is useful when you need a fresh version of your own article for a different audience, platform, or format.",
+      "Content creators use it to adapt a blog post into a newsletter, turn a formal report into a plain-language summary, or give an older article a more conversational tone. The goal is not to disguise someone else's work as your own: rewriting is legitimate when the underlying article is yours, properly licensed, or fully reworked with your own research and attribution.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, expect to edit the output. Long rewrites can drift from the original meaning, drop important details, or flatten a distinctive voice, so a human review pass is essential.",
+    ],
+    steps: [
+      "Open the Article Rewriter and paste the longer article or draft you want to rework.",
+      "Remove sensitive, confidential, or unpublished information before submitting the text.",
+      "Choose or describe the voice you want, such as simpler, more formal, or more conversational.",
+      "Submit the article and wait for the rewritten version to appear.",
+      "Read the rewrite against the original, checking facts, figures, and key claims.",
+      "Restore any details the rewrite dropped and fix any sentences that changed the meaning.",
+      "Edit the result in your own voice, then read it end to end before publishing.",
+    ],
+    benefits: [
+      "Fresh versions fast: adapt one article for a new audience or platform without starting from scratch.",
+      "New tone on demand: shift formal writing toward plain language, or casual drafts toward a professional voice.",
+      "Beats the blank page: a full rewrite gives you a workable draft to edit, rather than an empty document.",
+      "Free to try online with no signup, making it easy to test a new angle on existing content.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Can I rewrite someone else's article and publish it as mine?",
+        a: "No. Rewriting does not transfer ownership. Only rewrite your own work, licensed material, or content you have substantially reworked with your own research and proper attribution.",
+      },
+      {
+        q: "How is this different from the Paraphrasing Tool?",
+        a: "The Paraphrasing Tool focuses on sentences and short passages, keeping the meaning close to the original. The Article Rewriter handles longer text and reshapes it in a new voice, which requires more editing afterward.",
+      },
+      {
+        q: "Why do I need to edit the rewritten article?",
+        a: "Long rewrites can lose details, alter emphasis, or introduce errors. A careful human edit restores accuracy, keeps your voice, and ensures the final article says exactly what you intend.",
+      },
+      {
+        q: "Is the Article Rewriter free with no signup?",
+        a: "Yes, it is free to use online with no signup. Paste your article, review the rewrite carefully, and edit it before publishing.",
+      },
+    ],
+  },
+  {
+    slug: "ai-summarizer",
+    toolId: "ai-summarizer",
+    toolName: "AI Summarizer",
+    category: "ai",
+    seoTitle: "AI Summarizer Online Free — Summarize Long Text Fast",
+    seoDescription: "Use the free AI Summarizer online with no signup to turn long text into a concise summary. Paste an article or report and get the key points in seconds.",
+    intro: [
+      "The AI Summarizer turns long text into a concise summary. Paste an article, report, research paper, or meeting transcript and it pulls out the key points, leaving out repetition and minor detail. It is built for readers who need the gist quickly: students reviewing course material, professionals catching up on reports, and anyone facing a long document with limited time.",
+      "A good summary saves more than time. It helps you decide whether a document deserves a full read, gives you notes you can review later, and makes dense material easier to discuss with colleagues. Use it as a study aid, a briefing shortcut, or a first step before diving into the full text.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, remember that summaries compress and simplify: they can omit caveats, numbers, and conditions that matter, so check the original before quoting or acting on a summary.",
+    ],
+    steps: [
+      "Open the AI Summarizer and paste the long text you want to condense.",
+      "Remove sensitive information, such as private data or confidential documents, before submitting.",
+      "Choose the level of brevity you need, if the tool offers a length option.",
+      "Submit the text and wait for the summary to appear.",
+      "Read the summary and compare its key points with the original document.",
+      "Note anything the summary left out that matters for your purpose, such as figures or warnings.",
+      "Use the summary for notes or briefing, and return to the original for quotations and decisions.",
+    ],
+    benefits: [
+      "Faster reading: grasp the main points of a long document in a fraction of the time.",
+      "Better triage: decide quickly which articles and reports deserve a full read.",
+      "Cleaner notes: summaries give you a compact record to review before a meeting or exam.",
+      "Free and simple: summarize text online with no signup, whenever a document is too long.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Can I trust a summary for important decisions?",
+        a: "Use it as a starting point, not the final word. Summaries can omit caveats and numbers, so read the original document before making decisions, quoting figures, or citing claims.",
+      },
+      {
+        q: "What kinds of text summarize well?",
+        a: "Articles, reports, essays, and transcripts with a clear structure summarize best. Highly technical, legal, or fragmented text may lose important precision when compressed, so review those originals closely.",
+      },
+      {
+        q: "Why does the summarizer show an error?",
+        a: "The summarizer needs a configured AI provider on the site. If no provider is enabled, it shows an error instead of a summary. It will work once a provider has been configured.",
+      },
+      {
+        q: "Is the AI Summarizer free with no signup?",
+        a: "Yes, it is free to use online with no signup. Paste your text, read the concise summary, and keep the original handy for detail.",
+      },
+    ],
+  },
+  {
+    slug: "ai-writer",
+    toolId: "ai-writer",
+    toolName: "AI Writer",
+    category: "ai",
+    seoTitle: "AI Writer Online Free — Generate Drafts From a Prompt",
+    seoDescription: "Try the free AI Writer online with no signup to generate drafts from a prompt and tone settings. Describe your topic, review the draft, and make it your own.",
+    intro: [
+      "The AI Writer generates drafts from a prompt and tone settings. Describe your topic, audience, and desired tone, and it produces a starting draft: an outline, an introduction, a product description, or a full short article. It is designed to break the blank-page problem, not to replace your judgment.",
+      "Bloggers, marketers, students, and small business owners use it to get moving. A rough draft gives you structure, opening lines, and ideas to react to, which is often much easier than writing from nothing. The strongest results come when you bring a clear prompt and a willingness to rewrite.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, treat every draft as raw material: check facts, remove generic claims, add your own examples and experience, and edit the voice until it sounds like you.",
+    ],
+    steps: [
+      "Open the AI Writer and write a clear prompt describing your topic and audience.",
+      "Set the tone you want, such as friendly, formal, persuasive, or informative, if options are offered.",
+      "Add helpful details, such as key points to cover, length, and any facts the draft should include.",
+      "Submit the prompt and wait for the draft to appear.",
+      "Read the draft and mark anything inaccurate, generic, or off-topic for removal.",
+      "Rewrite the draft in your own voice, adding examples, evidence, and personal experience.",
+      "Proofread the final version before publishing or submitting it.",
+    ],
+    benefits: [
+      "Faster starts: turn a prompt into a workable draft instead of facing a blank page.",
+      "Flexible tone: match the draft to your audience, from casual blog readers to formal clients.",
+      "More ideas: drafts can suggest angles, structures, and examples you had not considered.",
+      "Free to try online with no signup, so experimenting with a prompt costs nothing.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Can I publish an AI Writer draft without editing it?",
+        a: "You should not. Drafts can contain errors, generic claims, and flat phrasing. Edit for accuracy, add your own insight, and make the voice your own before publishing anything.",
+      },
+      {
+        q: "What makes a good prompt for the AI Writer?",
+        a: "Be specific about topic, audience, purpose, tone, and length, and include the key points you want covered. A vague prompt produces a vague draft, while a detailed prompt gives you a much stronger starting point.",
+      },
+      {
+        q: "Why does the writer show an error?",
+        a: "The writer needs a configured AI provider on the site. If no provider is enabled, it shows an error instead of a draft. Once a provider is configured, the writer will run normally.",
+      },
+      {
+        q: "Is the AI Writer free with no signup?",
+        a: "Yes, it is free to use online with no signup. Enter a prompt, review the draft, and edit it into finished writing.",
+      },
+    ],
+  },
+  {
+    slug: "ai-humanizer",
+    toolId: "ai-humanizer",
+    toolName: "AI Humanizer",
+    category: "ai",
+    seoTitle: "AI Humanizer Online Free — Make AI Text Sound Natural",
+    seoDescription: "Use the free AI Humanizer online with no signup to make generated text read more naturally. Paste your draft, soften stiff phrasing, and edit the result.",
+    intro: [
+      "The AI Humanizer makes generated text read more naturally. Paste a draft that sounds stiff, repetitive, or overly formal, and it reworks the phrasing toward the rhythm of everyday writing: varied sentence lengths, simpler connectors, and a less mechanical tone. It is aimed at writers who used AI to draft and now want the result to sound like a person wrote it.",
+      "That goal is legitimate when the underlying content is yours and you are polishing your own draft. A humanizer can remove the telltale smoothness of generated text and help you find a voice that feels closer to how you actually speak and write. It works best as an editing aid, followed by your own revisions.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, use it honestly: making text sound natural does not make false claims true, and it should never be used to pass off work that is not yours or to evade legitimate review.",
+    ],
+    steps: [
+      "Open the AI Humanizer and paste the generated text you want to make more natural.",
+      "Remove sensitive information from the text before submitting it.",
+      "Submit the text and wait for the humanized version to appear.",
+      "Read the new version aloud to check whether it sounds like natural writing.",
+      "Fix any sentences where the meaning changed or the phrasing still feels awkward.",
+      "Add your own examples, opinions, and details to make the text genuinely yours.",
+      "Read the final version in full and confirm every claim is accurate before using it.",
+    ],
+    benefits: [
+      "More natural rhythm: varied sentences and simpler phrasing replace stiff, mechanical patterns.",
+      "Easier reading: text that sounds human is usually clearer and more engaging for readers.",
+      "Faster polishing: start from a smoothed draft instead of rewriting every sentence by hand.",
+      "Free to use online with no signup, whenever a generated draft needs a human touch.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Does humanizing text make it undetectable as AI writing?",
+        a: "Not reliably, and that should not be the goal. Use the humanizer to polish your own draft and improve readability, not to hide authorship or evade a review process that requires disclosure.",
+      },
+      {
+        q: "Will the humanizer change my meaning?",
+        a: "It can, which is why you must review the output carefully. Check facts, emphasis, and tone, and correct any sentence that no longer says what you intended.",
+      },
+      {
+        q: "Why do I see an error instead of a result?",
+        a: "The humanizer needs a configured AI provider on the site. If no provider is enabled, it shows an error rather than a rewritten text. It will work once a provider has been configured.",
+      },
+      {
+        q: "Is the AI Humanizer free with no signup?",
+        a: "Yes, it is free to use online with no signup. Paste your draft, review the natural-sounding version, and finish it with your own edits.",
+      },
+    ],
+  },
+  {
+    slug: "ai-translator",
+    toolId: "ai-translator",
+    toolName: "AI Translator",
+    category: "ai",
+    seoTitle: "AI Translator Online Free — Translate Text Accurately",
+    seoDescription: "Use the free AI Translator online with no signup to translate text between many languages. Paste your text, pick your languages, and review the translation.",
+    intro: [
+      "The AI Translator translates text between many languages. Paste a paragraph, message, or document excerpt, choose the source and target languages, and it produces a translation in seconds. It is useful for travellers, students, customer support teams, and anyone working across languages who needs a quick, readable version of a text.",
+      "Machine translation is best for understanding and everyday communication: reading a foreign article, replying to a customer, or drafting a message to a colleague abroad. It handles common phrasing well, though idioms, humour, legal terms, and culturally specific references still need a careful human check.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, review important translations before you send or publish them, especially when accuracy affects safety, money, health, or legal meaning.",
+    ],
+    steps: [
+      "Open the AI Translator and paste the text you want to translate.",
+      "Remove sensitive information, such as personal data or confidential business text, before submitting.",
+      "Select the source language, or let the tool detect it, and choose your target language.",
+      "Submit the text and wait for the translation to appear.",
+      "Read the translation for sense, checking names, numbers, dates, and key terms.",
+      "Fix idioms, formal or informal tone, and any phrases that do not fit the context.",
+      "Copy the reviewed translation into your message or document and give it a final read.",
+    ],
+    benefits: [
+      "Fast understanding: read foreign text in your own language without waiting for a translator.",
+      "Everyday communication: draft replies and messages across languages in seconds.",
+      "Wide language coverage: translate between many language pairs in one simple tool.",
+      "Free and accessible: translate online with no signup, whenever you need it.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "Is machine translation accurate enough for legal or medical text?",
+        a: "No, not on its own. Legal, medical, and safety-critical translations need a qualified human translator, since a small error can change the meaning with serious consequences. Use this tool for everyday understanding and drafts.",
+      },
+      {
+        q: "Which languages can I translate between?",
+        a: "The translator supports many common languages. If your language pair is not available or the result looks uncertain, try shorter sentences and check the result against a second source.",
+      },
+      {
+        q: "Why does the translator show an error?",
+        a: "The translation feature needs a configured AI provider on the site. If no provider is enabled, it shows an error instead of a translation. It will work once a provider has been configured.",
+      },
+      {
+        q: "Is the AI Translator free with no signup?",
+        a: "Yes, it is free to use online with no signup. Paste your text, choose your languages, and review the translation before using it.",
+      },
+    ],
+  },
+  {
+    slug: "ai-email-writer",
+    toolId: "ai-email-writer",
+    toolName: "AI Email Writer",
+    category: "ai",
+    seoTitle: "AI Email Writer Online Free — Draft Emails From Bullets",
+    seoDescription: "Try the free AI Email Writer online with no signup to draft clear emails from bullet points. List your key points, get a polished draft, and send confidently.",
+    intro: [
+      "The AI Email Writer drafts clear emails from bullet points. List the points you need to cover, add the recipient and context, and it turns those notes into a complete, polite email with a greeting, body, and closing. It is built for busy professionals who know what they want to say but do not want to spend twenty minutes wording it.",
+      "It works for follow-ups, introductions, apologies, meeting requests, customer replies, and job applications. Starting from bullets keeps you in control of the content, while the tool handles structure and tone: formal for a client, friendly for a colleague, concise for a busy executive.",
+      "This AI feature requires a configured AI provider on the site, and it shows an error when one is not enabled. When it is enabled, always read the draft before sending. Check names, dates, promises, and tone, because an email that sounds polished but says the wrong thing is worse than a short, accurate one.",
+    ],
+    steps: [
+      "Open the AI Email Writer and list your key points as short bullet points.",
+      "Add context, such as who the email is for and what outcome you want.",
+      "Choose the tone you need, such as formal, friendly, or concise, if options are offered.",
+      "Submit the bullets and wait for the email draft to appear.",
+      "Read the draft and check names, dates, commitments, and any sensitive details.",
+      "Edit the draft so it sounds like you and says exactly what you mean.",
+      "Copy the final email into your mail app, add the recipient, and send it.",
+    ],
+    benefits: [
+      "Faster inbox: turn rough notes into a send-ready draft in seconds.",
+      "Clearer messages: structured drafts with a clear ask get better, faster replies.",
+      "Right tone every time: match formal, friendly, or concise styles to each recipient.",
+      "Free and simple: draft emails online with no signup, from bullets you already have.",
+    ],
+    privacyNote: "This is a server tool, so your input is sent to complete the request. Avoid submitting sensitive information. The AI feature also requires a configured provider on the site and shows an error when one is not enabled.",
+    faqs: [
+      {
+        q: "What should I include in my bullet points?",
+        a: "Include the purpose, the key facts, any dates or deadlines, and the action you want from the reader. The clearer your bullets, the more accurate and useful the draft will be.",
+      },
+      {
+        q: "Should I send the draft without reading it?",
+        a: "No. Always check names, dates, promises, and tone first. A draft is a starting point, and you are responsible for what you send, so edit it until it says exactly what you mean.",
+      },
+      {
+        q: "Why does the email writer show an error?",
+        a: "The email feature needs a configured AI provider on the site. If no provider is enabled, it shows an error instead of a draft. It will work once a provider has been configured.",
+      },
+      {
+        q: "Is the AI Email Writer free with no signup?",
+        a: "Yes, it is free to use online with no signup. Turn your bullet points into a polished draft, edit it, and send it with confidence.",
+      },
+    ],
+  },
+];

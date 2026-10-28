@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -8,15 +8,9 @@ import { buildSiteMetadata } from "@/lib/seo";
 
 import "./globals.css";
 
-// Only preload the primary body font. Display/mono are used selectively,
-// so preloading them triggers Chrome's "preloaded but not used" warning.
-const display = Fraunces({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-});
-
+// Headings share the Inter body font (SmallPDF-style clean sans), so no
+// separate display font is loaded. --font-display maps to --font-body
+// in globals.css, keeping every existing font-display usage working.
 const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
@@ -42,16 +36,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
+      className={`${body.variable} ${mono.variable} h-full antialiased`}
     >
       <body
         className={`${body.className} min-h-full bg-[var(--bg)] text-[var(--ink)]`}
       >
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var k='quiet-workshop-theme';var t=localStorage.getItem(k);if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();`,
-          }}
-        />
         <ToastProvider>
           <div className="flex min-h-screen flex-col">
             <Header />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { categoryMeta, getCategoryCount, type Category } from "@/lib/tools";
+import { getCategoryIcon } from "@/components/tool-cards/categoryIcon";
 
 interface CategoryCardProps {
   category: Category;
@@ -10,25 +11,28 @@ interface CategoryCardProps {
 export function CategoryCard({ category, count }: CategoryCardProps) {
   const meta = categoryMeta[category];
   const toolCount = count ?? getCategoryCount(category);
+  const Icon = getCategoryIcon(category);
 
   return (
     <Link
       href={`/category/${category}`}
-      className="block rounded-[14px] border border-[var(--line)] bg-[var(--surface)] p-5 transition-transform duration-200 hover:-translate-y-0.5 hover:border-[var(--line-strong)]"
+      className="group block rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:shadow-md"
     >
-      <div
-        className="mb-4 h-1.5 w-14 rounded-full"
-        style={{ backgroundColor: meta.accent }}
-      />
-      <div className="flex items-center justify-between gap-4">
-        <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-          {meta.name}
-        </h3>
-        <span className="rounded-full bg-[var(--surface-sunk)] px-2 py-1 font-mono text-xs text-[var(--ink-soft)]">
+      <div className="flex items-start justify-between gap-3">
+        <span
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg"
+          style={{ backgroundColor: `${meta.accent}1a`, color: meta.accent }}
+        >
+          <Icon className="h-6 w-6" />
+        </span>
+        <span className="rounded-full bg-[var(--surface-sunk)] px-2 py-1 text-xs text-[var(--ink-soft)]">
           {toolCount} tools
         </span>
       </div>
-      <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+      <h3 className="mt-4 text-xl font-bold text-[var(--ink)]">
+        {meta.name}
+      </h3>
+      <p className="mt-1.5 text-sm leading-6 text-[var(--ink-soft)]">
         {meta.description}
       </p>
     </Link>

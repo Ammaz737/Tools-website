@@ -5,7 +5,12 @@ import { buildToolMetadata, isToolIndexable } from "@/lib/seo";
 import { tools } from "@/lib/tools";
 import { ToolShell } from "@/components/ui/ToolShell";
 import { ToolDispatcher } from "@/tools";
-import { generateToolJsonLd } from "@/lib/jsonld";
+import {
+  generateBreadcrumbJsonLd,
+  generateFaqJsonLd,
+  generateToolJsonLd,
+  resolveToolFaqs,
+} from "@/lib/jsonld";
 import { pdfToolContent } from "@/lib/pdf-tool-content";
 import {
   getPublicToolById,
@@ -42,13 +47,28 @@ export default async function ToolPage({ params }: ToolPageProps) {
   const related = await getRelatedPublicTools(tool);
   const jsonLd = generateToolJsonLd(tool);
   const content = pdfToolContent[tool.id];
+  // Matches the Breadcrumbs ToolShell renders exactly (note: the visible
+  // category crumb is the raw category slug, e.g. "pdf").
+  const breadcrumbLd = generateBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Tools", path: "/tools" },
+    { name: tool.category, path: `/category/${tool.category}` },
+    { name: tool.name },
+  ]);
+  const faqLd = generateFaqJsonLd(
+    resolveToolFaqs(tool, content?.faqs),
+  );
+  const jsonLdBlocks = [jsonLd, breadcrumbLd, ...(faqLd ? [faqLd] : [])];
 
   return (
     <>
-      {isToolIndexable(tool) && <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
-      />}
+      {isToolIndexable(tool) && jsonLdBlocks.map((block, idx) => (
+        <script
+          key={idx}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(block).replace(/</g, "\\u003c") }}
+        />
+      ))}
       <ToolShell
         tool={tool}
         usageCount={tool.usageCount}

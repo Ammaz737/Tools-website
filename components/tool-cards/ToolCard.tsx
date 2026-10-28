@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { categoryMeta, type Tool } from "@/lib/tools";
 import { isImplementedTool } from "@/lib/tool-capabilities";
+import { getCategoryIcon } from "@/components/tool-cards/categoryIcon";
 
 interface ToolCardProps {
   tool: Tool;
@@ -9,30 +10,36 @@ interface ToolCardProps {
 }
 
 export function ToolCard({ tool, usageCount }: ToolCardProps) {
+  const accent = categoryMeta[tool.category].accent;
+  const Icon = getCategoryIcon(tool.category);
+
   return (
     <Link
       href={`/tools/${tool.id}`}
-      className="group block rounded-[14px] border border-[var(--line)] bg-[var(--surface)] p-5 transition-transform duration-200 hover:-translate-y-0.5 hover:border-[var(--line-strong)]"
+      className="group block rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:shadow-lg"
     >
-      <div
-        className="mb-4 h-1.5 w-14 rounded-full"
-        style={{ backgroundColor: categoryMeta[tool.category].accent }}
-      />
-      <div className="flex items-center justify-between gap-4">
-        <h3 className="font-medium text-[var(--ink)]">{tool.name}</h3>
-        {!isImplementedTool(tool.id) && <span className="rounded-full bg-[var(--surface-sunk)] px-2 py-1 text-xs text-[var(--ink-soft)]">Coming soon</span>}
-      </div>
-      <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-        {tool.blurb}
-      </p>
-      <div className="mt-4 flex items-center justify-between gap-3">
-        <p className="text-sm text-[var(--accent)]">Open tool →</p>
-        {typeof usageCount === "number" && (
-          <p className="font-mono text-xs text-[var(--ink-faint)]">
-            {usageCount.toLocaleString()} uses
-          </p>
+      <div className="flex items-start justify-between gap-3">
+        <span
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+          style={{ backgroundColor: `${accent}1a`, color: accent }}
+        >
+          <Icon className="h-6 w-6" />
+        </span>
+        {!isImplementedTool(tool.id) && (
+          <span className="rounded-full bg-[var(--surface-sunk)] px-2 py-1 text-xs text-[var(--ink-soft)]">
+            Coming soon
+          </span>
         )}
       </div>
+      <h3 className="mt-4 font-semibold text-[var(--ink)]">{tool.name}</h3>
+      <p className="mt-1.5 text-sm leading-6 text-[var(--ink-soft)]">
+        {tool.blurb}
+      </p>
+      {typeof usageCount === "number" && usageCount > 0 && (
+        <p className="mt-4 text-xs text-[var(--ink-faint)]">
+          {usageCount.toLocaleString()} uses
+        </p>
+      )}
     </Link>
   );
 }
