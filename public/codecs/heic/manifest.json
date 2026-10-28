@@ -1,0 +1,17 @@
+{
+  "version": "1.23.5",
+  "files": {
+    "libheif-bundle.js": {
+      "bytes": 2044206,
+      "sha256": "074b2b55ef3de477ba9f794ca381f3f0324c1cba8c91b4af07395f39c22d54cc"
+    },
+    "decode-worker.js": {
+      "bytes": 1307,
+      "sha256": "813df057d9c3f256c24b7dccad14989fef3e2da5db0ff5d1672d7892895e96a0"
+    },
+    "LICENSE": {
+      "bytes": 44366,
+      "sha256": "fa81ce652315b013359d6e8e4744335f31a50c7c192907176d3632f78a3b4596"
+    }
+  }
+}

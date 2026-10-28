@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-21T19:07:52.070Z",
+  "scope": "Actual loopback production HTTP server and newly configured private admin credentials; no Atlas writes. Persistence is explicitly unconfigured. Stateless signed-token revocation after logout is not claimed.",
+  "results": [
+    {
+      "name": "configured login rejects incorrect password",
+      "status": "PASS"
+    },
+    {
+      "name": "configured login issues signed production cookie with security attributes",
+      "status": "PASS"
+    },
+    {
+      "name": "real cookie authenticates admin read without fabricating persistence",
+      "status": "FAIL",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "name": "tampered real cookie is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "logout clears browser session cookie",
+      "status": "PASS"
+    }
+  ]
+}

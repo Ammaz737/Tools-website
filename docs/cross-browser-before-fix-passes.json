@@ -1,0 +1,1062 @@
+{
+  "buildId": "JN5DGX3MFn9KwyN07yDdb",
+  "scope": "Passed assertions before shared hydration-readiness fix; incomplete WebKit run and failures remain in raw logs.",
+  "passed": [
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "discount-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "profit-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "roi-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "tip-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "margin-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "mortgage-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:20:5",
+      "title": "mortgage zero interest and invalid term; tip requires whole people",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:29:5",
+      "title": "scientific operations reject invalid domains without evaluating code",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:35:5",
+      "title": "date comparison and adjustment use calendar days across DST",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:41:5",
+      "title": "area and storage conversions distinguish decimal and binary units",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:48:5",
+      "title": "timezone converts explicit instants through the DST spring gap",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:55:5",
+      "title": "margin pricing solves target margin and rejects 100 percent",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-developer.spec.ts:12:52",
+      "title": "xml-formatter processes source and clears stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-developer.spec.ts:12:52",
+      "title": "xml-validator processes source and clears stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-developer.spec.ts:12:52",
+      "title": "html-formatter processes source and clears stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-developer.spec.ts:12:52",
+      "title": "html-minifier processes source and clears stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-developer.spec.ts:12:52",
+      "title": "css-minifier processes source and clears stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-developer.spec.ts:12:52",
+      "title": "javascript-minifier processes source and clears stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-developer.spec.ts:12:52",
+      "title": "sql-formatter processes source and clears stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:4:5",
+      "title": "random numbers validate bounds, produce integers in range, and download",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:17:70",
+      "title": "unix-time-converter converts both ways and rejects invalid dates",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:27:5",
+      "title": "dice output contains requested count, bounds, and a correct total",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:36:5",
+      "title": "stopwatch pauses, resumes, records laps and resets",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:50:5",
+      "title": "countdown validates, pauses, resumes and completes",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:60:5",
+      "title": "tasks persist completion after reload, export and clear completed",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:67:5",
+      "title": "password checker evaluates locally, supports reveal and clears sensitive output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:9:5",
+      "title": "qr-code-generator: decode downloaded pristine version-one byte payload",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:42:5",
+      "title": "barcode-generator: downloaded Code 128 bars decode payload and checksum",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:61:5",
+      "title": "sitemap-generator: downloaded XML round-trips escaped values and deduplicates",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:68:5",
+      "title": "meta-tag-generator: downloaded HTML restores original Unicode and quotes",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:74:5",
+      "title": "xml-formatter: namespace mixed text CDATA and entities preserve semantics",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:80:5",
+      "title": "javascript-minifier: trusted fixture preserves template regex and numeric semantics",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:87:5",
+      "title": "jwt-decoder: Unicode nested claims retain original values",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:92:75",
+      "title": "hash-generator: UTF8 digest agrees with independent Node crypto",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:92:75",
+      "title": "md5-generator: UTF8 digest agrees with independent Node crypto",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:92:75",
+      "title": "sha256-generator: UTF8 digest agrees with independent Node crypto",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:98:5",
+      "title": "mortgage-calculator: independent amortization recurrence pays principal",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:104:5",
+      "title": "css-minifier: browser computed declarations preserve calc and custom properties",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:17:70",
+      "title": "timestamp-converter converts both ways and rejects invalid dates",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:110:5",
+      "title": "html-minifier: whitespace-sensitive text and embedded script content survive",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:116:5",
+      "title": "data-storage-converter: bit/byte binary/decimal conversions use physical unit identities",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:123:5",
+      "title": "time-zone-converter: autumn repeated hour distinguishes two real instants",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\deep-output-oracles.spec.ts:129:5",
+      "title": "profit-calculator: loss and zero denominators never invent percentages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "split-pdf downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "delete-pdf-pages downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "rearrange-pdf-pages downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "rotate-pdf downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "watermark-pdf downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "sign-pdf downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "edit-pdf downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:33:34",
+      "title": "compress-pdf downloads a reopened PDF with the expected pages",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:64:5",
+      "title": "merge combines generated page geometry",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:71:42",
+      "title": "PDF to jpg produces real image signatures in ZIP",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:71:42",
+      "title": "PDF to png produces real image signatures in ZIP",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:82:5",
+      "title": "protect and unlock enforce password and reopen decrypted output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:94:5",
+      "title": "drawn signature uses real pointer interaction",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:104:52",
+      "title": "PDF to word output reopens as the requested Office format",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:104:52",
+      "title": "PDF to excel output reopens as the requested Office format",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:104:52",
+      "title": "PDF to ppt output reopens as the requested Office format",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:118:52",
+      "title": "word to PDF generated fixture reopens",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:118:52",
+      "title": "excel to PDF generated fixture reopens",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:118:52",
+      "title": "ppt to PDF generated fixture reopens",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:127:5",
+      "title": "all PDF routes reject malformed bytes before preview or processing",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\documents-suite.spec.ts:135:5",
+      "title": "PDF uploads enforce page and byte budgets",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:3:5",
+      "title": "age clamps leap anniversaries and handles early years without 1900 offset",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:12:5",
+      "title": "BMI and percentage reject empty and invalid inputs without fabricated zero",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:20:63",
+      "title": "emi-calculator zero interest, fractional years and zero tenure",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:20:63",
+      "title": "loan-calculator zero interest, fractional years and zero tenure",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:26:62",
+      "title": "gst-calculator inclusive and exclusive tax, zero rate and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:26:62",
+      "title": "vat-calculator inclusive and exclusive tax, zero rate and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:32:132",
+      "title": "length-converter exact units and empty/negative inputs",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:32:132",
+      "title": "weight-converter exact units and empty/negative inputs",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:38:5",
+      "title": "temperature respects absolute zero and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:44:5",
+      "title": "binary converter uses UTF-8 bytes for Unicode and supports empty text",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-math.spec.ts:49:5",
+      "title": "Roman conversion requires a bounded integer",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-utilities.spec.ts:4:5",
+      "title": "qr-code-generator: readable PNG download, empty and size-limit recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-utilities.spec.ts:20:59",
+      "title": "color-picker: exact RGB conversion and invalid-input recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-utilities.spec.ts:20:59",
+      "title": "color-converter: exact RGB conversion and invalid-input recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-utilities.spec.ts:28:5",
+      "title": "random-password-generator: alias honors selected groups and length",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\existing-utilities.spec.ts:39:5",
+      "title": "coin-flipper: produces a valid outcome and can flip again",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\heic-quality.spec.ts:3:5",
+      "title": "HEIC primary image decodes locally to real JPEG with reference colors",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\heic-quality.spec.ts:30:5",
+      "title": "HEIC malformed input rejects then a valid file recovers",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "convert-image downloads real png bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "jpg-to-png downloads real png bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "jfif-to-png downloads real png bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "webp-to-png downloads real png bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "png-to-jpg downloads real jpg bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "webp-to-jpg downloads real jpg bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "jpeg-to-jpg downloads real jpg bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:15:66",
+      "title": "webp-converter downloads real webp bytes and clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:27:5",
+      "title": "heic-to-jpg rejects malformed HEIC without a false download",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:31:5",
+      "title": "image-compressor exports JPEG with matching filename and dimensions",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:38:5",
+      "title": "image-resizer rejects allocation bounds then exports the chosen dimensions",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:44:5",
+      "title": "rotate-image swaps dimensions after 90 degrees",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:50:5",
+      "title": "svg-converter exports scaled PNG and invalid markup removes stale output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:56:163",
+      "title": "image-to-pdf creates a readable PDF with actual image page dimensions",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:56:163",
+      "title": "jpg-to-pdf creates a readable PDF with actual image page dimensions",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:56:163",
+      "title": "png-to-pdf creates a readable PDF with actual image page dimensions",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:61:5",
+      "title": "background-remover honestly removes selected black pixels while preserving white",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:67:5",
+      "title": "image-upscaler exports a real double-sized raster and discloses its method",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:71:5",
+      "title": "screenshot-tool annotates uploaded pixels and exports PNG rather than pretending capture",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\image-suite.spec.ts:75:5",
+      "title": "invalid raster files remove stale downloads and recover with valid input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:35:34",
+      "title": "dns-lookup: mocked UI query, output and upstream-error recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:35:34",
+      "title": "whois-lookup: mocked UI query, output and upstream-error recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:35:34",
+      "title": "ssl-checker: mocked UI query, output and upstream-error recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:35:34",
+      "title": "ip-lookup: mocked UI query, output and upstream-error recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:35:34",
+      "title": "email-validator: mocked UI query, output and upstream-error recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:35:34",
+      "title": "broken-link-checker: mocked UI query, output and upstream-error recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:35:34",
+      "title": "website-speed-test: mocked UI query, output and upstream-error recovery",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\network-ui-quality.spec.ts:54:5",
+      "title": "currency-converter: mocked exchange rates yield correct cross-rate math and recover after failure",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\ocr-quality.spec.ts:9:5",
+      "title": "ocr-pdf reads image-only English pages and preserves searchable page dimensions",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\output-fidelity.spec.ts:43:5",
+      "title": "PDF to Word page images survive mixed-size document round trip",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\output-fidelity.spec.ts:95:5",
+      "title": "PDF to Word editable mode reconstructs table cells and source page sections",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\output-fidelity.spec.ts:124:5",
+      "title": "PDF to Excel preserves blank middle pages and later-page assignment",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\output-fidelity.spec.ts:138:5",
+      "title": "PowerPoint rejects unsupported mixed content instead of downloading damaged output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\output-fidelity.spec.ts:150:5",
+      "title": "PDF to Excel reconstructs detected table cells instead of a single text column",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\output-fidelity.spec.ts:165:5",
+      "title": "PDF page-image PowerPoint round trip preserves declared slide dimensions",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\output-fidelity.spec.ts:185:5",
+      "title": "PDF canvas export recovers from an unreadable encoder Blob without changing pixels",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:7:5",
+      "title": "all registered tool URLs render with accurate indexing policy",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:23:5",
+      "title": "case converter transforms input and clears result on mobile",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:34:5",
+      "title": "sitemap and private pages follow the indexing policy",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:53:5",
+      "title": "logout rejects cross-origin requests",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:60:5",
+      "title": "JSON formatter handles valid, invalid and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:72:5",
+      "title": "merge PDFs downloads a readable document and sends no file bytes",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:100:5",
+      "title": "admin APIs reject forged fallback cookies when configuration is absent",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:110:5",
+      "title": "AI validates empty prompts and throttles repeated requests",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\regression.spec.ts:120:5",
+      "title": "login fails closed then throttles repeated attempts without trusting spoofed headers",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:3:5",
+      "title": "meta tags escape user HTML and reset clears output",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:14:5",
+      "title": "robots directives generate a downloadable text file",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:23:5",
+      "title": "sitemap escapes query parameters and rejects mixed origins",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:35:5",
+      "title": "density counts words and phrase occurrences",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:44:5",
+      "title": "SERP preview displays text without injecting markup",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:52:5",
+      "title": "Open Graph validates URL protocols and escapes properties",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:62:5",
+      "title": "canonical removes fragments and rejects credentials",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\seo-tools.spec.ts:71:5",
+      "title": "schema emits parseable script-safe JSON and product offers",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\service-integration-ui.spec.ts:5:5",
+      "title": "Office server choice discloses upload and sends raw document with tool mapping",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\service-integration-ui.spec.ts:27:5",
+      "title": "Plagiarism requires consent and labels simulated provider results",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "remove-duplicate-lines: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "text-sorter: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "text-cleaner: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "remove-extra-spaces: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "reverse-text: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "base64-encoder: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "base64-decoder: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "url-encoder: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "url-decoder: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:14:17",
+      "title": "json-minifier: known output and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:23:179",
+      "title": "word-counter: counts and empty reset",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:23:179",
+      "title": "character-counter: counts and empty reset",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:23:179",
+      "title": "sentence-counter: counts and empty reset",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:30:65",
+      "title": "uuid-generator: valid unique IDs and bounded quantity",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:30:65",
+      "title": "uuid-generator-util: valid unique IDs and bounded quantity",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:38:79",
+      "title": "hash-generator: published known hash vectors",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:38:79",
+      "title": "md5-generator: published known hash vectors",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:38:79",
+      "title": "sha256-generator: published known hash vectors",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:44:5",
+      "title": "json-validator: valid scalar and malformed syntax",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:48:5",
+      "title": "jwt-decoder: claims and malformed token, no verification claim",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:52:5",
+      "title": "lorem-ipsum-generator: paragraph count and allocation bound",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\text-developer-suite.spec.ts:56:5",
+      "title": "random-text-generator: allowed characters and bound",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\ui-regression.spec.ts:4:5",
+      "title": "crop presets download correct dimensions from a rectangular source",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\ui-regression.spec.ts:26:5",
+      "title": "password generation and reset honor selected groups and length",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\ui-regression.spec.ts:43:5",
+      "title": "barcode recovers from invalid input and downloads a valid SVG",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\ui-regression.spec.ts:61:5",
+      "title": "notepad preserves Unicode notes across reload",
+      "status": "PASS"
+    },
+    {
+      "project": "firefox",
+      "file": "tests\\e2e\\ui-regression.spec.ts:70:5",
+      "title": "theme toggles both directions and persists after reload",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "discount-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "profit-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "roi-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "tip-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "margin-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:12:7",
+      "title": "mortgage-calculator: known result and empty input",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:29:5",
+      "title": "scientific operations reject invalid domains without evaluating code",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-calculators.spec.ts:55:5",
+      "title": "margin pricing solves target margin and rejects 100 percent",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:17:70",
+      "title": "timestamp-converter converts both ways and rejects invalid dates",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:17:70",
+      "title": "unix-time-converter converts both ways and rejects invalid dates",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:27:5",
+      "title": "dice output contains requested count, bounds, and a correct total",
+      "status": "PASS"
+    },
+    {
+      "project": "webkit",
+      "file": "tests\\e2e\\additional-utilities.spec.ts:36:5",
+      "title": "stopwatch pauses, resumes, records laps and resets",
+      "status": "PASS"
+    }
+  ]
+}

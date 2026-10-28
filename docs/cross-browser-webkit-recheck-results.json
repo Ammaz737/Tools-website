@@ -1,0 +1,192 @@
+{
+  "config": {
+    "argv": [
+      "D:\\Program Files\\nodejs\\node.exe",
+      "D:\\Tools_Site\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "service-integration-ui.spec.ts",
+      "--config",
+      "playwright.cross-browser.config.ts",
+      "--project=webkit",
+      "--grep",
+      "Office server choice"
+    ],
+    "configFile": "D:\\Tools_Site\\playwright.cross-browser.config.ts",
+    "rootDir": "D:/Tools_Site/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Tools_Site/test-results/cross-browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Tools_Site/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "D:/Tools_Site/test-results/cross-browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Tools_Site/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Tools_Site\\test-results\\cross-browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "D:\\Tools_Site\\tests\\e2e",
+        "snapshotDir": "D:\\Tools_Site\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3100",
+          "acceptDownloads": true,
+          "launchOptions": {
+            "downloadsPath": "D:\\Tools_Site\\tmp\\playwright-runtime"
+          },
+          "trace": "retain-on-failure",
+          "browserName": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/cross-browser-webkit-recheck-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start -- --hostname 127.0.0.1 --port 3100",
+      "url": "http://127.0.0.1:3100",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "env": {
+        "MONGODB_URI": "",
+        "ADMIN_PASSWORD": "",
+        "ADMIN_SESSION_SECRET": "",
+        "OFFICE_CONVERTER_URL": "",
+        "OFFICE_CONVERTER_AUTH_HEADER": "",
+        "COPYLEAKS_EMAIL": "",
+        "COPYLEAKS_API_KEY": "",
+        "COPYLEAKS_WEBHOOK_SECRET": "",
+        "AI_PROVIDER": "auto",
+        "OPENAI_API_KEY": "",
+        "GEMINI_API_KEY": "",
+        "OLLAMA_BASE_URL": "",
+        "OLLAMA_MODEL": "",
+        "RATE_LIMIT_IP_HEADER": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "service-integration-ui.spec.ts",
+      "file": "service-integration-ui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Office server choice discloses upload and sends raw document with tool mapping",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3562,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T21:44:18.804Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "acb7df451400af5eb6a8-bb289e5c18229fc715de",
+          "file": "service-integration-ui.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T21:44:13.191Z",
+    "duration": 9966.708999999999,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

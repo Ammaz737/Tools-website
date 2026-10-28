@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED_UNSUPPORTED_LAYOUT",
+  "expectedPages": 1,
+  "actualPages": 0,
+  "message": "Slides with multiple images or mixed images and text cannot be converted reliably here. Export this presentation to PDF in PowerPoint or LibreOffice to preserve its layout.",
+  "corruptDownloadPrevented": true
+}

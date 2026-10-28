@@ -1,0 +1,63 @@
+
+> tools@0.1.0 prebuild
+> node scripts/prepare-heic-assets.mjs && node scripts/prepare-ocr-assets.mjs
+
+Prepared pinned local HEIC decoder assets.
+Verified self-hosted OCR assets in D:\Tools_Site\public\ocr
+
+> tools@0.1.0 build
+> next build
+
+▲ Next.js 16.4.2 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 110ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 47s
+  Running TypeScript ...
+✓ Finished writing to filesystem cache in 10.3s
+  Finished TypeScript in 25.7s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/170) ...
+  Generating static pages using 3 workers (42/170) 
+  Generating static pages using 3 workers (84/170) 
+  Generating static pages using 3 workers (127/170) 
+✓ Generating static pages using 3 workers (170/170) in 966ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin
+├ ƒ /admin/tools
+├ ƒ /api/admin/login
+├ ƒ /api/admin/logout
+├ ƒ /api/admin/tools
+├ ƒ /api/admin/tools/[id]
+├ ƒ /api/ai
+├ ƒ /api/convert-office
+├ ƒ /api/crawl
+├ ƒ /api/dns
+├ ƒ /api/email-check
+├ ƒ /api/ip
+├ ƒ /api/plagiarism
+├ ƒ /api/plagiarism/[jobId]
+├ ƒ /api/plagiarism/webhook/[jobId]/[status]
+├ ƒ /api/rates
+├ ƒ /api/ssl
+├ ƒ /api/tools/[id]/use
+├ ƒ /api/tools/status
+├ ƒ /api/whois
+├ ƒ /category/[slug]
+├ ○ /privacy
+├ ○ /robots.txt
+├ ƒ /sitemap.xml
+├ ○ /terms
+├ ƒ /tools
+└ ƒ /tools/[slug]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

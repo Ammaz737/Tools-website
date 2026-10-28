@@ -1,0 +1,75 @@
+{
+  "sourceHashes": {
+    "package-lock.json": "f63eeea7f8e162965fac2914933ff89764423034ede057bdb9618ee6683e95ad",
+    "app/api/crawl/route.ts": "ccd7b62701d55f61b97a51be1c732446f7de8818e740aca75f054f6f6690ea65",
+    "app/api/dns/route.ts": "05fd9e69c530cb3d67e30f49ec501cd42ec7e5c5b4ff7e6f68085fc944fb7036",
+    "app/api/email-check/route.ts": "7c5689a65e52cd1b533826409950de71b460a9a65d02d793107e3d67234d45b3",
+    "app/api/ssl/route.ts": "a89b46589558c79dad296b128b8ac956cf67bffe274424f87d333af930d1800b",
+    "app/api/whois/route.ts": "2ffa49a53ba6e22aefefa06b8f2220dd792bb4beb22b86eb290297f9022fb1f1",
+    "app/api/ip/route.ts": "058263dbad6ce0dd5263d1d33164ff93faface0a7f6f76e062e5c16ceb279c05",
+    "app/api/rates/route.ts": "32515b454a41d8ea36aeea77c14b5a4f2ae580317aed359c0c7dce52d80347d7",
+    "lib/server/safe-request.ts": "35dafccc17a40d8072ae2f42c95b77591dee8b1fa68f851c81761bc7b1120824",
+    "lib/server/ssrf.ts": "95b007095a781319260c6e21c0e8418dbf8106beac1783bbfd17f22868b664e1",
+    "lib/server/html-links.ts": "6a3f284103ba521285b3cdc45ce73fc5c85c0effaae3559f21180a541868066b",
+    "lib/server/dns-resolver.ts": "947d2ecd7d94ebcfcba3275ac20fb727a19fdf6afe19ed565d8d52d1697faee7",
+    "lib/server/rate-limit.ts": "c6a14c8be9514620f42391140bdaff04504791cfb5775ab471f644b29e9ef645",
+    "lib/server/tool-access.ts": "b11933615ce3a45df7a77ae5173a43de62310612904683cc4aee0a5ee778e497",
+    "lib/server/cache.ts": "f30b3553b28ec5aacc53274d8baac70c299314ec4a10029ce5f69cdc19129640",
+    "lib/tool-status.ts": "85cff3ab842e41b1e2af18edba02eee4d6d2f248193212531b9404ceebc2c627",
+    "lib/db.ts": "d3bc46db3896fa925e34f950f1025cb36ffe06d4f93aca2269bc574446bda3cd",
+    "lib/tools.ts": "a96e41c6ccec5a93fa1244a1a63513428f10c76b313bb831d557a5ea5accbf1f"
+  },
+  "dnsMode": "Explicit opt-in Cloudflare 1.1.1.1",
+  "checkedAt": "2026-10-17T21:08:25.817Z",
+  "scope": "Actual production GET handlers with live read-only public requests; defaults only, no Atlas connection. A pass covers these targets and invariants, not UI behavior or exhaustive provider accuracy.",
+  "results": [
+    {
+      "id": "website-speed-test",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 231
+    },
+    {
+      "id": "broken-link-checker",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 1460
+    },
+    {
+      "id": "dns-lookup",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 89
+    },
+    {
+      "id": "email-validator",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 88
+    },
+    {
+      "id": "ssl-checker",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 188
+    },
+    {
+      "id": "whois-lookup",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 675
+    },
+    {
+      "id": "ip-lookup",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 574
+    },
+    {
+      "id": "currency-converter",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 235
+    }
+  ]
+}

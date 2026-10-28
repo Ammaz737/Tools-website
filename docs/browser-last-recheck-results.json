@@ -1,0 +1,204 @@
+{
+  "config": {
+    "argv": [
+      "D:\\Program Files\\nodejs\\node.exe",
+      "D:\\Tools_Site\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/output-fidelity.spec.ts",
+      "-g",
+      "PDF to Word page images survive"
+    ],
+    "configFile": "D:\\Tools_Site\\playwright.config.ts",
+    "rootDir": "D:/Tools_Site/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Tools_Site/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Tools_Site/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Tools_Site\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\Tools_Site\\tests\\e2e",
+        "snapshotDir": "D:\\Tools_Site\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3100",
+          "channel": "chromium",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start -- --hostname 127.0.0.1 --port 3100",
+      "url": "http://127.0.0.1:3100",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "env": {
+        "MONGODB_URI": "",
+        "ADMIN_PASSWORD": "",
+        "ADMIN_SESSION_SECRET": "",
+        "OFFICE_CONVERTER_URL": "",
+        "OFFICE_CONVERTER_AUTH_HEADER": "",
+        "COPYLEAKS_EMAIL": "",
+        "COPYLEAKS_API_KEY": "",
+        "COPYLEAKS_WEBHOOK_SECRET": "",
+        "AI_PROVIDER": "auto",
+        "OPENAI_API_KEY": "",
+        "GEMINI_API_KEY": "",
+        "OLLAMA_BASE_URL": "",
+        "OLLAMA_MODEL": "",
+        "RATE_LIMIT_IP_HEADER": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "output-fidelity.spec.ts",
+      "file": "output-fidelity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PDF to Word page images survive mixed-size document round trip",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 121827,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                        "column": 24,
+                        "line": 33
+                      },
+                      "message": "Error: page.waitForEvent: Test timeout of 120000ms exceeded.\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================\n\n  31 | }\n  32 | async function download(page: Page) {\n> 33 |   const pending = page.waitForEvent(\"download\");\n     |                        ^\n  34 |   await page.getByRole(\"button\", { name: \"Download\", exact: true }).click();\n  35 |   return readFile((await (await pending).path())!);\n  36 | }\n    at download (D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:33:24)\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:58:27"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                        "column": 69,
+                        "line": 34
+                      },
+                      "message": "Error: locator.click: Test timeout of 120000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n\n\n  32 | async function download(page: Page) {\n  33 |   const pending = page.waitForEvent(\"download\");\n> 34 |   await page.getByRole(\"button\", { name: \"Download\", exact: true }).click();\n     |                                                                     ^\n  35 |   return readFile((await (await pending).path())!);\n  36 | }\n  37 | test(\"PDF to Word page images survive mixed-size document round trip\", async ({ page }) => {\n    at download (D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:34:69)\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:58:27"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:46:27.389Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Wor-9ba6c-ed-size-document-round-trip\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Wor-9ba6c-ed-size-document-round-trip\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2eda957ffd2a557dde19-1ddf4b3078abb8283066",
+          "file": "output-fidelity.spec.ts",
+          "line": 37,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T19:46:10.393Z",
+    "duration": 143536.493,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

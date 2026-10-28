@@ -1,0 +1,605 @@
+
+> tools@0.1.0 test
+> node --import tsx --test tests/*.test.ts
+
+TAP version 13
+# Subtest: admin auth fails closed for absent, short, or reused credentials
+ok 1 - admin auth fails closed for absent, short, or reused credentials
+  ---
+  duration_ms: 6.9622
+  type: 'test'
+  ...
+# Subtest: previous development and password fallback signatures cannot authenticate
+ok 2 - previous development and password fallback signatures cannot authenticate
+  ---
+  duration_ms: 2.2592
+  type: 'test'
+  ...
+# Subtest: password checks require complete configuration and exact string input
+ok 3 - password checks require complete configuration and exact string input
+  ---
+  duration_ms: 1.6228
+  type: 'test'
+  ...
+# Subtest: valid tokens expire after seven days and cannot be issued in the future
+ok 4 - valid tokens expire after seven days and cannot be issued in the future
+  ---
+  duration_ms: 3.1096
+  type: 'test'
+  ...
+# Subtest: tampering, secret rotation, malformed signatures and extra segments are rejected
+ok 5 - tampering, secret rotation, malformed signatures and extra segments are rejected
+  ---
+  duration_ms: 1.2271
+  type: 'test'
+  ...
+# Subtest: even correctly signed malformed or noncanonical payloads are rejected
+ok 6 - even correctly signed malformed or noncanonical payloads are rejected
+  ---
+  duration_ms: 0.9902
+  type: 'test'
+  ...
+# Subtest: unconfigured authentication returns false before accessing request cookies
+ok 7 - unconfigured authentication returns false before accessing request cookies
+  ---
+  duration_ms: 0.7496
+  type: 'test'
+  ...
+# Subtest: valid AI inputs cannot trigger provider work from a foreign or missing origin
+ok 8 - valid AI inputs cannot trigger provider work from a foreign or missing origin
+  ---
+  duration_ms: 34.5864
+  type: 'test'
+  ...
+# Subtest: AI providers enforce safe failures, credentials, bounds and valid scores
+    # Subtest: missing configuration never fetches
+    ok 1 - missing configuration never fetches
+      ---
+      duration_ms: 3.5886
+      type: 'test'
+      ...
+    # Subtest: invalid keys and secret-bearing thrown errors are sanitized without logs
+    ok 2 - invalid keys and secret-bearing thrown errors are sanitized without logs
+      ---
+      duration_ms: 95.9235
+      type: 'test'
+      ...
+    # Subtest: Gemini puts credentials in header and encodes model path
+    ok 3 - Gemini puts credentials in header and encodes model path
+      ---
+      duration_ms: 27.4613
+      type: 'test'
+      ...
+    # Subtest: null, empty, boolean and absent detector scores never become zero
+    ok 4 - null, empty, boolean and absent detector scores never become zero
+      ---
+      duration_ms: 14.5277
+      type: 'test'
+      ...
+    # Subtest: oversized and malformed provider responses fail safely
+    ok 5 - oversized and malformed provider responses fail safely
+      ---
+      duration_ms: 5.9465
+      type: 'test'
+      ...
+    # Subtest: deadline covers fetch and stalled response body
+    ok 6 - deadline covers fetch and stalled response body
+      ---
+      duration_ms: 25.9057
+      type: 'test'
+      ...
+    # Subtest: Ollama requests bounded non-streaming output
+    ok 7 - Ollama requests bounded non-streaming output
+      ---
+      duration_ms: 1.4598
+      type: 'test'
+      ...
+    1..7
+ok 9 - AI providers enforce safe failures, credentials, bounds and valid scores
+  ---
+  duration_ms: 179.894
+  type: 'test'
+  ...
+# Subtest: application DNS override is opt-in and isolated to its child process
+ok 10 - application DNS override is opt-in and isolated to its child process
+  ---
+  duration_ms: 624.0905
+  type: 'test'
+  ...
+# Subtest: invalid application resolver configuration fails before server startup
+ok 11 - invalid application resolver configuration fails before server startup
+  ---
+  duration_ms: 137.1054
+  type: 'test'
+  ...
+# Subtest: crawler parses HTML syntax/entities/base and skips inert or unsafe links
+ok 12 - crawler parses HTML syntax/entities/base and skips inert or unsafe links
+  ---
+  duration_ms: 41.8865
+  type: 'test'
+  ...
+# Subtest: crawler canonicalizes, deduplicates, bounds and handles malformed documents
+ok 13 - crawler canonicalizes, deduplicates, bounds and handles malformed documents
+  ---
+  duration_ms: 12.0937
+  type: 'test'
+  ...
+# Subtest: DNS resolver override is opt-in, public literal addresses only, and bounded
+ok 14 - DNS resolver override is opt-in, public literal addresses only, and bounded
+  ---
+  duration_ms: 160.9164
+  type: 'test'
+  ...
+# Subtest: local secret preparation preserves account credentials and is idempotent
+ok 15 - local secret preparation preserves account credentials and is idempotent
+  ---
+  duration_ms: 364.2084
+  type: 'test'
+  ...
+# Subtest: network routes reject malformed input and report mocked provider results honestly
+ok 16 - network routes reject malformed input and report mocked provider results honestly
+  ---
+  duration_ms: 1183.9266
+  type: 'test'
+  ...
+# Subtest: office conversion configuration is optional, private endpoint is fixed and secrets never appear in availability
+ok 17 - office conversion configuration is optional, private endpoint is fixed and secrets never appear in availability
+  ---
+  duration_ms: 48.2279
+  type: 'test'
+  ...
+# Subtest: native conversion submits one fixed-name file, retains auth privately, returns structurally valid PDFs for three Office formats
+ok 18 - native conversion submits one fixed-name file, retains auth privately, returns structurally valid PDFs for three Office formats
+  ---
+  duration_ms: 174.494
+  type: 'test'
+  ...
+# Subtest: route rejects cross-origin or mismatched source/tool and emits safe PDF attachment
+ok 19 - route rejects cross-origin or mismatched source/tool and emits safe PDF attachment
+  ---
+  duration_ms: 30.9652
+  type: 'test'
+  ...
+# Subtest: upload counts real bytes instead of trusting length and cancels stalled streams
+ok 20 - upload counts real bytes instead of trusting length and cancels stalled streams
+  ---
+  duration_ms: 17.3401
+  type: 'test'
+  ...
+# Subtest: worker failures, wrong signatures/formats and oversized or invalid PDF responses are sanitized
+ok 21 - worker failures, wrong signatures/formats and oversized or invalid PDF responses are sanitized
+  ---
+  duration_ms: 149.6207
+  type: 'test'
+  ...
+# (node:21616) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: worker fetch and response-body deadlines abort and release conversion capacity
+ok 22 - worker fetch and response-body deadlines abort and release conversion capacity
+  ---
+  duration_ms: 49.5022
+  type: 'test'
+  ...
+# Subtest: conversion capacity rejects excess parallel work rather than queueing unbounded documents
+ok 23 - conversion capacity rejects excess parallel work rather than queueing unbounded documents
+  ---
+  duration_ms: 33.7182
+  type: 'test'
+  ...
+# Subtest: visual DOCX preserves each PDF page's dimensions and zero margins
+ok 24 - visual DOCX preserves each PDF page's dimensions and zero margins
+  ---
+  duration_ms: 176.9891
+  type: 'test'
+  ...
+# Subtest: visual DOCX rejects an empty PDF page list
+ok 25 - visual DOCX rejects an empty PDF page list
+  ---
+  duration_ms: 1.4572
+  type: 'test'
+  ...
+# Subtest: editable DOCX retains title, paragraphs, and XML-sensitive text
+ok 26 - editable DOCX retains title, paragraphs, and XML-sensitive text
+  ---
+  duration_ms: 43.7776
+  type: 'test'
+  ...
+# Subtest: editable DOCX explains when a scanned PDF has no extractable text
+ok 27 - editable DOCX explains when a scanned PDF has no extractable text
+  ---
+  duration_ms: 47.6238
+  type: 'test'
+  ...
+# Subtest: editable multipage DOCX keeps page labels and extracted content in order
+ok 28 - editable multipage DOCX keeps page labels and extracted content in order
+  ---
+  duration_ms: 44.9026
+  type: 'test'
+  ...
+# Subtest: Office converter rejects legacy .doc with actionable guidance
+ok 29 - Office converter rejects legacy .doc with actionable guidance
+  ---
+  duration_ms: 2.0133
+  type: 'test'
+  ...
+# Subtest: Office converter rejects legacy .ppt with actionable guidance
+ok 30 - Office converter rejects legacy .ppt with actionable guidance
+  ---
+  duration_ms: 0.7365
+  type: 'test'
+  ...
+# Subtest: Office converter rejects an unsupported conversion before rendering
+ok 31 - Office converter rejects an unsupported conversion before rendering
+  ---
+  duration_ms: 0.8509
+  type: 'test'
+  ...
+# Subtest: PPTX image slides convert through the production function without private fixtures
+ok 32 - PPTX image slides convert through the production function without private fixtures
+  ---
+  duration_ms: 212.9869
+  type: 'test'
+  ...
+# Subtest: PPTX with no slides fails with a useful error
+ok 33 - PPTX with no slides fails with a useful error
+  ---
+  duration_ms: 18.2029
+  type: 'test'
+  ...
+# Subtest: PPTX rejects mixed text/image slides instead of silently dropping content
+ok 34 - PPTX rejects mixed text/image slides instead of silently dropping content
+  ---
+  duration_ms: 21.8278
+  type: 'test'
+  ...
+# Subtest: PPTX with an empty slide reports that no content can be extracted
+ok 35 - PPTX with an empty slide reports that no content can be extracted
+  ---
+  duration_ms: 7.5925
+  type: 'test'
+  ...
+# Subtest: PPTX image conversion uses presentation points instead of raster pixels
+ok 36 - PPTX image conversion uses presentation points instead of raster pixels
+  ---
+  duration_ms: 424.8851
+  type: 'test'
+  ...
+# Subtest: blank pages and whitespace-only text produce no fabricated rows
+ok 37 - blank pages and whitespace-only text produce no fabricated rows
+  ---
+  duration_ms: 5.5626
+  type: 'test'
+  ...
+# Subtest: rows follow descending PDF baseline and cells follow horizontal geometry
+ok 38 - rows follow descending PDF baseline and cells follow horizontal geometry
+  ---
+  duration_ms: 1.4984
+  type: 'test'
+  ...
+# Subtest: split glyph items join inside words and infer only geometric interword spaces
+ok 39 - split glyph items join inside words and infer only geometric interword spaces
+  ---
+  duration_ms: 0.6625
+  type: 'test'
+  ...
+# Subtest: source Unicode and explicit multiple spaces remain intact
+ok 40 - source Unicode and explicit multiple spaces remain intact
+  ---
+  duration_ms: 0.8334
+  type: 'test'
+  ...
+# Subtest: repeated aligned rows form a table while words inside each cell stay together
+ok 41 - repeated aligned rows form a table while words inside each cell stay together
+  ---
+  duration_ms: 1.5064
+  type: 'test'
+  ...
+# Subtest: a single spaced phrase is never sufficient table evidence
+ok 42 - a single spaced phrase is never sufficient table evidence
+  ---
+  duration_ms: 0.6117
+  type: 'test'
+  ...
+# Subtest: ragged row between aligned table rows retains actual column index
+ok 43 - ragged row between aligned table rows retains actual column index
+  ---
+  duration_ms: 0.9313
+  type: 'test'
+  ...
+# Subtest: following single-column prose and widely separated rows do not extend a table
+ok 44 - following single-column prose and widely separated rows do not extend a table
+  ---
+  duration_ms: 0.6458
+  type: 'test'
+  ...
+# Subtest: unmatched ragged rows do not bridge table blocks
+ok 45 - unmatched ragged rows do not bridge table blocks
+  ---
+  duration_ms: 0.8259
+  type: 'test'
+  ...
+# Subtest: mixed font sizes and small baseline jitter preserve rows without merging separate lines
+ok 46 - mixed font sizes and small baseline jitter preserve rows without merging separate lines
+  ---
+  duration_ms: 1.5914
+  type: 'test'
+  ...
+# Subtest: rotated mirrored nonfinite and pathological geometry are explicitly omitted
+ok 47 - rotated mirrored nonfinite and pathological geometry are explicitly omitted
+  ---
+  duration_ms: 0.9736
+  type: 'test'
+  ...
+# Subtest: overlapping fragments retain all text and never produce a negative cell width
+ok 48 - overlapping fragments retain all text and never produce a negative cell width
+  ---
+  duration_ms: 0.4677
+  type: 'test'
+  ...
+# Subtest: separate tables use local columns rather than unrelated page-wide anchors
+ok 49 - separate tables use local columns rather than unrelated page-wide anchors
+  ---
+  duration_ms: 1.2187
+  type: 'test'
+  ...
+# Subtest: PDFjs synthetic whitespace spanning a table gutter never bridges adjacent cells
+ok 50 - PDFjs synthetic whitespace spanning a table gutter never bridges adjacent cells
+  ---
+  duration_ms: 0.785
+  type: 'test'
+  ...
+# Subtest: gutter filtering preserves wide explicit spaces embedded in nonblank source items
+ok 51 - gutter filtering preserves wide explicit spaces embedded in nonblank source items
+  ---
+  duration_ms: 0.3016
+  type: 'test'
+  ...
+# Subtest: page selection expands ranges to zero-based indices in requested order
+ok 52 - page selection expands ranges to zero-based indices in requested order
+  ---
+  duration_ms: 4.739
+  type: 'test'
+  ...
+# Subtest: page selection handles reversed ranges and removes duplicates
+ok 53 - page selection handles reversed ranges and removes duplicates
+  ---
+  duration_ms: 0.8609
+  type: 'test'
+  ...
+# Subtest: page selection ignores out-of-bounds pages, blanks, and nonnumeric tokens
+ok 54 - page selection ignores out-of-bounds pages, blanks, and nonnumeric tokens
+  ---
+  duration_ms: 0.6136
+  type: 'test'
+  ...
+# Subtest: plagiarism config fails closed and defaults to simulated sandbox
+ok 55 - plagiarism config fails closed and defaults to simulated sandbox
+  ---
+  duration_ms: 3.2902
+  type: 'test'
+  ...
+# Subtest: anonymous polling credentials are random and only hashes authenticate
+ok 56 - anonymous polling credentials are random and only hashes authenticate
+  ---
+  duration_ms: 2.6126
+  type: 'test'
+  ...
+# Subtest: webhook custom secret requires exact authenticated value
+ok 57 - webhook custom secret requires exact authenticated value
+  ---
+  duration_ms: 1.0945
+  type: 'test'
+  ...
+# Subtest: documented completion score and source data are retained without fabricated originality
+ok 58 - documented completion score and source data are retained without fabricated originality
+  ---
+  duration_ms: 3.0588
+  type: 'test'
+  ...
+# Subtest: completion rejects wrong scan ID, non-success status, missing and invalid scores
+ok 59 - completion rejects wrong scan ID, non-success status, missing and invalid scores
+  ---
+  duration_ms: 1.8726
+  type: 'test'
+  ...
+# Subtest: public summaries strip unsafe links and bound source list and title length
+ok 60 - public summaries strip unsafe links and bound source list and title length
+  ---
+  duration_ms: 2.3353
+  type: 'test'
+  ...
+# Subtest: submission matches official login/file/webhook contract and encodes UTF8
+ok 61 - submission matches official login/file/webhook contract and encodes UTF8
+  ---
+  duration_ms: 61.9755
+  type: 'test'
+  ...
+# Subtest: provider login is reused with concurrent single-flight authentication
+ok 62 - provider login is reused with concurrent single-flight authentication
+  ---
+  duration_ms: 39.1625
+  type: 'test'
+  ...
+# Subtest: malformed login, oversized response and upstream failures are sanitized
+ok 63 - malformed login, oversized response and upstream failures are sanitized
+  ---
+  duration_ms: 10.7415
+  type: 'test'
+  ...
+# Subtest: empty and oversized source input never reaches provider
+ok 64 - empty and oversized source input never reaches provider
+  ---
+  duration_ms: 1.8758
+  type: 'test'
+  ...
+# Subtest: submission route requires browser origin and explicit transfer consent before any scan
+ok 65 - submission route requires browser origin and explicit transfer consent before any scan
+  ---
+  duration_ms: 1227.7364
+  type: 'test'
+  ...
+# Subtest: poll route rejects malformed IDs or missing access token without database access
+ok 66 - poll route rejects malformed IDs or missing access token without database access
+  ---
+  duration_ms: 13.2866
+  type: 'test'
+  ...
+# Subtest: Atlas helper preserves DNS configuration and original SRV URI
+ok 67 - Atlas helper preserves DNS configuration and original SRV URI
+  ---
+  duration_ms: 1522.2882
+  type: 'test'
+  ...
+# Subtest: shared daily quota enforces one atomic cap across callers and resets at UTC boundary
+ok 68 - shared daily quota enforces one atomic cap across callers and resets at UTC boundary
+  ---
+  duration_ms: 10.2252
+  type: 'test'
+  ...
+# Subtest: quota outages propagate instead of granting unaccounted provider requests
+ok 69 - quota outages propagate instead of granting unaccounted provider requests
+  ---
+  duration_ms: 2.0405
+  type: 'test'
+  ...
+# Subtest: production provider gate fails closed without shared Atlas configuration
+ok 70 - production provider gate fails closed without shared Atlas configuration
+  ---
+  duration_ms: 40.7921
+  type: 'test'
+  ...
+# Subtest: quota blocks over-limit requests and resets at the window boundary
+ok 71 - quota blocks over-limit requests and resets at the window boundary
+  ---
+  duration_ms: 4.3506
+  type: 'test'
+  ...
+# Subtest: identities have separate quotas and full storage does not evict active quotas
+ok 72 - identities have separate quotas and full storage does not evict active quotas
+  ---
+  duration_ms: 0.8324
+  type: 'test'
+  ...
+# Subtest: untrusted forwarded headers cannot mint new identities
+ok 73 - untrusted forwarded headers cannot mint new identities
+  ---
+  duration_ms: 12.0634
+  type: 'test'
+  ...
+# Subtest: rates reject stale publication and retain timestamp/attribution through cache
+ok 74 - rates reject stale publication and retain timestamp/attribution through cache
+  ---
+  duration_ms: 954.929
+  type: 'test'
+  ...
+# Subtest: JSON request reader accepts bounded objects and rejects malformed or non-object values
+ok 75 - JSON request reader accepts bounded objects and rejects malformed or non-object values
+  ---
+  duration_ms: 81.5605
+  type: 'test'
+  ...
+# Subtest: JSON request limits measure bytes without trusting declared length
+ok 76 - JSON request limits measure bytes without trusting declared length
+  ---
+  duration_ms: 5.7062
+  type: 'test'
+  ...
+# Subtest: stalled JSON streams time out and are cancelled
+ok 77 - stalled JSON streams time out and are cancelled
+  ---
+  duration_ms: 17.9058
+  type: 'test'
+  ...
+# Subtest: pinned lookup supports Node autoSelectFamily all:true without resolving again
+ok 78 - pinned lookup supports Node autoSelectFamily all:true without resolving again
+  ---
+  duration_ms: 90.3251
+  type: 'test'
+  ...
+# Subtest: pins DNS once, preserves host, revalidates redirect, bounds bytes and timeout
+ok 79 - pins DNS once, preserves host, revalidates redirect, bounds bytes and timeout
+  ---
+  duration_ms: 165.732
+  type: 'test'
+  ...
+# Subtest: same-origin handles normalized bind host without trusting forwarded headers
+ok 80 - same-origin handles normalized bind host without trusting forwarded headers
+  ---
+  duration_ms: 84.6668
+  type: 'test'
+  ...
+# Subtest: availability policy exactly matches actual dispatcher wiring
+ok 81 - availability policy exactly matches actual dispatcher wiring
+  ---
+  duration_ms: 3.9683
+  type: 'test'
+  ...
+# Subtest: unfinished and intentionally unavailable tools have noindex metadata
+ok 82 - unfinished and intentionally unavailable tools have noindex metadata
+  ---
+  duration_ms: 2.5415
+  type: 'test'
+  ...
+# Subtest: origin normalization and document URLs do not use example domains
+ok 83 - origin normalization and document URLs do not use example domains
+  ---
+  duration_ms: 1.3641
+  type: 'test'
+  ...
+# Subtest: AI indexing requires shared quota storage as well as a provider
+ok 84 - AI indexing requires shared quota storage as well as a provider
+  ---
+  duration_ms: 1.1514
+  type: 'test'
+  ...
+# Subtest: reject private, mapped, reserved and encoded addresses
+ok 85 - reject private, mapped, reserved and encoded addresses
+  ---
+  duration_ms: 16.7765
+  type: 'test'
+  ...
+# Subtest: DNS rejects any unsafe answer and keeps approved public destination
+ok 86 - DNS rejects any unsafe answer and keeps approved public destination
+  ---
+  duration_ms: 2.3878
+  type: 'test'
+  ...
+# Subtest: tool access rejects unknown, disabled, maintenance and database outage
+ok 87 - tool access rejects unknown, disabled, maintenance and database outage
+  ---
+  duration_ms: 50.0042
+  type: 'test'
+  ...
+# Subtest: configured input limits include boundary and oversized file checks
+ok 88 - configured input limits include boundary and oversized file checks
+  ---
+  duration_ms: 2.3409
+  type: 'test'
+  ...
+# Subtest: concurrent seeds establish uniqueness before atomic insertion and preserve live mutations
+ok 89 - concurrent seeds establish uniqueness before atomic insertion and preserve live mutations
+  ---
+  duration_ms: 4.8847
+  type: 'test'
+  ...
+# Subtest: index failures prevent all writes and unexpected upsert failures propagate
+ok 90 - index failures prevent all writes and unexpected upsert failures propagate
+  ---
+  duration_ms: 2.4072
+  type: 'test'
+  ...
+# Subtest: tool configuration accepts only supported bounded values
+ok 91 - tool configuration accepts only supported bounded values
+  ---
+  duration_ms: 2.5015
+  type: 'test'
+  ...
+1..91
+# tests 98
+# suites 0
+# pass 98
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13052.1811

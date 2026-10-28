@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-21T21:12:10.296Z",
+  "status": 503,
+  "integration": "BLOCKED",
+  "failClosed": true,
+  "providerRequests": 0,
+  "durationMs": 146,
+  "scope": "Actual production-mode POST handler, same-origin synthetic prompt, configured Atlas/provider. No mocks. At most one provider request. No secret/header/response body recorded."
+}

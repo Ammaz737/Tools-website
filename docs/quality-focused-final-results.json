@@ -1,0 +1,485 @@
+{
+  "config": {
+    "argv": [
+      "D:\\Program Files\\nodejs\\node.exe",
+      "D:\\Tools_Site\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/heic-quality.spec.ts",
+      "tests/e2e/output-fidelity.spec.ts",
+      "tests/e2e/ocr-quality.spec.ts",
+      "--reporter=list,json"
+    ],
+    "configFile": "D:\\Tools_Site\\playwright.config.ts",
+    "rootDir": "D:/Tools_Site/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Tools_Site/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Tools_Site/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Tools_Site\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\Tools_Site\\tests\\e2e",
+        "snapshotDir": "D:\\Tools_Site\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3100",
+          "channel": "chromium",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start -- --hostname 127.0.0.1 --port 3100",
+      "url": "http://127.0.0.1:3100",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "env": {
+        "MONGODB_URI": "",
+        "ADMIN_PASSWORD": "",
+        "ADMIN_SESSION_SECRET": "",
+        "AI_PROVIDER": "auto",
+        "OPENAI_API_KEY": "",
+        "GEMINI_API_KEY": "",
+        "OLLAMA_BASE_URL": "",
+        "OLLAMA_MODEL": "",
+        "RATE_LIMIT_IP_HEADER": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "heic-quality.spec.ts",
+      "file": "heic-quality.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "HEIC primary image decodes locally to real JPEG with reference colors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5651,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:19:37.227Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbf4d135ba359ad9ba7b-37d90c5deaed11e18955",
+          "file": "heic-quality.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "HEIC malformed input rejects then a valid file recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:19:43.400Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbf4d135ba359ad9ba7b-29c396120dfab5a8d61e",
+          "file": "heic-quality.spec.ts",
+          "line": 30,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ocr-quality.spec.ts",
+      "file": "ocr-quality.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ocr-pdf reads image-only English pages and preserves searchable page dimensions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8107,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:19:47.068Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e89be5da8727970cc5e9-7f757606d7c8da46042f",
+          "file": "ocr-quality.spec.ts",
+          "line": 9,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "output-fidelity.spec.ts",
+      "file": "output-fidelity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PDF to Word page images survive mixed-size document round trip",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8909,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:19:55.521Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2eda957ffd2a557dde19-1ddf4b3078abb8283066",
+          "file": "output-fidelity.spec.ts",
+          "line": 37,
+          "column": 5
+        },
+        {
+          "title": "PDF to Word editable mode reconstructs table cells and source page sections",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3951,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:99:48",
+                    "location": {
+                      "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                      "column": 48,
+                      "line": 99
+                    },
+                    "snippet": "   97 |   const xml = await zip.file(\"word/document.xml\")!.async(\"string\");\n   98 |   for (const text of [\"Quality fixture page 1\", \"Quality fixture page 2\", \"Item 4\", \"500.00\", \"Footer must remain visible\"]) expect(xml).toContain(text);\n>  99 |   expect((xml.match(/<w:tbl>/g) ?? []).length).toBe(2);\n      |                                                ^\n  100 |   expect((xml.match(/<w:tc>/g) ?? []).length).toBe(16);\n  101 |   expect((xml.match(/<w:sectPr\\b/g) ?? []).length).toBe(2);\n  102 |   expect(xml).not.toContain(\"<w:drawing>\");"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                        "column": 48,
+                        "line": 99
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n   97 |   const xml = await zip.file(\"word/document.xml\")!.async(\"string\");\n   98 |   for (const text of [\"Quality fixture page 1\", \"Quality fixture page 2\", \"Item 4\", \"500.00\", \"Footer must remain visible\"]) expect(xml).toContain(text);\n>  99 |   expect((xml.match(/<w:tbl>/g) ?? []).length).toBe(2);\n      |                                                ^\n  100 |   expect((xml.match(/<w:tc>/g) ?? []).length).toBe(16);\n  101 |   expect((xml.match(/<w:sectPr\\b/g) ?? []).length).toBe(2);\n  102 |   expect(xml).not.toContain(\"<w:drawing>\");\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:99:48"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:20:04.463Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Wor-6e7bf-ls-and-source-page-sections\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Wor-6e7bf-ls-and-source-page-sections\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                    "column": 48,
+                    "line": 99
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2eda957ffd2a557dde19-0c6d5680b97e583163fa",
+          "file": "output-fidelity.spec.ts",
+          "line": 88,
+          "column": 5
+        },
+        {
+          "title": "PDF to Excel preserves blank middle pages and later-page assignment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4050,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:20:11.052Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2eda957ffd2a557dde19-3e3eb1099feb0c139f95",
+          "file": "output-fidelity.spec.ts",
+          "line": 105,
+          "column": 5
+        },
+        {
+          "title": "PowerPoint rejects unsupported mixed content instead of downloading damaged output",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:20:15.778Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2eda957ffd2a557dde19-8c6399feb754a0d9abac",
+          "file": "output-fidelity.spec.ts",
+          "line": 119,
+          "column": 5
+        },
+        {
+          "title": "PDF to Excel reconstructs detected table cells instead of a single text column",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3979,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m[\"Item 1\", \"125.00\"]\u001b[39m\nReceived: \u001b[31mundefined\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m[\"Item 1\", \"125.00\"]\u001b[39m\nReceived: \u001b[31mundefined\u001b[39m\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:140:19",
+                    "location": {
+                      "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                      "column": 19,
+                      "line": 140
+                    },
+                    "snippet": "  138 |     const first = rows.find(row => row[0] === \"Item 1\");\n  139 |     const last = rows.find(row => row[0] === \"Item 4\");\n> 140 |     expect(first).toEqual([\"Item 1\", \"125.00\"]);\n      |                   ^\n  141 |     expect(last).toEqual([\"Item 4\", \"500.00\"]);\n  142 |     expect(rows.flat().filter(value => value === \"Content\")).toHaveLength(0);\n  143 |   }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                        "column": 19,
+                        "line": 140
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m[\"Item 1\", \"125.00\"]\u001b[39m\nReceived: \u001b[31mundefined\u001b[39m\n\n  138 |     const first = rows.find(row => row[0] === \"Item 1\");\n  139 |     const last = rows.find(row => row[0] === \"Item 4\");\n> 140 |     expect(first).toEqual([\"Item 1\", \"125.00\"]);\n      |                   ^\n  141 |     expect(last).toEqual([\"Item 4\", \"500.00\"]);\n  142 |     expect(rows.flat().filter(value => value === \"Content\")).toHaveLength(0);\n  143 |   }\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:140:19"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:20:17.910Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Exc-d3d98-ead-of-a-single-text-column\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Exc-d3d98-ead-of-a-single-text-column\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                    "column": 19,
+                    "line": 140
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2eda957ffd2a557dde19-5eb8300f475321e87412",
+          "file": "output-fidelity.spec.ts",
+          "line": 131,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T19:19:32.111Z",
+    "duration": 50923.256,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

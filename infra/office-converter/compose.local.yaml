@@ -1,0 +1,19 @@
+# Local verification only. Use --env-file .env.local. Production has no host port.
+services:
+  office-converter:
+    restart: "no"
+    networks: !override [office_local]
+    ports:
+      - "127.0.0.1:3101:3000"
+    environment:
+      API_ENABLE_BASIC_AUTH: "true"
+      GOTENBERG_API_BASIC_AUTH_USERNAME: ${OFFICE_CONVERTER_USERNAME:?configure private worker username}
+      GOTENBERG_API_BASIC_AUTH_PASSWORD: ${OFFICE_CONVERTER_PASSWORD:?configure private worker password}
+    healthcheck:
+      test: ["CMD-SHELL", 'curl --fail --silent --max-time 3 --user "$${GOTENBERG_API_BASIC_AUTH_USERNAME}:$${GOTENBERG_API_BASIC_AUTH_PASSWORD}" http://127.0.0.1:3000/health']
+
+networks:
+  office_local:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"

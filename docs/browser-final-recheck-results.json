@@ -1,0 +1,247 @@
+{
+  "config": {
+    "argv": [
+      "D:\\Program Files\\nodejs\\node.exe",
+      "D:\\Tools_Site\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/output-fidelity.spec.ts",
+      "tests/e2e/regression.spec.ts",
+      "-g",
+      "PDF to Word page images survive|all registered tool URLs"
+    ],
+    "configFile": "D:\\Tools_Site\\playwright.config.ts",
+    "rootDir": "D:/Tools_Site/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Tools_Site/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Tools_Site/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Tools_Site\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\Tools_Site\\tests\\e2e",
+        "snapshotDir": "D:\\Tools_Site\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3100",
+          "channel": "chromium",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start -- --hostname 127.0.0.1 --port 3100",
+      "url": "http://127.0.0.1:3100",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "env": {
+        "MONGODB_URI": "",
+        "ADMIN_PASSWORD": "",
+        "ADMIN_SESSION_SECRET": "",
+        "OFFICE_CONVERTER_URL": "",
+        "OFFICE_CONVERTER_AUTH_HEADER": "",
+        "COPYLEAKS_EMAIL": "",
+        "COPYLEAKS_API_KEY": "",
+        "COPYLEAKS_WEBHOOK_SECRET": "",
+        "AI_PROVIDER": "auto",
+        "OPENAI_API_KEY": "",
+        "GEMINI_API_KEY": "",
+        "OLLAMA_BASE_URL": "",
+        "OLLAMA_MODEL": "",
+        "RATE_LIMIT_IP_HEADER": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "output-fidelity.spec.ts",
+      "file": "output-fidelity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PDF to Word page images survive mixed-size document round trip",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 33145,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByAltText('Page 1 preview')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByAltText('Page 1 preview') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByAltText('Page 1 preview')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByAltText('Page 1 preview')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByAltText('Page 1 preview') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByAltText('Page 1 preview')\u001b[22m\n\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:68:27",
+                    "location": {
+                      "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                      "column": 27,
+                      "line": 68
+                    },
+                    "snippet": "  66 |   for (let index = 0; index < 2; index++) {\n  67 |     const preview = page.getByAltText(`Page ${index + 1} preview`);\n> 68 |     await expect(preview).toBeVisible();\n     |                           ^\n  69 |     const bytes = await preview.evaluate(async (img: HTMLImageElement) => Array.from(new Uint8Array(await (await fetch(img.src)).arrayBuffer())));\n  70 |     await writeFile(`${directory}/round-trip-${index + 1}.png`, Buffer.from(bytes));\n  71 |     // Compare actual downloaded DOCX after rendering, not its source preview."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                        "column": 27,
+                        "line": 68
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByAltText('Page 1 preview')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByAltText('Page 1 preview') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByAltText('Page 1 preview')\u001b[22m\n\n\n  66 |   for (let index = 0; index < 2; index++) {\n  67 |     const preview = page.getByAltText(`Page ${index + 1} preview`);\n> 68 |     await expect(preview).toBeVisible();\n     |                           ^\n  69 |     const bytes = await preview.evaluate(async (img: HTMLImageElement) => Array.from(new Uint8Array(await (await fetch(img.src)).arrayBuffer())));\n  70 |     await writeFile(`${directory}/round-trip-${index + 1}.png`, Buffer.from(bytes));\n  71 |     // Compare actual downloaded DOCX after rendering, not its source preview.\n    at D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts:68:27"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:43:04.543Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Wor-9ba6c-ed-size-document-round-trip\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Tools_Site\\test-results\\output-fidelity-PDF-to-Wor-9ba6c-ed-size-document-round-trip\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Tools_Site\\tests\\e2e\\output-fidelity.spec.ts",
+                    "column": 27,
+                    "line": 68
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2eda957ffd2a557dde19-1ddf4b3078abb8283066",
+          "file": "output-fidelity.spec.ts",
+          "line": 37,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "regression.spec.ts",
+      "file": "regression.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "all registered tool URLs render with accurate indexing policy",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5938,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:44:08.975Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9dc370239c4a30f174fb-4807a37a809a3ec44501",
+          "file": "regression.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T19:42:52.204Z",
+    "duration": 83304.171,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

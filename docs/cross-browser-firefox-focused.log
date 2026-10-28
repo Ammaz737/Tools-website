@@ -1,0 +1,25 @@
+[WebServer] (node:26444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:6504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [firefox] › tests\e2e\hydration-readiness.spec.ts:3:5 › tool controls remain disabled until delayed application scripts hydrate (7.7s)
+  ok  2 [firefox] › tests\e2e\hydration-readiness.spec.ts:23:5 › immediate text processing retains the first entered value (4.2s)
+  ok  3 [firefox] › tests\e2e\output-fidelity.spec.ts:43:5 › PDF to Word page images survive mixed-size document round trip (14.0s)
+  ok  4 [firefox] › tests\e2e\output-fidelity.spec.ts:95:5 › PDF to Word editable mode reconstructs table cells and source page sections (11.4s)
+  ok  5 [firefox] › tests\e2e\output-fidelity.spec.ts:124:5 › PDF to Excel preserves blank middle pages and later-page assignment (4.6s)
+  ok  6 [firefox] › tests\e2e\output-fidelity.spec.ts:138:5 › PowerPoint rejects unsupported mixed content instead of downloading damaged output (2.9s)
+  ok  7 [firefox] › tests\e2e\output-fidelity.spec.ts:150:5 › PDF to Excel reconstructs detected table cells instead of a single text column (3.6s)
+  ok  8 [firefox] › tests\e2e\output-fidelity.spec.ts:165:5 › PDF page-image PowerPoint round trip preserves declared slide dimensions (8.2s)
+  ok  9 [firefox] › tests\e2e\output-fidelity.spec.ts:185:5 › PDF canvas export recovers from an unreadable encoder Blob without changing pixels (4.9s)
+  ok 10 [firefox] › tests\e2e\service-integration-ui.spec.ts:6:5 › Office server choice discloses upload and sends raw document with tool mapping (3.9s)
+  ok 11 [firefox] › tests\e2e\service-integration-ui.spec.ts:51:5 › Plagiarism requires consent and labels simulated provider results (3.1s)
+  ok 12 [firefox] › tests\e2e\ui-regression.spec.ts:4:5 › crop presets download correct dimensions from a rectangular source (4.0s)
+  ok 13 [firefox] › tests\e2e\ui-regression.spec.ts:26:5 › password generation and reset honor selected groups and length (3.1s)
+  ok 14 [firefox] › tests\e2e\ui-regression.spec.ts:43:5 › barcode recovers from invalid input and downloads a valid SVG (2.9s)
+  ok 15 [firefox] › tests\e2e\ui-regression.spec.ts:61:5 › notepad preserves Unicode notes across reload (4.1s)
+  ok 16 [firefox] › tests\e2e\ui-regression.spec.ts:70:5 › theme toggles both directions and persists after reload (3.0s)
+
+  16 passed (1.6m)

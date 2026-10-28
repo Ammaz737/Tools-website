@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-21T19:31:38.544Z",
+  "scope": "Local authenticated loopback Office worker only; production ingress not deployed.",
+  "baseImage": "gotenberg/gotenberg:8.38.0@sha256:c36cdd730893e3941d27a196ff8b68675e473642d067ec7ee3668b9adaa37b75",
+  "imageId": "sha256:06abc319a310837b2cea8ac597d227f558c6f08a5fc9f7bc4c84e23b2e38cdf7",
+  "status": "running",
+  "health": "healthy",
+  "user": "1001:1001",
+  "readOnlyRoot": true,
+  "capDrop": [
+    "ALL"
+  ],
+  "memoryBytes": 2147483648,
+  "pidsLimit": 128,
+  "ports": {
+    "3000/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "3101"
+      }
+    ]
+  },
+  "unauthenticatedConversionStatus": 401,
+  "libreOffice": "26.8.1.1",
+  "temporaryFixtureDocumentsAfterChecks": 0
+}

@@ -1,0 +1,45 @@
+# Optional private worker; merge into the app deployment Compose file.
+# Attach only the application backend to office_private. No host port is exposed.
+services:
+  office-converter:
+    image: tools-site-office:8.38.0-recalc1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "1001:1001"
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    cpus: 1.0
+    mem_limit: 2g
+    pids_limit: 128
+    shm_size: 128m
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=268435456,mode=1777
+      - /home/gotenberg:rw,nosuid,nodev,size=134217728,uid=1001,gid=1001,mode=0700
+    command:
+      - gotenberg
+      - --api-timeout=35s
+      - --api-body-limit=21MB
+      - --api-disable-download-from=true
+      - --chromium-disable-routes=true
+      - --api-start-timeout=90s
+      - --libreoffice-auto-start=true
+      - --libreoffice-start-timeout=60s
+      - --libreoffice-max-queue-size=1
+      - --libreoffice-deny-list=.*
+      - --libreoffice-deny-private-ips=true
+      - --libreoffice-deny-public-ips=true
+      - --webhook-disable=true
+      - --pdfengines-disable-routes=true
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--max-time", "3", "http://127.0.0.1:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    networks: [office_private]
+networks:
+  office_private:
+    internal: true

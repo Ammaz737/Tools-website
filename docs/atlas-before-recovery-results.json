@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-21T21:02:17.113Z",
+  "scope": "Credential-safe configuration and read-only Atlas diagnostics; no database writes or new paid AI requests.",
+  "configuration": {
+    "openai": "CONFIGURED; previous ten live HTTP200 results retained",
+    "mongodb": "VALID_FORMAT_AFTER_REMOVING_DUPLICATED_VARIABLE_ASSIGNMENT",
+    "sharedQuota": "VALID_CONFIGURATION_SHAPE_ONLY"
+  },
+  "atlas": {
+    "systemDns": {
+      "status": "FAIL",
+      "code": "ECONNREFUSED"
+    },
+    "isolatedExplicitDns": {
+      "srvRecords": 3,
+      "connection": "FAIL",
+      "errorType": "MongoServerSelectionError",
+      "serverCount": 3,
+      "serverErrors": [
+        "MongoNetworkTimeoutError",
+        "MongoNetworkTimeoutError",
+        "MongoNetworkTimeoutError"
+      ]
+    },
+    "authentication": "NOT_VERIFIED",
+    "persistence": "NOT_VERIFIED",
+    "tcpReachability": {
+      "members": 3,
+      "resolved": 3,
+      "timeouts": 3,
+      "tls": "NOT_REACHED"
+    }
+  },
+  "nextActions": [
+    "Repair host DNS for Atlas SRV/TXT records.",
+    "Allow outbound Atlas database-port connectivity on the local network/firewall, or use an authorized staging host with connectivity.",
+    "After connectivity succeeds, verify authentication, isolated persistence and shared quotas."
+  ],
+  "secretsRecorded": false,
+  "recheckedAt": "2026-10-21T21:11:29.422Z",
+  "dashboard": {
+    "profile": "Fyp",
+    "cluster": "ACTIVE",
+    "currentIpAllowed": true,
+    "configuredHostnameMatches": true,
+    "configuredUsernameMatches": true,
+    "changesMade": false,
+    "accessListContainsAllAddresses": true,
+    "applicationUserHasBroadAtlasAdminRole": true
+  },
+  "productionHardening": [
+    "Replace broad network allowance with required restricted deployment egress addresses.",
+    "Use an application-scoped database user rather than atlasAdmin. Existing shared account settings were inspected but not modified."
+  ]
+}

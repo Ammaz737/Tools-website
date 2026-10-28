@@ -1,0 +1,47 @@
+{
+  "scope": "Poppler render and independent Pillow pixel comparison; text/table layout also requires visual inspection.",
+  "results": [
+    {
+      "name": "Word page-image native visual comparison 1",
+      "status": "PASS",
+      "meanChannelError": [
+        3.3535973502304146,
+        4.468316532258065,
+        4.39168202764977
+      ],
+      "threshold": 6,
+      "pixels": [
+        700,
+        992
+      ]
+    },
+    {
+      "name": "Word page-image native visual comparison 2",
+      "status": "PASS",
+      "meanChannelError": [
+        1.8207056451612904,
+        2.901694988479263,
+        2.8676094470046083
+      ],
+      "threshold": 6,
+      "pixels": [
+        992,
+        700
+      ]
+    },
+    {
+      "name": "Mixed slide retains source blue graphic at expected position",
+      "status": "PASS",
+      "actualRGB": [
+        0,
+        102,
+        204
+      ],
+      "expectedRGB": [
+        0,
+        102,
+        204
+      ]
+    }
+  ]
+}

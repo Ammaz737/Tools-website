@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-21T21:35:54.069Z",
+  "beforeFixBuildId": "JN5DGX3MFn9KwyN07yDdb",
+  "scope": "Observed WebKit diagnostic before product fix: same area-converter input, first immediately after navigation, then after React event handlers attached. Private integrations disabled.",
+  "observations": [
+    {
+      "waitedForReact": false,
+      "reactAttachedBeforeFill": false,
+      "input": "-1",
+      "alertCount": 0,
+      "output": [
+        "10.7639104167 Square feet"
+      ]
+    },
+    {
+      "waitedForReact": true,
+      "reactAttachedBeforeFill": true,
+      "input": "-1",
+      "alertCount": 1,
+      "output": []
+    }
+  ],
+  "finding": "SSR controls allowed input before hydration; controlled state remained at its initial value. Shared workspace now disables native form controls until client handlers commit."
+}

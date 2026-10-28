@@ -1,0 +1,50 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import http from "node:http";
+import { EventEmitter } from "node:events";
+import { safeRequest } from "../lib/server/safe-request";
+const resolver = async () => [{ address: "8.8.8.8", family: 4 }];
+
+test("pins DNS once, preserves host, revalidates redirect, bounds bytes and timeout", async (t) => {
+  let mode = "ok";
+  let requests = 0;
+  let resolved = 0;
+  t.mock.method(http, "request", (url: URL, options: http.RequestOptions, callback: (response: EventEmitter) => void) => {
+    requests++;
+    assert.equal(url.hostname, "example.com");
+    assert.equal(options.agent, false);
+    const lookup = options.lookup as (host: string, options: object, callback: (error: null, address: string, family: number) => void) => void;
+    lookup("example.com", {}, (_error, address) => assert.equal(address, "8.8.8.8"));
+    const request = new EventEmitter() as EventEmitter & { end(): void; destroy(error: Error): void };
+    request.destroy = (error) => request.emit("error", error);
+    options.signal?.addEventListener("abort", () => request.destroy(new Error("Request timed out")), { once: true });
+    request.end = () => queueMicrotask(() => {
+      if (mode === "timeout") return;
+      const response = new EventEmitter() as EventEmitter & { statusCode: number; headers: Record<string, string>; destroy(error: Error): void };
+      response.statusCode = ["redirect", "redirectDns", "loop"].includes(mode) ? 302 : 200;
+      response.headers = mode === "redirect" ? { location: "http://127.0.0.1/" } : mode === "redirectDns" ? { location: "http://private.example/" } : mode === "loop" ? { location: "/again" } : {};
+      response.destroy = (error) => response.emit("error", error);
+      callback(response);
+      response.emit("data", Buffer.from("hello"));
+      response.emit("end");
+    });
+    return request;
+  });
+  const response = await safeRequest("http://example.com", { resolver: async () => { resolved++; return resolver(); } });
+  assert.equal(response.body.toString(), "hello");
+  assert.equal(resolved, 1);
+  mode = "redirect";
+  await assert.rejects(safeRequest("http://example.com", { resolver }), /restricted/);
+  assert.equal(requests, 2);
+  mode = "redirectDns";
+  await assert.rejects(safeRequest("http://example.com", { resolver: async (hostname) => hostname === "private.example" ? [{ address: "::1", family: 6 }] : resolver() }), /restricted/);
+  mode = "loop";
+  await assert.rejects(safeRequest("http://example.com", { resolver, maxRedirects: 1 }), /Too many redirects/);
+  mode = "ok";
+  await assert.rejects(safeRequest("http://example.com", { resolver, maxBytes: 4 }), /byte limit/);
+  mode = "timeout";
+  await assert.rejects(safeRequest("http://example.com", { resolver, timeoutMs: 10 }), /timed out/);
+  await assert.rejects(safeRequest("http://example.com", { resolver: () => new Promise(() => {}), timeoutMs: 10 }), /timed out/);
+  mode = "ok";
+  assert.equal((await safeRequest("http://example.com", { resolver })).status, 200);
+});

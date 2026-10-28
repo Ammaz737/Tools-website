@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-22T19:20:54.621Z",
+  "status": "SCOPED_PASS",
+  "defaultRouterSrvDns": "STILL_REFUSED",
+  "configuredApplicationDns": "PASS",
+  "operatingSystemDnsChanged": false,
+  "atlasAuthenticationAndPing": "PASS",
+  "persistence": {
+    "checkedAt": "2026-10-22T19:11:20.292Z",
+    "scope": "Isolated disposable record in qa_connection_checks; only this generated id is deleted. No existing tool settings changed.",
+    "status": "PASS",
+    "cleanup": true
+  },
+  "admin": {
+    "checkedAt": "2026-10-22T19:19:06.050Z",
+    "nextVersion": "16.4.2",
+    "loginStatus": 200,
+    "reads": [
+      {
+        "status": 200,
+        "mongoConfigured": true,
+        "toolCount": 137
+      },
+      {
+        "status": 200,
+        "mongoConfigured": true,
+        "toolCount": 137
+      },
+      {
+        "status": 200,
+        "mongoConfigured": true,
+        "toolCount": 137
+      }
+    ],
+    "adminPageStatus": 200,
+    "missingMongoWarning": false,
+    "scope": "Actual authenticated dev server on port3000 after patches; credentials/cookies/raw bodies omitted."
+  },
+  "save": {
+    "checkedAt": "2026-10-22T19:19:41.536Z",
+    "patchStatus": 200,
+    "valuePreserved": true,
+    "scope": "Actual authenticated save of the existing visibility value, followed by a new GET. No tool visibility flipped. Normal audit/update timestamp may be written."
+  },
+  "pending": [
+    "Cross-instance provider quota concurrency and primary failover",
+    "Remaining provider production-route acceptance",
+    "Public HTTPS/deployment acceptance"
+  ],
+  "scope": "Actual configured app-process DNS and Atlas checks. Previous failed network snapshots retained separately. No secret values saved."
+}

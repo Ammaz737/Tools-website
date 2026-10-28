@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-10-22T18:52:51.734Z",
+  "loginStatus": 200,
+  "adminPageStatus": 200,
+  "incorrectMissingMongoWarning": false,
+  "databaseApiStatus": 500,
+  "scope": "Actual authenticated localhost HTTP checks; no cookies, credentials or raw response bodies saved."
+}

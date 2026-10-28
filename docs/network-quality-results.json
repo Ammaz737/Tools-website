@@ -1,0 +1,57 @@
+{
+  "dnsMode": "System resolver (no override)",
+  "checkedAt": "2026-10-15T19:10:01.288Z",
+  "scope": "Actual production GET handlers with live read-only public requests; defaults only, no Atlas connection. A pass covers these targets and invariants, not UI behavior or exhaustive provider accuracy.",
+  "results": [
+    {
+      "id": "website-speed-test",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 282
+    },
+    {
+      "id": "broken-link-checker",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 515
+    },
+    {
+      "id": "dns-lookup",
+      "status": "BLOCKED",
+      "httpStatus": 500,
+      "durationMs": 102,
+      "error": "DNS service could not complete the lookup"
+    },
+    {
+      "id": "email-validator",
+      "status": "BLOCKED",
+      "httpStatus": 502,
+      "durationMs": 101,
+      "error": "Mail routing lookup unavailable or timed out"
+    },
+    {
+      "id": "ssl-checker",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 154
+    },
+    {
+      "id": "whois-lookup",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 693
+    },
+    {
+      "id": "ip-lookup",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 598
+    },
+    {
+      "id": "currency-converter",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 279
+    }
+  ]
+}

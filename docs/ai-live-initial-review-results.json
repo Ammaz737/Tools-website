@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-10-21T19:48:03.961Z",
+  "scope": "Actual application provider function and configured private account. Synthetic prompts, at most10 sequential requests, 20second deadlines, existing2048output-token cap, no retries. Public production route/Atlas quota is a separate acceptance; no Atlas writes.",
+  "results": [
+    {
+      "id": "ai-translator",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "La reuni\u00f3n es el lunes en la biblioteca.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 2734
+    },
+    {
+      "id": "grammar-checker",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "She **goes** to school every day.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 1034
+    },
+    {
+      "id": "spell-checker",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "I **received** the package.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 1452
+    },
+    {
+      "id": "paraphrasing-tool",
+      "status": "QUALITY_REVIEW_REQUIRED",
+      "httpStatus": 200,
+      "result": "The meeting commences at nine o'clock. Participation is voluntary.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 1052
+    },
+    {
+      "id": "article-rewriter",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "On Tuesday, Mira made a trip to the library.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 850
+    },
+    {
+      "id": "ai-summarizer",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "**Key Bullet Points:**\n- Total samples tested: 20\n- Samples that failed: 5\n- Samples that passed: 15\n\n**Executive Summary:**\nIn a recent lab test involving 20 samples, 15 samples met the required standards and passed, while 5 samples did not meet the necessary criteria and failed the test.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 1882
+    },
+    {
+      "id": "ai-writer",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "The blue kite danced gracefully against the clear sky, its vibrant hue contrasting with the soft clouds above. With each gust of wind, it soared higher, tracing whimsical patterns in the air.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 912
+    },
+    {
+      "id": "ai-humanizer",
+      "status": "QUALITY_REVIEW_REQUIRED",
+      "httpStatus": 200,
+      "result": "The store starts welcoming customers at 8 AM on Monday.",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 855
+    },
+    {
+      "id": "ai-email-writer",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "Subject: Confirmation of Meeting\n\nHi Alex, \n\nI would like to confirm our meeting on Friday at 10 AM. Looking forward to our discussion. \n\nBest,  \nSam",
+      "scope": "Synthetic task fixture only, not comprehensive accuracy.",
+      "durationMs": 1103
+    },
+    {
+      "id": "ai-detector",
+      "status": "SCOPED_PASS",
+      "httpStatus": 200,
+      "result": "The text contains a personal anecdote that reflects a human experience, which suggests a lower likelihood of being AI-generated. The use of relatable emotions, such as laughter in response to a mishap, indicates a human touch that AI typically lacks.",
+      "score": 20,
+      "scope": "Live structured-output contract only; authorship detection accuracy is not established.",
+      "durationMs": 1707
+    }
+  ]
+}

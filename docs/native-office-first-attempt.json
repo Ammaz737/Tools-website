@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-21T19:17:11.397Z",
+  "scope": "Actual application POST handler and local Gotenberg/LibreOffice. Fixtures cover tables, page images, formulas, multiple sheets and mixed-content slides; visual rendering must be reviewed separately. No Atlas or paid provider calls.",
+  "results": [
+    {
+      "name": "page-images",
+      "status": "PASS",
+      "pages": 2,
+      "pageSizes": [
+        {
+          "width": 419.555905511811,
+          "height": 595.303937007874
+        },
+        {
+          "width": 595.303937007874,
+          "height": 419.555905511811
+        }
+      ],
+      "images": 2,
+      "textByPage": [
+        "",
+        ""
+      ],
+      "durationMs": 11879,
+      "sha256": "ce651b8d59979e44be86520e2cecc494b194db3d084d6d286f6534f4f52ccbb2"
+    },
+    {
+      "name": "editable-tables",
+      "status": "PASS",
+      "pages": 2,
+      "pageSizes": [
+        {
+          "width": 419.555905511811,
+          "height": 595.303937007874
+        },
+        {
+          "width": 595.303937007874,
+          "height": 419.555905511811
+        }
+      ],
+      "images": 0,
+      "textByPage": [
+        "Quality fixture page 1  Item 1   125.00 Item 2   250.00 Item 3   375.00 Item 4   500.00  Footer must remain visible",
+        "Quality fixture page 2  Item 1   125.00 Item 2   250.00 Item 3   375.00 Item 4   500.00  Footer must remain visible"
+      ],
+      "durationMs": 1267,
+      "sha256": "f7331f6e020fb7483896a5fca19b301366d2c5f8b694381e38d64f4511866e39"
+    },
+    {
+      "name": "spreadsheet",
+      "status": "FAIL",
+      "error": "missing 30",
+      "durationMs": 1238
+    },
+    {
+      "name": "mixed-slides",
+      "status": "PASS",
+      "pages": 2,
+      "pageSizes": [
+        {
+          "width": 720,
+          "height": 360
+        },
+        {
+          "width": 720,
+          "height": 360
+        }
+      ],
+      "images": 1,
+      "textByPage": [
+        "Mixed content heading survives  Body text beside graphics",
+        "Native second slide"
+      ],
+      "durationMs": 2097,
+      "sha256": "4922ed5e5db12e07bd457ed885369bf67c23ccc421bc1aa10acc1b7b3386505b"
+    }
+  ]
+}

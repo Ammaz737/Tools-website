@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-21T20:18:17.820Z",
+  "scope": "Actual Chromium against loopback production app and native worker; no paid provider calls or Atlas writes.",
+  "origin": "http://localhost:3102",
+  "appBuildId": "JN5DGX3MFn9KwyN07yDdb",
+  "results": [
+    {
+      "name": "real browser signs in, sees explicit persistence warning and signs out",
+      "status": "PASS"
+    },
+    {
+      "name": "real browser uploads to authenticated native service and downloads two-page PDF",
+      "status": "PASS"
+    }
+  ]
+}

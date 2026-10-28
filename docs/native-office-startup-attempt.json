@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-21T19:23:47.280Z",
+  "scope": "Actual application POST handler and local Gotenberg/LibreOffice. Fixtures cover tables, page images, formulas, multiple sheets and mixed-content slides; visual rendering must be reviewed separately. No Atlas or paid provider calls.",
+  "results": [
+    {
+      "name": "page-images",
+      "status": "FAIL",
+      "error": "HTTP 504: {\"error\":\"Document conversion timed out or was cancelled\"}",
+      "durationMs": 30634
+    },
+    {
+      "name": "editable-tables",
+      "status": "FAIL",
+      "error": "HTTP 504: {\"error\":\"Document conversion timed out or was cancelled\"}",
+      "durationMs": 30124
+    },
+    {
+      "name": "spreadsheet",
+      "status": "FAIL",
+      "error": "HTTP 504: {\"error\":\"Document conversion timed out or was cancelled\"}",
+      "durationMs": 30051
+    },
+    {
+      "name": "mixed-slides",
+      "status": "FAIL",
+      "error": "HTTP 504: {\"error\":\"Document conversion timed out or was cancelled\"}",
+      "durationMs": 30024
+    }
+  ]
+}

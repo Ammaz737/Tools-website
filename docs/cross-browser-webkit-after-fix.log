@@ -1,0 +1,227 @@
+[WebServer] (node:26364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 166 tests using 1 worker
+
+(node:10856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   1 [webkit] › tests\e2e\additional-calculators.spec.ts:12:7 › discount-calculator: known result and empty input (3.2s)
+  ok   2 [webkit] › tests\e2e\additional-calculators.spec.ts:12:7 › profit-calculator: known result and empty input (1.9s)
+  ok   3 [webkit] › tests\e2e\additional-calculators.spec.ts:12:7 › roi-calculator: known result and empty input (1.6s)
+  ok   4 [webkit] › tests\e2e\additional-calculators.spec.ts:12:7 › tip-calculator: known result and empty input (2.2s)
+  ok   5 [webkit] › tests\e2e\additional-calculators.spec.ts:12:7 › margin-calculator: known result and empty input (1.9s)
+  ok   6 [webkit] › tests\e2e\additional-calculators.spec.ts:12:7 › mortgage-calculator: known result and empty input (1.9s)
+  ok   7 [webkit] › tests\e2e\additional-calculators.spec.ts:20:5 › mortgage zero interest and invalid term; tip requires whole people (3.1s)
+  ok   8 [webkit] › tests\e2e\additional-calculators.spec.ts:29:5 › scientific operations reject invalid domains without evaluating code (2.5s)
+  ok   9 [webkit] › tests\e2e\additional-calculators.spec.ts:35:5 › date comparison and adjustment use calendar days across DST (1.9s)
+  ok  10 [webkit] › tests\e2e\additional-calculators.spec.ts:41:5 › area and storage conversions distinguish decimal and binary units (2.7s)
+  ok  11 [webkit] › tests\e2e\additional-calculators.spec.ts:48:5 › timezone converts explicit instants through the DST spring gap (2.6s)
+  ok  12 [webkit] › tests\e2e\additional-calculators.spec.ts:55:5 › margin pricing solves target margin and rejects 100 percent (2.3s)
+  ok  13 [webkit] › tests\e2e\additional-developer.spec.ts:12:52 › xml-formatter processes source and clears stale output (2.8s)
+  ok  14 [webkit] › tests\e2e\additional-developer.spec.ts:12:52 › xml-validator processes source and clears stale output (2.6s)
+  ok  15 [webkit] › tests\e2e\additional-developer.spec.ts:12:52 › html-formatter processes source and clears stale output (2.7s)
+  ok  16 [webkit] › tests\e2e\additional-developer.spec.ts:12:52 › html-minifier processes source and clears stale output (2.4s)
+  ok  17 [webkit] › tests\e2e\additional-developer.spec.ts:12:52 › css-minifier processes source and clears stale output (2.4s)
+  ok  18 [webkit] › tests\e2e\additional-developer.spec.ts:12:52 › javascript-minifier processes source and clears stale output (2.4s)
+  ok  19 [webkit] › tests\e2e\additional-developer.spec.ts:12:52 › sql-formatter processes source and clears stale output (2.3s)
+  ok  20 [webkit] › tests\e2e\additional-utilities.spec.ts:4:5 › random numbers validate bounds, produce integers in range, and download (2.8s)
+  ok  21 [webkit] › tests\e2e\additional-utilities.spec.ts:17:70 › timestamp-converter converts both ways and rejects invalid dates (2.7s)
+  ok  22 [webkit] › tests\e2e\additional-utilities.spec.ts:17:70 › unix-time-converter converts both ways and rejects invalid dates (2.9s)
+  ok  23 [webkit] › tests\e2e\additional-utilities.spec.ts:27:5 › dice output contains requested count, bounds, and a correct total (3.0s)
+  ok  24 [webkit] › tests\e2e\additional-utilities.spec.ts:36:5 › stopwatch pauses, resumes, records laps and resets (3.9s)
+  ok  25 [webkit] › tests\e2e\additional-utilities.spec.ts:50:5 › countdown validates, pauses, resumes and completes (4.1s)
+  ok  26 [webkit] › tests\e2e\additional-utilities.spec.ts:60:5 › tasks persist completion after reload, export and clear completed (3.9s)
+  ok  27 [webkit] › tests\e2e\additional-utilities.spec.ts:67:5 › password checker evaluates locally, supports reveal and clears sensitive output (2.6s)
+  ok  28 [webkit] › tests\e2e\deep-output-oracles.spec.ts:9:5 › qr-code-generator: decode downloaded pristine version-one byte payload (2.0s)
+  ok  29 [webkit] › tests\e2e\deep-output-oracles.spec.ts:42:5 › barcode-generator: downloaded Code 128 bars decode payload and checksum (2.3s)
+  ok  30 [webkit] › tests\e2e\deep-output-oracles.spec.ts:61:5 › sitemap-generator: downloaded XML round-trips escaped values and deduplicates (2.3s)
+  ok  31 [webkit] › tests\e2e\deep-output-oracles.spec.ts:68:5 › meta-tag-generator: downloaded HTML restores original Unicode and quotes (2.2s)
+  ok  32 [webkit] › tests\e2e\deep-output-oracles.spec.ts:74:5 › xml-formatter: namespace mixed text CDATA and entities preserve semantics (2.3s)
+  ok  33 [webkit] › tests\e2e\deep-output-oracles.spec.ts:80:5 › javascript-minifier: trusted fixture preserves template regex and numeric semantics (2.2s)
+  ok  34 [webkit] › tests\e2e\deep-output-oracles.spec.ts:87:5 › jwt-decoder: Unicode nested claims retain original values (1.7s)
+  ok  35 [webkit] › tests\e2e\deep-output-oracles.spec.ts:92:75 › hash-generator: UTF8 digest agrees with independent Node crypto (1.9s)
+  ok  36 [webkit] › tests\e2e\deep-output-oracles.spec.ts:92:75 › md5-generator: UTF8 digest agrees with independent Node crypto (1.8s)
+  ok  37 [webkit] › tests\e2e\deep-output-oracles.spec.ts:92:75 › sha256-generator: UTF8 digest agrees with independent Node crypto (1.9s)
+  ok  38 [webkit] › tests\e2e\deep-output-oracles.spec.ts:98:5 › mortgage-calculator: independent amortization recurrence pays principal (2.1s)
+  ok  39 [webkit] › tests\e2e\deep-output-oracles.spec.ts:104:5 › css-minifier: browser computed declarations preserve calc and custom properties (1.9s)
+  ok  40 [webkit] › tests\e2e\deep-output-oracles.spec.ts:110:5 › html-minifier: whitespace-sensitive text and embedded script content survive (1.7s)
+  ok  41 [webkit] › tests\e2e\deep-output-oracles.spec.ts:116:5 › data-storage-converter: bit/byte binary/decimal conversions use physical unit identities (1.9s)
+  ok  42 [webkit] › tests\e2e\deep-output-oracles.spec.ts:123:5 › time-zone-converter: autumn repeated hour distinguishes two real instants (1.6s)
+  ok  43 [webkit] › tests\e2e\deep-output-oracles.spec.ts:129:5 › profit-calculator: loss and zero denominators never invent percentages (2.0s)
+  ok  44 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › split-pdf downloads a reopened PDF with the expected pages (4.6s)
+  ok  45 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › delete-pdf-pages downloads a reopened PDF with the expected pages (4.3s)
+  ok  46 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › rearrange-pdf-pages downloads a reopened PDF with the expected pages (3.7s)
+  ok  47 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › rotate-pdf downloads a reopened PDF with the expected pages (3.7s)
+  ok  48 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › watermark-pdf downloads a reopened PDF with the expected pages (3.1s)
+  ok  49 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › sign-pdf downloads a reopened PDF with the expected pages (3.1s)
+  ok  50 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › edit-pdf downloads a reopened PDF with the expected pages (3.2s)
+  ok  51 [webkit] › tests\e2e\documents-suite.spec.ts:33:34 › compress-pdf downloads a reopened PDF with the expected pages (3.9s)
+  ok  52 [webkit] › tests\e2e\documents-suite.spec.ts:64:5 › merge combines generated page geometry (2.5s)
+  ok  53 [webkit] › tests\e2e\documents-suite.spec.ts:71:42 › PDF to jpg produces real image signatures in ZIP (3.1s)
+  ok  54 [webkit] › tests\e2e\documents-suite.spec.ts:71:42 › PDF to png produces real image signatures in ZIP (3.5s)
+  ok  55 [webkit] › tests\e2e\documents-suite.spec.ts:82:5 › protect and unlock enforce password and reopen decrypted output (4.5s)
+  ok  56 [webkit] › tests\e2e\documents-suite.spec.ts:94:5 › drawn signature uses real pointer interaction (2.9s)
+  ok  57 [webkit] › tests\e2e\documents-suite.spec.ts:104:52 › PDF to word output reopens as the requested Office format (3.6s)
+  ok  58 [webkit] › tests\e2e\documents-suite.spec.ts:104:52 › PDF to excel output reopens as the requested Office format (3.1s)
+  ok  59 [webkit] › tests\e2e\documents-suite.spec.ts:104:52 › PDF to ppt output reopens as the requested Office format (4.9s)
+  ok  60 [webkit] › tests\e2e\documents-suite.spec.ts:118:52 › word to PDF generated fixture reopens (8.0s)
+  ok  61 [webkit] › tests\e2e\documents-suite.spec.ts:118:52 › excel to PDF generated fixture reopens (4.1s)
+  ok  62 [webkit] › tests\e2e\documents-suite.spec.ts:118:52 › ppt to PDF generated fixture reopens (2.6s)
+  ok  63 [webkit] › tests\e2e\documents-suite.spec.ts:127:5 › all PDF routes reject malformed bytes before preview or processing (9.4s)
+  ok  64 [webkit] › tests\e2e\documents-suite.spec.ts:135:5 › PDF uploads enforce page and byte budgets (1.6s)
+  ok  65 [webkit] › tests\e2e\existing-math.spec.ts:3:5 › age clamps leap anniversaries and handles early years without 1900 offset (2.5s)
+  ok  66 [webkit] › tests\e2e\existing-math.spec.ts:12:5 › BMI and percentage reject empty and invalid inputs without fabricated zero (2.4s)
+  ok  67 [webkit] › tests\e2e\existing-math.spec.ts:20:63 › emi-calculator zero interest, fractional years and zero tenure (2.1s)
+  ok  68 [webkit] › tests\e2e\existing-math.spec.ts:20:63 › loan-calculator zero interest, fractional years and zero tenure (2.1s)
+  ok  69 [webkit] › tests\e2e\existing-math.spec.ts:26:62 › gst-calculator inclusive and exclusive tax, zero rate and empty input (1.9s)
+  ok  70 [webkit] › tests\e2e\existing-math.spec.ts:26:62 › vat-calculator inclusive and exclusive tax, zero rate and empty input (1.9s)
+  ok  71 [webkit] › tests\e2e\existing-math.spec.ts:32:132 › length-converter exact units and empty/negative inputs (2.4s)
+  ok  72 [webkit] › tests\e2e\existing-math.spec.ts:32:132 › weight-converter exact units and empty/negative inputs (2.3s)
+  ok  73 [webkit] › tests\e2e\existing-math.spec.ts:38:5 › temperature respects absolute zero and empty input (1.8s)
+  ok  74 [webkit] › tests\e2e\existing-math.spec.ts:44:5 › binary converter uses UTF-8 bytes for Unicode and supports empty text (2.1s)
+  ok  75 [webkit] › tests\e2e\existing-math.spec.ts:49:5 › Roman conversion requires a bounded integer (2.6s)
+  ok  76 [webkit] › tests\e2e\existing-utilities.spec.ts:4:5 › qr-code-generator: readable PNG download, empty and size-limit recovery (3.4s)
+  ok  77 [webkit] › tests\e2e\existing-utilities.spec.ts:20:59 › color-picker: exact RGB conversion and invalid-input recovery (2.3s)
+  ok  78 [webkit] › tests\e2e\existing-utilities.spec.ts:20:59 › color-converter: exact RGB conversion and invalid-input recovery (2.3s)
+  ok  79 [webkit] › tests\e2e\existing-utilities.spec.ts:28:5 › random-password-generator: alias honors selected groups and length (3.4s)
+  ok  80 [webkit] › tests\e2e\existing-utilities.spec.ts:39:5 › coin-flipper: produces a valid outcome and can flip again (3.7s)
+  ok  81 [webkit] › tests\e2e\heic-quality.spec.ts:3:5 › HEIC primary image decodes locally to real JPEG with reference colors (4.1s)
+  ok  82 [webkit] › tests\e2e\heic-quality.spec.ts:30:5 › HEIC malformed input rejects then a valid file recovers (3.7s)
+  ok  83 [webkit] › tests\e2e\hydration-readiness.spec.ts:3:5 › tool controls remain disabled until delayed application scripts hydrate (2.0s)
+  ok  84 [webkit] › tests\e2e\hydration-readiness.spec.ts:23:5 › immediate text processing retains the first entered value (2.1s)
+  ok  85 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › convert-image downloads real png bytes and clears output (2.1s)
+  ok  86 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › jpg-to-png downloads real png bytes and clears output (2.1s)
+  ok  87 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › jfif-to-png downloads real png bytes and clears output (2.2s)
+  ok  88 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › webp-to-png downloads real png bytes and clears output (2.1s)
+  ok  89 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › png-to-jpg downloads real jpg bytes and clears output (2.2s)
+  ok  90 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › webp-to-jpg downloads real jpg bytes and clears output (2.1s)
+  ok  91 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › jpeg-to-jpg downloads real jpg bytes and clears output (2.9s)
+  ok  92 [webkit] › tests\e2e\image-suite.spec.ts:15:66 › webp-converter downloads real webp bytes and clears output (2.8s)
+  ok  93 [webkit] › tests\e2e\image-suite.spec.ts:27:5 › heic-to-jpg rejects malformed HEIC without a false download (3.4s)
+  ok  94 [webkit] › tests\e2e\image-suite.spec.ts:31:5 › image-compressor exports JPEG with matching filename and dimensions (2.1s)
+  ok  95 [webkit] › tests\e2e\image-suite.spec.ts:38:5 › image-resizer rejects allocation bounds then exports the chosen dimensions (3.1s)
+  ok  96 [webkit] › tests\e2e\image-suite.spec.ts:44:5 › rotate-image swaps dimensions after 90 degrees (2.1s)
+  ok  97 [webkit] › tests\e2e\image-suite.spec.ts:50:5 › svg-converter exports scaled PNG and invalid markup removes stale output (2.6s)
+  ok  98 [webkit] › tests\e2e\image-suite.spec.ts:56:163 › image-to-pdf creates a readable PDF with actual image page dimensions (3.1s)
+  ok  99 [webkit] › tests\e2e\image-suite.spec.ts:56:163 › jpg-to-pdf creates a readable PDF with actual image page dimensions (2.7s)
+  ok 100 [webkit] › tests\e2e\image-suite.spec.ts:56:163 › png-to-pdf creates a readable PDF with actual image page dimensions (2.8s)
+  ok 101 [webkit] › tests\e2e\image-suite.spec.ts:61:5 › background-remover honestly removes selected black pixels while preserving white (2.1s)
+  ok 102 [webkit] › tests\e2e\image-suite.spec.ts:67:5 › image-upscaler exports a real double-sized raster and discloses its method (1.8s)
+  ok 103 [webkit] › tests\e2e\image-suite.spec.ts:71:5 › screenshot-tool annotates uploaded pixels and exports PNG rather than pretending capture (1.8s)
+  ok 104 [webkit] › tests\e2e\image-suite.spec.ts:75:5 › invalid raster files remove stale downloads and recover with valid input (8.4s)
+  ok 105 [webkit] › tests\e2e\network-ui-quality.spec.ts:35:34 › dns-lookup: mocked UI query, output and upstream-error recovery (2.4s)
+  ok 106 [webkit] › tests\e2e\network-ui-quality.spec.ts:35:34 › whois-lookup: mocked UI query, output and upstream-error recovery (2.5s)
+  ok 107 [webkit] › tests\e2e\network-ui-quality.spec.ts:35:34 › ssl-checker: mocked UI query, output and upstream-error recovery (3.0s)
+  ok 108 [webkit] › tests\e2e\network-ui-quality.spec.ts:35:34 › ip-lookup: mocked UI query, output and upstream-error recovery (3.2s)
+  ok 109 [webkit] › tests\e2e\network-ui-quality.spec.ts:35:34 › email-validator: mocked UI query, output and upstream-error recovery (2.7s)
+  ok 110 [webkit] › tests\e2e\network-ui-quality.spec.ts:35:34 › broken-link-checker: mocked UI query, output and upstream-error recovery (2.6s)
+  ok 111 [webkit] › tests\e2e\network-ui-quality.spec.ts:35:34 › website-speed-test: mocked UI query, output and upstream-error recovery (2.6s)
+  ok 112 [webkit] › tests\e2e\network-ui-quality.spec.ts:54:5 › currency-converter: mocked exchange rates yield correct cross-rate math and recover after failure (2.3s)
+  ok 113 [webkit] › tests\e2e\ocr-quality.spec.ts:9:5 › ocr-pdf reads image-only English pages and preserves searchable page dimensions (9.6s)
+  ok 114 [webkit] › tests\e2e\output-fidelity.spec.ts:43:5 › PDF to Word page images survive mixed-size document round trip (12.4s)
+  ok 115 [webkit] › tests\e2e\output-fidelity.spec.ts:95:5 › PDF to Word editable mode reconstructs table cells and source page sections (12.8s)
+  ok 116 [webkit] › tests\e2e\output-fidelity.spec.ts:124:5 › PDF to Excel preserves blank middle pages and later-page assignment (4.3s)
+  ok 117 [webkit] › tests\e2e\output-fidelity.spec.ts:138:5 › PowerPoint rejects unsupported mixed content instead of downloading damaged output (2.4s)
+  ok 118 [webkit] › tests\e2e\output-fidelity.spec.ts:150:5 › PDF to Excel reconstructs detected table cells instead of a single text column (3.3s)
+  ok 119 [webkit] › tests\e2e\output-fidelity.spec.ts:165:5 › PDF page-image PowerPoint round trip preserves declared slide dimensions (9.1s)
+  ok 120 [webkit] › tests\e2e\output-fidelity.spec.ts:185:5 › PDF canvas export recovers from an unreadable encoder Blob without changing pixels (3.6s)
+  ok 121 [webkit] › tests\e2e\regression.spec.ts:7:5 › all registered tool URLs render with accurate indexing policy (3.2s)
+  ok 122 [webkit] › tests\e2e\regression.spec.ts:23:5 › case converter transforms input and clears result on mobile (2.0s)
+  ok 123 [webkit] › tests\e2e\regression.spec.ts:34:5 › sitemap and private pages follow the indexing policy (197ms)
+  ok 124 [webkit] › tests\e2e\regression.spec.ts:53:5 › logout rejects cross-origin requests (32ms)
+  ok 125 [webkit] › tests\e2e\regression.spec.ts:60:5 › JSON formatter handles valid, invalid and empty input (2.1s)
+  ok 126 [webkit] › tests\e2e\regression.spec.ts:72:5 › merge PDFs downloads a readable document and sends no file bytes (3.8s)
+  ok 127 [webkit] › tests\e2e\regression.spec.ts:100:5 › admin APIs reject forged fallback cookies when configuration is absent (70ms)
+  ok 128 [webkit] › tests\e2e\regression.spec.ts:110:5 › AI validates empty prompts and throttles repeated requests (132ms)
+  ok 129 [webkit] › tests\e2e\regression.spec.ts:120:5 › login fails closed then throttles repeated attempts without trusting spoofed headers (55ms)
+  ok 130 [webkit] › tests\e2e\seo-tools.spec.ts:3:5 › meta tags escape user HTML and reset clears output (2.5s)
+  ok 131 [webkit] › tests\e2e\seo-tools.spec.ts:14:5 › robots directives generate a downloadable text file (2.7s)
+  ok 132 [webkit] › tests\e2e\seo-tools.spec.ts:23:5 › sitemap escapes query parameters and rejects mixed origins (2.4s)
+  ok 133 [webkit] › tests\e2e\seo-tools.spec.ts:35:5 › density counts words and phrase occurrences (2.0s)
+  ok 134 [webkit] › tests\e2e\seo-tools.spec.ts:44:5 › SERP preview displays text without injecting markup (1.9s)
+  ok 135 [webkit] › tests\e2e\seo-tools.spec.ts:52:5 › Open Graph validates URL protocols and escapes properties (2.6s)
+  ok 136 [webkit] › tests\e2e\seo-tools.spec.ts:62:5 › canonical removes fragments and rejects credentials (2.2s)
+  ok 137 [webkit] › tests\e2e\seo-tools.spec.ts:71:5 › schema emits parseable script-safe JSON and product offers (2.6s)
+  x  138 [webkit] › tests\e2e\service-integration-ui.spec.ts:5:5 › Office server choice discloses upload and sends raw document with tool mapping (2.1s)
+(node:29128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 139 [webkit] › tests\e2e\service-integration-ui.spec.ts:27:5 › Plagiarism requires consent and labels simulated provider results (4.4s)
+  ok 140 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › remove-duplicate-lines: known output and empty input (1.6s)
+  ok 141 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › text-sorter: known output and empty input (2.1s)
+  ok 142 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › text-cleaner: known output and empty input (2.1s)
+  ok 143 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › remove-extra-spaces: known output and empty input (2.1s)
+  ok 144 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › reverse-text: known output and empty input (2.3s)
+  ok 145 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › base64-encoder: known output and empty input (1.6s)
+  ok 146 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › base64-decoder: known output and empty input (2.1s)
+  ok 147 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › url-encoder: known output and empty input (2.1s)
+  ok 148 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › url-decoder: known output and empty input (2.7s)
+  ok 149 [webkit] › tests\e2e\text-developer-suite.spec.ts:14:17 › json-minifier: known output and empty input (2.2s)
+  ok 150 [webkit] › tests\e2e\text-developer-suite.spec.ts:23:179 › word-counter: counts and empty reset (2.6s)
+  ok 151 [webkit] › tests\e2e\text-developer-suite.spec.ts:23:179 › character-counter: counts and empty reset (2.0s)
+  ok 152 [webkit] › tests\e2e\text-developer-suite.spec.ts:23:179 › sentence-counter: counts and empty reset (2.2s)
+  ok 153 [webkit] › tests\e2e\text-developer-suite.spec.ts:30:65 › uuid-generator: valid unique IDs and bounded quantity (2.0s)
+  ok 154 [webkit] › tests\e2e\text-developer-suite.spec.ts:30:65 › uuid-generator-util: valid unique IDs and bounded quantity (1.8s)
+  ok 155 [webkit] › tests\e2e\text-developer-suite.spec.ts:38:79 › hash-generator: published known hash vectors (2.6s)
+  ok 156 [webkit] › tests\e2e\text-developer-suite.spec.ts:38:79 › md5-generator: published known hash vectors (1.8s)
+  ok 157 [webkit] › tests\e2e\text-developer-suite.spec.ts:38:79 › sha256-generator: published known hash vectors (1.8s)
+  ok 158 [webkit] › tests\e2e\text-developer-suite.spec.ts:44:5 › json-validator: valid scalar and malformed syntax (2.7s)
+  ok 159 [webkit] › tests\e2e\text-developer-suite.spec.ts:48:5 › jwt-decoder: claims and malformed token, no verification claim (2.5s)
+  ok 160 [webkit] › tests\e2e\text-developer-suite.spec.ts:52:5 › lorem-ipsum-generator: paragraph count and allocation bound (1.7s)
+  ok 161 [webkit] › tests\e2e\text-developer-suite.spec.ts:56:5 › random-text-generator: allowed characters and bound (2.0s)
+  ok 162 [webkit] › tests\e2e\ui-regression.spec.ts:4:5 › crop presets download correct dimensions from a rectangular source (3.8s)
+  ok 163 [webkit] › tests\e2e\ui-regression.spec.ts:26:5 › password generation and reset honor selected groups and length (3.3s)
+  ok 164 [webkit] › tests\e2e\ui-regression.spec.ts:43:5 › barcode recovers from invalid input and downloads a valid SVG (2.5s)
+  ok 165 [webkit] › tests\e2e\ui-regression.spec.ts:61:5 › notepad preserves Unicode notes across reload (2.3s)
+  ok 166 [webkit] › tests\e2e\ui-regression.spec.ts:70:5 › theme toggles both directions and persists after reload (2.5s)
+
+
+  1) [webkit] › tests\e2e\service-integration-ui.spec.ts:5:5 › Office server choice discloses upload and sends raw document with tool mapping 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      12 |     expect(route.request().url()).toContain("toolId=word-to-pdf&format=docx");
+      13 |     expect(route.request().headers()["content-type"]).toBe("application/octet-stream");
+    > 14 |     expect(route.request().postDataBuffer()?.equals(source)).toBe(true); sent = true;
+         |                                                              ^
+      15 |     await route.fulfill({ contentType: "application/pdf", body: output });
+      16 |   });
+      17 |   await page.goto("/tools/word-to-pdf");
+        at D:\Tools_Site\tests\e2e\service-integration-ui.spec.ts:14:62
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Converted by the configured server Office engine.')
+    Expected: visible
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText('Converted by the configured server Office engine.') with timeout 5000ms
+      - waiting for getByText('Converted by the configured server Office engine.')
+      - Test ended.
+
+
+      20 |   await expect(page.getByRole("note")).toContainText("uploaded");
+      21 |   await page.getByRole("button", { name: /^Convert Document/ }).click();
+    > 22 |   await expect(page.getByText("Converted by the configured server Office engine.", { exact: false })).toBeVisible();
+         |                                                                                                       ^
+      23 |   expect(sent).toBe(true);
+      24 |   await expect(page.getByRole("button", { name: "Download", exact: true })).toBeVisible();
+      25 | });
+        at D:\Tools_Site\tests\e2e\service-integration-ui.spec.ts:22:103
+
+    Error Context: test-results\cross-browser\service-integration-ui-Off-920b3--document-with-tool-mapping-webkit\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\cross-browser\service-integration-ui-Off-920b3--document-with-tool-mapping-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\cross-browser\service-integration-ui-Off-920b3--document-with-tool-mapping-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests\e2e\service-integration-ui.spec.ts:5:5 › Office server choice discloses upload and sends raw document with tool mapping 
+  165 passed (8.1m)

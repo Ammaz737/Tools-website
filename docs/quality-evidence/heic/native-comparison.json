@@ -1,0 +1,12 @@
+{
+  "independent_decoder": "Bundled native libheif heif-convert.exe",
+  "width": 1280,
+  "height": 854,
+  "mean_absolute_rgb_error": [
+    2.4743385904566746,
+    1.9086641905737705,
+    3.2423073404566747
+  ],
+  "allowed_mean_per_channel": 6,
+  "pass": true
+}

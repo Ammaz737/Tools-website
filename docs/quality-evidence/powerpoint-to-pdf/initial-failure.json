@@ -1,0 +1,17 @@
+{
+  "status": "FAIL",
+  "expectedPages": 1,
+  "actualPages": 2,
+  "actualSizes": [
+    {
+      "width": 1,
+      "height": 1
+    },
+    {
+      "width": 1,
+      "height": 1
+    }
+  ],
+  "expectedBehavior": "One slide remains one landscape PDF page, with both placed images and heading visible.",
+  "finding": "Current image-first converter emits one page per embedded image and omits accompanying text. Arbitrary slide rendering is not implemented."
+}

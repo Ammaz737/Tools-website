@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-21T21:50:24.869Z",
+  "buildId": "tQK_66xZxggB_nLXuwCKO",
+  "scope": "Firefox full164 latest outcomes before the shared hydration fix, plus targeted current-build regressions including two new readiness scenarios. WebKit current-build full166 run:165 passed; the Office transport test was repaired to verify actual bytes at a loopback receiver and passed on targeted recheck. Prior failures/resource-pressure interruption remain in logs. No single uninterrupted Firefox run or every Safari/device certification is claimed. Live integrations are disabled in browser suites and verified separately.",
+  "priorBuildId": "JN5DGX3MFn9KwyN07yDdb",
+  "priorFirefoxPasses": 164,
+  "webkitStats": {
+    "startTime": "2026-10-21T21:34:39.963Z",
+    "duration": 487857.029,
+    "expected": 165,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "webkitRecheckStats": {
+    "startTime": "2026-10-21T21:44:13.191Z",
+    "duration": 9966.708999999999,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "focusedFirefoxStats": {
+    "startTime": "2026-10-21T21:44:52.912Z",
+    "duration": 97375.825,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "firefox": {
+      "total": 166,
+      "passed": 166,
+      "unresolved": 0
+    },
+    "webkit": {
+      "total": 166,
+      "passed": 166,
+      "unresolved": 0
+    }
+  },
+  "lockfileSha256": "f63eeea7f8e162965fac2914933ff89764423034ede057bdb9618ee6683e95ad",
+  "failures": []
+}

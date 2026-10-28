@@ -1,0 +1,27 @@
+
+> tools@0.1.0 check:release
+> npm run audit:tools && node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/check-release.mjs
+
+
+> tools@0.1.0 audit:tools
+> node --import tsx scripts/generate-tool-inventory.ts
+
+{"total":137,"wired":137,"placeholders":0,"orphanDispatcherIds":[],"statuses":{"PASS":126,"FAIL":0,"BLOCKED":11,"NOT IMPLEMENTED":0}}
+.env not found. Continuing without it.
+READY: AI provider selection and credentials
+READY: MongoDB Atlas connection string
+READY: MongoDB database name
+READY: Admin password and independent signing secret
+MISSING_OR_INVALID: Production HTTPS site origin
+MISSING_OR_INVALID: Copyleaks credentials, authenticated webhook and live mode
+READY: Native Office converter service URL (configuration only)
+READY: Shared provider daily quota configuration
+This validates configuration shape only; live integrations and production readiness require separate verification.
+BLOCKED: Every registered tool has comprehensive output-quality acceptance
+BLOCKED: Every registered tool has recorded functional PASS
+READY: Full browser run has no failed or skipped scenarios
+READY: Full lint report has no errors
+BLOCKED: Dependency audit has no critical/high findings
+READY: Production build artifact exists
+Live provider/Atlas, ingress, recovery and operational verification also require recorded staging evidence. Local gates alone do not certify production readiness.
+RELEASE BLOCKED — do not deploy as a fully verified 137-tool product.

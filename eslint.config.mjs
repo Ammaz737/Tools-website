@@ -1,0 +1,25 @@
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    "tmp/**",
+    "test-results/**",
+    "playwright-report/**",
+    // Vendored, unmodified codec distributions; custom workers remain linted.
+    "public/codecs/heic/libheif-bundle.js",
+    "public/ocr/worker.min.js",
+    "public/ocr/tesseract-core*.js",
+  ]),
+]);
+
+export default eslintConfig;

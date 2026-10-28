@@ -1,0 +1,1668 @@
+{
+  "total": 137,
+  "methodology": "Separate from smoke/operation PASS. No perfect or comprehensive output-quality PASS inferred from a successful download. Read OUTPUT_QUALITY_AUDIT.md for current observed results and limits.",
+  "tools": [
+    {
+      "id": "pdf-to-word",
+      "name": "PDF to Word",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: PDF to word output reopens as the requested Office format",
+        "tests/e2e: PDF to Word page images survive mixed-size document round trip",
+        "tests/e2e: PDF to Word editable mode reconstructs table cells and source page sections",
+        "docs/native-office-quality-results.json: actual local LibreOffice fixture rendering; see NATIVE_OFFICE_LIVE_REPORT.md for visual review and limits"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Editable mode reconstructs horizontal text and detected tables; source graphics, exact fonts and complex columns are not retained. Page-image mixed-size round trip and editable table fixtures pass. Generated page-image/table fixtures independently rendered in local LibreOffice; Microsoft Word compatibility and arbitrary layouts remain unverified."
+    },
+    {
+      "id": "word-to-pdf",
+      "name": "Word to PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: word to PDF generated fixture reopens",
+        "docs/native-office-quality-results.json: actual local LibreOffice fixture rendering; see NATIVE_OFFICE_LIVE_REPORT.md for visual review and limits"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Browser rendering passes scoped editable/image-page fixtures. Local authenticated LibreOffice fixtures now pass actual conversion and visual checks; broader font/layout and deployed acceptance remain pending."
+    },
+    {
+      "id": "pdf-to-excel",
+      "name": "PDF to Excel",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: PDF to excel output reopens as the requested Office format",
+        "tests/e2e: PDF to Excel reconstructs detected table cells instead of a single text column",
+        "tests/e2e: PDF to Excel preserves blank middle pages and later-page assignment"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Detected aligned table cells and blank-middle-page ordering pass real downloaded XLSX assertions. Formulas, original styles and complex tables are not reconstructed."
+    },
+    {
+      "id": "excel-to-pdf",
+      "name": "Excel to PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: excel to PDF generated fixture reopens",
+        "docs/native-office-quality-results.json: actual local LibreOffice fixture rendering; see NATIVE_OFFICE_LIVE_REPORT.md for visual review and limits"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Browser raster rendering is limited for print areas/charts/pagination. Local native two-sheet/formula fixture passes after fixing stale cache recalculation; complex charts/print ranges and Excel-specific functions remain pending."
+    },
+    {
+      "id": "pdf-to-powerpoint",
+      "name": "PDF to PowerPoint",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: PDF to ppt output reopens as the requested Office format",
+        "tests/e2e: PDF page-image PowerPoint round trip preserves declared slide dimensions"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Raster slide images preserve content in scoped round trip; slide objects are not editable. Mixed source dimensions use one presentation slide size."
+    },
+    {
+      "id": "powerpoint-to-pdf",
+      "name": "PowerPoint to PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: ppt to PDF generated fixture reopens",
+        "docs/native-office-quality-results.json: actual local LibreOffice fixture rendering; see NATIVE_OFFICE_LIVE_REPORT.md for visual review and limits"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Supported one-image slides preserve declared dimensions; mixed image/text slides safely rejected by browser fallback. Local native mixed-content two-slide fixture passes text, image, dimensions and visual checks; SmartArt, exact fonts and arbitrary presentations remain pending."
+    },
+    {
+      "id": "pdf-to-jpg",
+      "name": "PDF to JPG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: PDF to jpg produces real image signatures in ZIP"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "jpg-to-pdf",
+      "name": "JPG to PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: jpg-to-pdf creates a readable PDF with actual image page dimensions"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "png-to-pdf",
+      "name": "PNG to PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: png-to-pdf creates a readable PDF with actual image page dimensions"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "pdf-to-png",
+      "name": "PDF to PNG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: PDF to png produces real image signatures in ZIP"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "merge-pdf",
+      "name": "Merge PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: merge PDFs downloads a readable document and sends no file bytes"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "split-pdf",
+      "name": "Split PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: split-pdf downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "compress-pdf",
+      "name": "Compress PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: compress-pdf downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "rotate-pdf",
+      "name": "Rotate PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: rotate-pdf downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "unlock-pdf",
+      "name": "Unlock PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: protect and unlock enforce password and reopen decrypted output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "protect-pdf",
+      "name": "Protect PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: protect and unlock enforce password and reopen decrypted output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "edit-pdf",
+      "name": "Edit PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: edit-pdf downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ocr-pdf",
+      "name": "OCR PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: ocr-pdf reads image-only English pages and preserves searchable page dimensions",
+        "tests/e2e: ocr-pdf reads image-only English pages and preserves searchable page dimensions"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Actual two-page English printed-scan TXT and searchable PDF accuracy passes with local assets and one worker. Handwriting, other languages and precise text positioning are not certified."
+    },
+    {
+      "id": "sign-pdf",
+      "name": "Sign PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: sign-pdf downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "watermark-pdf",
+      "name": "Watermark PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: watermark-pdf downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "delete-pdf-pages",
+      "name": "Delete PDF Pages",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: delete-pdf-pages downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "rearrange-pdf-pages",
+      "name": "Rearrange PDF Pages",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: rearrange-pdf-pages downloads a reopened PDF with the expected pages"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare source/output page count, order, dimensions, text, fonts, tables, graphics and clipping; render downloaded output; test scans, mixed orientation and blank pages.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "image-compressor",
+      "name": "Image Compressor",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: image-compressor exports JPEG with matching filename and dimensions"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "image-resizer",
+      "name": "Image Resizer",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: image-resizer rejects allocation bounds then exports the chosen dimensions"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "crop-image",
+      "name": "Crop Image",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: crop presets download correct dimensions from a rectangular source"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "rotate-image",
+      "name": "Rotate Image",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: rotate-image swaps dimensions after 90 degrees"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "convert-image",
+      "name": "Convert Image",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: convert-image downloads real png bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "jpg-to-png",
+      "name": "JPG to PNG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: jpg-to-png downloads real png bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "png-to-jpg",
+      "name": "PNG to JPG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: png-to-jpg downloads real jpg bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "webp-converter",
+      "name": "WebP Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: webp-converter downloads real webp bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "webp-to-jpg",
+      "name": "WebP to JPG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: webp-to-jpg downloads real jpg bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "webp-to-png",
+      "name": "WebP to PNG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: webp-to-png downloads real png bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "jfif-to-png",
+      "name": "JFIF to PNG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: jfif-to-png downloads real png bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "jpeg-to-jpg",
+      "name": "JPEG to JPG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: jpeg-to-jpg downloads real jpg bytes and clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "heic-to-jpg",
+      "name": "HEIC to JPG",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: HEIC primary image decodes locally to real JPEG with reference colors",
+        "tests/e2e: HEIC primary image decodes locally to real JPEG with reference colors"
+      ],
+      "outputQualityStatus": "SCOPED_PASS_WITH_LIMITATIONS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Real self-hosted decoder passes primary-image, pixel, dimension and malformed-recovery assertions. Independent native decoder comparison passes. Multi-image/metadata/animation preservation is not provided."
+    },
+    {
+      "id": "svg-converter",
+      "name": "SVG Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: svg-converter exports scaled PNG and invalid markup removes stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "background-remover",
+      "name": "Background Remover",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: background-remover honestly removes selected black pixels while preserving white"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "image-upscaler",
+      "name": "Image Upscaler",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: image-upscaler exports a real double-sized raster and discloses its method"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "image-to-pdf",
+      "name": "Image to PDF",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: image-to-pdf creates a readable PDF with actual image page dimensions"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "screenshot-tool",
+      "name": "Screenshot Tool",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: screenshot-tool annotates uploaded pixels and exports PNG rather than pretending capture"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Decode downloaded bytes independently; check format, dimensions, orientation, alpha and known pixel locations; compare visual quality and verify advertised edit.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ai-detector",
+      "name": "AI Detector",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "plagiarism-checker",
+      "name": "Plagiarism Checker",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Dedicated Copyleaks asynchronous integration implemented. Credentials, Atlas and authenticated public webhook acceptance are required; sandbox is not a real similarity check."
+    },
+    {
+      "id": "grammar-checker",
+      "name": "Grammar Checker",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "spell-checker",
+      "name": "Spell Checker",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "paraphrasing-tool",
+      "name": "Paraphrasing Tool",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "article-rewriter",
+      "name": "Article Rewriter",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ai-summarizer",
+      "name": "AI Summarizer",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ai-writer",
+      "name": "AI Writer",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ai-humanizer",
+      "name": "AI Humanizer",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ai-translator",
+      "name": "AI Translator",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ai-email-writer",
+      "name": "AI Email Writer",
+      "priorScopedStatus": "BLOCKED",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "docs/ai-live-results.json: actual configured provider synthetic fixture; public production route still requires Atlas/shared quota acceptance"
+      ],
+      "outputQualityStatus": "BLOCKED",
+      "requiredVerification": "Run real provider, assess task-specific accuracy with reference examples, check hallucinations, invalid inputs, timeouts and repeated calls.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "case-converter",
+      "name": "Case Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: case converter transforms input and clears result on mobile"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "word-counter",
+      "name": "Word Counter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: word-counter: counts and empty reset"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "character-counter",
+      "name": "Character Counter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: character-counter: counts and empty reset"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "sentence-counter",
+      "name": "Sentence Counter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: sentence-counter: counts and empty reset"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "remove-duplicate-lines",
+      "name": "Remove Duplicate Lines",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: remove-duplicate-lines: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "text-sorter",
+      "name": "Text Sorter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: text-sorter: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "text-cleaner",
+      "name": "Text Cleaner",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: text-cleaner: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "lorem-ipsum-generator",
+      "name": "Lorem Ipsum Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: lorem-ipsum-generator: paragraph count and allocation bound"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "random-text-generator",
+      "name": "Random Text Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: random-text-generator: allowed characters and bound"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "remove-extra-spaces",
+      "name": "Remove Extra Spaces",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: remove-extra-spaces: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "reverse-text",
+      "name": "Reverse Text",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: reverse-text: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare exact expected text including Unicode, whitespace, punctuation and empty inputs; independently check statistics.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "json-formatter",
+      "name": "JSON Formatter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: JSON formatter handles valid, invalid and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "json-validator",
+      "name": "JSON Validator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: json-validator: valid scalar and malformed syntax"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "json-minifier",
+      "name": "JSON Minifier",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: json-minifier: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "xml-formatter",
+      "name": "XML Formatter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: xml-formatter processes source and clears stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "xml-validator",
+      "name": "XML Validator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: xml-validator processes source and clears stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "html-formatter",
+      "name": "HTML Formatter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: html-formatter processes source and clears stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "html-minifier",
+      "name": "HTML Minifier",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: html-minifier processes source and clears stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "css-minifier",
+      "name": "CSS Minifier",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: css-minifier processes source and clears stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "javascript-minifier",
+      "name": "JavaScript Minifier",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: javascript-minifier processes source and clears stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "sql-formatter",
+      "name": "SQL Formatter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: sql-formatter processes source and clears stale output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "base64-encoder",
+      "name": "Base64 Encoder",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: base64-encoder: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "base64-decoder",
+      "name": "Base64 Decoder",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: base64-decoder: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "url-encoder",
+      "name": "URL Encoder",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: url-encoder: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "url-decoder",
+      "name": "URL Decoder",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: url-decoder: known output and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "jwt-decoder",
+      "name": "JWT Decoder",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: jwt-decoder: Unicode nested claims retain original values"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "uuid-generator",
+      "name": "UUID Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: uuid-generator: valid unique IDs and bounded quantity"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "hash-generator",
+      "name": "Hash Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: hash-generator: UTF8 digest agrees with independent Node crypto"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "md5-generator",
+      "name": "MD5 Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: md5-generator: UTF8 digest agrees with independent Node crypto"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "sha256-generator",
+      "name": "SHA-256 Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: sha256-generator: UTF8 digest agrees with independent Node crypto"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse output independently, check semantic equivalence and escaping, malformed syntax, Unicode and repeated execution.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "meta-tag-generator",
+      "name": "Meta Tag Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: meta tags escape user HTML and reset clears output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "robots-txt-generator",
+      "name": "Robots.txt Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: robots directives generate a downloadable text file"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "sitemap-generator",
+      "name": "Sitemap Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: sitemap escapes query parameters and rejects mixed origins"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "keyword-density-checker",
+      "name": "Keyword Density Checker",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: density counts words and phrase occurrences"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "serp-preview-tool",
+      "name": "SERP Preview Tool",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: SERP preview displays text without injecting markup"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "open-graph-generator",
+      "name": "Open Graph Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: Open Graph validates URL protocols and escapes properties"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "canonical-tag-generator",
+      "name": "Canonical Tag Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: canonical removes fragments and rejects credentials"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "schema-markup-generator",
+      "name": "Schema Markup Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: schema emits parseable script-safe JSON and product offers"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "website-speed-test",
+      "name": "Website Speed Test",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: website-speed-test: mocked UI query, output and upstream-error recovery",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "broken-link-checker",
+      "name": "Broken Link Checker",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: broken-link-checker: mocked UI query, output and upstream-error recovery",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Parse generated output, validate escaping and schema/protocol syntax, check user values and rendered previews against exports.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: password generation and reset honor selected groups and length"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify known vectors or independently decoded output; check cryptographic randomness, encodings and invalid input.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "password-strength-checker",
+      "name": "Password Strength Checker",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: password checker evaluates locally, supports reveal and clears sensitive output"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify known vectors or independently decoded output; check cryptographic randomness, encodings and invalid input.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ssl-checker",
+      "name": "SSL Checker",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: ssl-checker: mocked UI query, output and upstream-error recovery",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify known vectors or independently decoded output; check cryptographic randomness, encodings and invalid input.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "whois-lookup",
+      "name": "WHOIS Lookup",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: whois-lookup: mocked UI query, output and upstream-error recovery",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify known vectors or independently decoded output; check cryptographic randomness, encodings and invalid input.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "dns-lookup",
+      "name": "DNS Lookup",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: dns-lookup: mocked UI query, output and upstream-error recovery",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify known vectors or independently decoded output; check cryptographic randomness, encodings and invalid input.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "ip-lookup",
+      "name": "IP Lookup",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: ip-lookup: mocked UI query, output and upstream-error recovery",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify known vectors or independently decoded output; check cryptographic randomness, encodings and invalid input.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "email-validator",
+      "name": "Email Validator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: email-validator: mocked UI query, output and upstream-error recovery",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify known vectors or independently decoded output; check cryptographic randomness, encodings and invalid input.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "currency-converter",
+      "name": "Currency Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: currency-converter: mocked exchange rates yield correct cross-rate math and recover after failure",
+        "docs/network-quality-optin-dns-results.json: Explicit opt-in Cloudflare 1.1.1.1"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "length-converter",
+      "name": "Length Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: length-converter exact units and empty/negative inputs"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "weight-converter",
+      "name": "Weight Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: weight-converter exact units and empty/negative inputs"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "area-converter",
+      "name": "Area Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: area and storage conversions distinguish decimal and binary units"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "temperature-converter",
+      "name": "Temperature Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: temperature respects absolute zero and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "time-zone-converter",
+      "name": "Time Zone Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: timezone converts explicit instants through the DST spring gap"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "data-storage-converter",
+      "name": "Data Storage Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: area and storage conversions distinguish decimal and binary units"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "binary-converter",
+      "name": "Binary Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: binary converter uses UTF-8 bytes for Unicode and supports empty text"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "roman-numeral-converter",
+      "name": "Roman Numeral Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: Roman conversion requires a bounded integer"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent unit/encoding reference and round trip, precision, invalid values and boundary conditions.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "age-calculator",
+      "name": "Age Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: age clamps leap anniversaries and handles early years without 1900 offset"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "bmi-calculator",
+      "name": "BMI Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: BMI and percentage reject empty and invalid inputs without fabricated zero"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: BMI and percentage reject empty and invalid inputs without fabricated zero"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "emi-calculator",
+      "name": "EMI Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: emi-calculator zero interest, fractional years and zero tenure"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "loan-calculator",
+      "name": "Loan Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: loan-calculator zero interest, fractional years and zero tenure"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "gst-calculator",
+      "name": "GST Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: gst-calculator inclusive and exclusive tax, zero rate and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "vat-calculator",
+      "name": "VAT Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: vat-calculator inclusive and exclusive tax, zero rate and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "discount-calculator",
+      "name": "Discount Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: discount-calculator: known result and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "profit-calculator",
+      "name": "Profit Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: profit-calculator: known result and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "scientific-calculator",
+      "name": "Scientific Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: scientific operations reject invalid domains without evaluating code"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "date-calculator",
+      "name": "Date Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: date comparison and adjustment use calendar days across DST"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "mortgage-calculator",
+      "name": "Mortgage Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: mortgage-calculator: known result and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "roi-calculator",
+      "name": "ROI Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: roi-calculator: known result and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "tip-calculator",
+      "name": "Tip Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: tip-calculator: known result and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "margin-calculator",
+      "name": "Margin Calculator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: margin-calculator: known result and empty input"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Compare independent reference calculations, units, rounding, zero/negative/decimal/extreme inputs and domain boundaries.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "qr-code-generator",
+      "name": "QR Code Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: qr-code-generator: decode downloaded pristine version-one byte payload"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "barcode-generator",
+      "name": "Barcode Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: barcode-generator: downloaded Code 128 bars decode payload and checksum"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "color-picker",
+      "name": "Color Picker",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: color-picker: exact RGB conversion and invalid-input recovery"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "color-converter",
+      "name": "Color Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: color-converter: exact RGB conversion and invalid-input recovery"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "uuid-generator-util",
+      "name": "UUID Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: uuid-generator-util: valid unique IDs and bounded quantity"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "random-number-generator",
+      "name": "Random Number Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: random numbers validate bounds, produce integers in range, and download"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "random-password-generator",
+      "name": "Random Password Generator",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: random-password-generator: alias honors selected groups and length"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "timestamp-converter",
+      "name": "Timestamp Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: timestamp-converter converts both ways and rejects invalid dates"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "unix-time-converter",
+      "name": "Unix Time Converter",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: unix-time-converter converts both ways and rejects invalid dates"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "coin-flipper",
+      "name": "Coin Flipper",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: coin-flipper: produces a valid outcome and can flip again"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "dice-roller",
+      "name": "Dice Roller",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: dice output contains requested count, bounds, and a correct total"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "stopwatch",
+      "name": "Stopwatch",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: stopwatch pauses, resumes, records laps and resets"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "timer",
+      "name": "Timer",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: countdown validates, pauses, resumes and completes"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "notepad-online",
+      "name": "Notepad Online",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: notepad preserves Unicode notes across reload"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    },
+    {
+      "id": "todo-list-online",
+      "name": "Todo List Online",
+      "priorScopedStatus": "PASS",
+      "priorEvidence": [
+        "docs/browser-test-results.json: all registered tool URLs returned 200 with name and accurate indexing policy",
+        "tests/e2e: tasks persist completion after reload, export and clear completed"
+      ],
+      "outputQualityStatus": "SCOPED_PASS",
+      "requiredVerification": "Verify actual behavior and exported content; check state transitions, time, persistence, random range and repeated/reset operations.",
+      "finding": "Previous scoped tests are evidence only for their assertions; comprehensive behavior and output quality have not been certified."
+    }
+  ]
+}

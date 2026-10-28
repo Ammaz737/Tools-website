@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-22T19:19:06.050Z",
+  "nextVersion": "16.4.2",
+  "loginStatus": 200,
+  "reads": [
+    {
+      "status": 200,
+      "mongoConfigured": true,
+      "toolCount": 137
+    },
+    {
+      "status": 200,
+      "mongoConfigured": true,
+      "toolCount": 137
+    },
+    {
+      "status": 200,
+      "mongoConfigured": true,
+      "toolCount": 137
+    }
+  ],
+  "adminPageStatus": 200,
+  "missingMongoWarning": false,
+  "scope": "Actual authenticated dev server on port3000 after patches; credentials/cookies/raw bodies omitted."
+}

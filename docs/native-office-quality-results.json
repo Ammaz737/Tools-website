@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-10-21T19:28:32.466Z",
+  "scope": "Actual application POST handler and local Gotenberg/LibreOffice. Fixtures cover tables, page images, formulas, multiple sheets and mixed-content slides; visual rendering must be reviewed separately. No Atlas or paid provider calls.",
+  "results": [
+    {
+      "name": "page-images",
+      "status": "PASS",
+      "pages": 2,
+      "pageSizes": [
+        {
+          "width": 419.555905511811,
+          "height": 595.303937007874
+        },
+        {
+          "width": 595.303937007874,
+          "height": 419.555905511811
+        }
+      ],
+      "images": 2,
+      "textByPage": [
+        "",
+        ""
+      ],
+      "durationMs": 9207,
+      "sha256": "0119f529f7008af6f1095b3484581a191afcada027eeaac6c7c93ca75eaa21e7"
+    },
+    {
+      "name": "editable-tables",
+      "status": "PASS",
+      "pages": 2,
+      "pageSizes": [
+        {
+          "width": 419.555905511811,
+          "height": 595.303937007874
+        },
+        {
+          "width": 595.303937007874,
+          "height": 419.555905511811
+        }
+      ],
+      "images": 0,
+      "textByPage": [
+        "Quality fixture page 1  Item 1   125.00 Item 2   250.00 Item 3   375.00 Item 4   500.00  Footer must remain visible",
+        "Quality fixture page 2  Item 1   125.00 Item 2   250.00 Item 3   375.00 Item 4   500.00  Footer must remain visible"
+      ],
+      "durationMs": 1442,
+      "sha256": "3a78df90400e95af8834b0207d49a47d658cd5c01b2f288e6271c85d1b72d824"
+    },
+    {
+      "name": "spreadsheet",
+      "status": "PASS",
+      "pages": 2,
+      "pageSizes": [
+        {
+          "width": 595.303937007874,
+          "height": 841.889763779528
+        },
+        {
+          "width": 595.303937007874,
+          "height": 841.889763779528
+        }
+      ],
+      "images": 0,
+      "textByPage": [
+        "Product   Amount Native alpha   10 Native beta   20 Calculated total   30",
+        "Second sheet survives Native sheet marker"
+      ],
+      "durationMs": 5664,
+      "sha256": "cda315ef85033b471348a88b45afb087ee156ab1595ad998a272984f6cd02c14"
+    },
+    {
+      "name": "mixed-slides",
+      "status": "PASS",
+      "pages": 2,
+      "pageSizes": [
+        {
+          "width": 720,
+          "height": 360
+        },
+        {
+          "width": 720,
+          "height": 360
+        }
+      ],
+      "images": 1,
+      "textByPage": [
+        "Mixed content heading survives  Body text beside graphics",
+        "Native second slide"
+      ],
+      "durationMs": 1877,
+      "sha256": "62aeb606799c36b75d9e5ac4db86933f2bc1d9b1080820121e46a7a05b266852"
+    }
+  ],
+  "sourceHashes": {
+    "lib/server/office-conversion.ts": "e38d43f793538befd4e0a5a622864fc7ec1853c7a4701d876df41a32ad7b8a76",
+    "app/api/convert-office/route.ts": "b4a1f1cdc3ba8fed98b30c0c6bb9d80234673b5c01ae692525ee33e8afa0cad9",
+    "lib/docx-from-text.ts": "2298b5f4c75dd983a6ae6e4f9acad0aa9737c1d7ad44bc805549792e5594ce96",
+    "infra/office-converter/Dockerfile": "0a3575352beb8ac4e25482e3daceedb00edd72093ebd0d81383c463ec2db764b",
+    "infra/office-converter/configure-calc.py": "08af61190e2b39845da0bcd018472c23b6cb62a328bfbe7011f515412cf903e0",
+    "infra/office-converter/compose.yaml": "cc130edbd958d065bfcbd3d729e869c9c481e3d1044dfd3a7a9ec160c5f66965",
+    "infra/office-converter/compose.local.yaml": "d2da6b292f09b5ac6c642dba6cd3ed0132bbc606c2c1633cf30ae70d32ee656d",
+    "package-lock.json": "f63eeea7f8e162965fac2914933ff89764423034ede057bdb9618ee6683e95ad"
+  }
+}

@@ -1,0 +1,859 @@
+{
+  "config": {
+    "argv": [
+      "D:\\Program Files\\nodejs\\node.exe",
+      "D:\\Tools_Site\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/heic-quality.spec.ts",
+      "tests/e2e/ocr-quality.spec.ts",
+      "tests/e2e/deep-output-oracles.spec.ts",
+      "--reporter=list,json"
+    ],
+    "configFile": "D:\\Tools_Site\\playwright.config.ts",
+    "rootDir": "D:/Tools_Site/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Tools_Site/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/Tools_Site/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\Tools_Site\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "D:\\Tools_Site\\tests\\e2e",
+        "snapshotDir": "D:\\Tools_Site\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3100",
+          "channel": "chromium",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start -- --hostname 127.0.0.1 --port 3100",
+      "url": "http://127.0.0.1:3100",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "env": {
+        "MONGODB_URI": "",
+        "ADMIN_PASSWORD": "",
+        "ADMIN_SESSION_SECRET": "",
+        "AI_PROVIDER": "auto",
+        "OPENAI_API_KEY": "",
+        "GEMINI_API_KEY": "",
+        "OLLAMA_BASE_URL": "",
+        "OLLAMA_MODEL": "",
+        "RATE_LIMIT_IP_HEADER": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "deep-output-oracles.spec.ts",
+      "file": "deep-output-oracles.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "qr-code-generator: decode downloaded pristine version-one byte payload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5067,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:12:47.183Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-bddd3947ea80eedd3da1",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 9,
+          "column": 5
+        },
+        {
+          "title": "barcode-generator: downloaded Code 128 bars decode payload and checksum",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2487,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:12:54.791Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-f7e40f213984ec901eb8",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "sitemap-generator: downloaded XML round-trips escaped values and deduplicates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2746,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:12:57.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-e3983de8abd9c78b8501",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 61,
+          "column": 5
+        },
+        {
+          "title": "meta-tag-generator: downloaded HTML restores original Unicode and quotes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2342,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:00.127Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-a83d7b36de3946378144",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 68,
+          "column": 5
+        },
+        {
+          "title": "xml-formatter: namespace mixed text CDATA and entities preserve semantics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2146,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:02.503Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-87db45e61cc50e5f184c",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 74,
+          "column": 5
+        },
+        {
+          "title": "javascript-minifier: trusted fixture preserves template regex and numeric semantics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2461,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:04.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-134fbfa311e50d59ef39",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 80,
+          "column": 5
+        },
+        {
+          "title": "jwt-decoder: Unicode nested claims retain original values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1965,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:07.183Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-3f03cf0249589f088151",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 87,
+          "column": 5
+        },
+        {
+          "title": "hash-generator: UTF8 digest agrees with independent Node crypto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2201,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:09.181Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-c7082513e4edf0702eb4",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 92,
+          "column": 75
+        },
+        {
+          "title": "md5-generator: UTF8 digest agrees with independent Node crypto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2063,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:11.422Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-c50306bf9e0207565731",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 92,
+          "column": 75
+        },
+        {
+          "title": "sha256-generator: UTF8 digest agrees with independent Node crypto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2126,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:13.524Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-4ebc999471ae8c696156",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 92,
+          "column": 75
+        },
+        {
+          "title": "mortgage-calculator: independent amortization recurrence pays principal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1758,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:15.685Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-9137b953c19b472fa68b",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 98,
+          "column": 5
+        },
+        {
+          "title": "css-minifier: browser computed declarations preserve calc and custom properties",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1851,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:17.479Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-e7d6e3f820dc59ffe04f",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 104,
+          "column": 5
+        },
+        {
+          "title": "html-minifier: whitespace-sensitive text and embedded script content survive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1815,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:19.361Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-ef6bcf003725f2ea6e3f",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 110,
+          "column": 5
+        },
+        {
+          "title": "data-storage-converter: bit/byte binary/decimal conversions use physical unit identities",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1888,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:21.215Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-623cf55fd1a96cf6e85a",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "time-zone-converter: autumn repeated hour distinguishes two real instants",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1645,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:23.135Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-ecdce659326f5aac7eab",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 123,
+          "column": 5
+        },
+        {
+          "title": "profit-calculator: loss and zero denominators never invent percentages",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1900,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:24.815Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0d139774c1d238ef168-90bf32e20f62fd1ebd5c",
+          "file": "deep-output-oracles.spec.ts",
+          "line": 129,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "heic-quality.spec.ts",
+      "file": "heic-quality.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "HEIC primary image decodes locally to real JPEG with reference colors",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 60492,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts",
+                        "column": 24,
+                        "line": 9
+                      },
+                      "message": "Error: page.waitForEvent: Test timeout of 60000ms exceeded.\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================\n\n   7 |   await page.locator('input[type=\"file\"]').setInputFiles(\"tests/fixtures/heic/example.heic\");\n   8 |   await expect(page.getByAltText(\"Converted preview\")).toBeVisible({ timeout: 45_000 });\n>  9 |   const pending = page.waitForEvent(\"download\");\n     |                        ^\n  10 |   await page.getByRole(\"button\", { name: \"Download\", exact: true }).click();\n  11 |   const download = await pending;\n  12 |   expect(download.suggestedFilename()).toMatch(/\\.jpg$/);\n    at D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts:9:24"
+                    },
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n\n\n   8 |   await expect(page.getByAltText(\"Converted preview\")).toBeVisible({ timeout: 45_000 });\n   9 |   const pending = page.waitForEvent(\"download\");\n> 10 |   await page.getByRole(\"button\", { name: \"Download\", exact: true }).click();\n     |                                                                     ^\n  11 |   const download = await pending;\n  12 |   expect(download.suggestedFilename()).toMatch(/\\.jpg$/);\n  13 |   const bytes = await readFile((await download.path())!);\n    at D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts:10:69"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:13:26.762Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Tools_Site\\test-results\\heic-quality-HEIC-primary--278e6--JPEG-with-reference-colors\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Tools_Site\\test-results\\heic-quality-HEIC-primary--278e6--JPEG-with-reference-colors\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fbf4d135ba359ad9ba7b-37d90c5deaed11e18955",
+          "file": "heic-quality.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "HEIC malformed input rejects then a valid file recovers",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2870,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected substring: \u001b[32m\"Not a valid HEIC/HEIF\"\u001b[39m\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <p role=\"alert\" class=\"text-xs text-[var(--danger)]\">Not a valid HEIC/HEIF image.</p> aka getByText('Not a valid HEIC/HEIF image.')\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected substring: \u001b[32m\"Not a valid HEIC/HEIF\"\u001b[39m\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <p role=\"alert\" class=\"text-xs text-[var(--danger)]\">Not a valid HEIC/HEIF image.</p> aka getByText('Not a valid HEIC/HEIF image.')\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n    at D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts:33:41",
+                    "location": {
+                      "file": "D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts",
+                      "column": 41,
+                      "line": 33
+                    },
+                    "snippet": "  31 |   await page.goto(\"/tools/heic-to-jpg\");\n  32 |   await page.locator('input[type=\"file\"]').setInputFiles({ name: \"broken.heic\", mimeType: \"image/heic\", buffer: Buffer.from(\"not a HEIC\") });\n> 33 |   await expect(page.getByRole(\"alert\")).toContainText(\"Not a valid HEIC/HEIF\");\n     |                                         ^\n  34 |   await expect(page.getByRole(\"button\", { name: \"Download\", exact: true })).toHaveCount(0);\n  35 |   await page.locator('input[type=\"file\"]').setInputFiles(\"tests/fixtures/heic/example.heic\");\n  36 |   await expect(page.getByAltText(\"Converted preview\")).toBeVisible({ timeout:45_000 });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts",
+                        "column": 41,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected substring: \u001b[32m\"Not a valid HEIC/HEIF\"\u001b[39m\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <p role=\"alert\" class=\"text-xs text-[var(--danger)]\">Not a valid HEIC/HEIF image.</p> aka getByText('Not a valid HEIC/HEIF image.')\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n\n  31 |   await page.goto(\"/tools/heic-to-jpg\");\n  32 |   await page.locator('input[type=\"file\"]').setInputFiles({ name: \"broken.heic\", mimeType: \"image/heic\", buffer: Buffer.from(\"not a HEIC\") });\n> 33 |   await expect(page.getByRole(\"alert\")).toContainText(\"Not a valid HEIC/HEIF\");\n     |                                         ^\n  34 |   await expect(page.getByRole(\"button\", { name: \"Download\", exact: true })).toHaveCount(0);\n  35 |   await page.locator('input[type=\"file\"]').setInputFiles(\"tests/fixtures/heic/example.heic\");\n  36 |   await expect(page.getByAltText(\"Converted preview\")).toBeVisible({ timeout:45_000 });\n    at D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts:33:41"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:14:28.949Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\Tools_Site\\test-results\\heic-quality-HEIC-malforme-ad651--then-a-valid-file-recovers\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\Tools_Site\\test-results\\heic-quality-HEIC-malforme-ad651--then-a-valid-file-recovers\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\Tools_Site\\tests\\e2e\\heic-quality.spec.ts",
+                    "column": 41,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fbf4d135ba359ad9ba7b-29c396120dfab5a8d61e",
+          "file": "heic-quality.spec.ts",
+          "line": 30,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ocr-quality.spec.ts",
+      "file": "ocr-quality.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ocr-pdf reads image-only English pages and preserves searchable page dimensions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12509,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T19:14:34.445Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e89be5da8727970cc5e9-7f757606d7c8da46042f",
+          "file": "ocr-quality.spec.ts",
+          "line": 9,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T19:12:36.808Z",
+    "duration": 131207.257,
+    "expected": 17,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
