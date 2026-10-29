@@ -67,12 +67,17 @@ test("notepad preserves Unicode notes across reload", async ({ page }) => {
   await page.reload(); await expect(input).toHaveValue(note);
 });
 
-test("theme toggles both directions and persists after reload", async ({ page }) => {
-  await page.emulateMedia({ colorScheme: "light" }); await page.goto("/");
-  const button = page.getByRole("button", { name: "Toggle color theme" });
-  await expect(button).toHaveText("Dark mode"); await button.click();
-  await expect(page.locator("html")).toHaveClass(/dark/); await page.reload();
-  await expect(page.locator("html")).toHaveClass(/dark/); await expect(button).toHaveText("Light mode");
-  await button.click(); await expect(page.locator("html")).not.toHaveClass(/dark/); await page.reload();
-  await expect(page.locator("html")).not.toHaveClass(/dark/); await expect(button).toHaveText("Dark mode");
+test("tools menu supports keyboard dismissal and category navigation", async ({ page }) => {
+  await page.goto("/");
+  const menu = page.locator(".nav-menu");
+  const summary = menu.locator("summary");
+  await summary.focus(); await summary.press("Enter");
+  await expect(menu).toHaveAttribute("open", "");
+  await summary.press("Escape");
+  await expect(menu).not.toHaveAttribute("open", "");
+  await expect(summary).toBeFocused();
+  await summary.click();
+  await menu.locator('a[href="/category/text"]').click();
+  await expect(page).toHaveURL(/\/category\/text$/);
+  await expect(menu).not.toHaveAttribute("open", "");
 });

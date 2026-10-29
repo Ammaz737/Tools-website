@@ -203,8 +203,8 @@ export const tools: Tool[] = [
 
   t("meta-tag-generator", "Meta Tag Generator", "seo", "client", "Generate title, meta, OG, and Twitter tags.", ["meta", "seo", "og"]),
   t("robots-txt-generator", "Robots.txt Generator", "seo", "client", "Build a clean robots.txt file.", ["robots", "seo", "txt"]),
-  t("sitemap-generator", "Sitemap Generator", "seo", "server", "Generate a sitemap from URLs or a crawl.", ["sitemap", "seo", "xml"]),
-  t("keyword-density-checker", "Keyword Density Checker", "seo", "server", "Measure keyword density in text or URLs.", ["keyword", "density", "seo"]),
+  t("sitemap-generator", "Sitemap Generator", "seo", "client", "Generate a sitemap from a list of URLs.", ["sitemap", "seo", "xml"]),
+  t("keyword-density-checker", "Keyword Density Checker", "seo", "client", "Measure keyword density in pasted text.", ["keyword", "density", "seo"]),
   t("serp-preview-tool", "SERP Preview Tool", "seo", "client", "Preview how titles and descriptions look in search.", ["serp", "preview", "seo"]),
   t("open-graph-generator", "Open Graph Generator", "seo", "client", "Generate social meta tags and preview cards.", ["open graph", "twitter", "seo"]),
   t("canonical-tag-generator", "Canonical Tag Generator", "seo", "client", "Generate canonical link tags.", ["canonical", "seo", "tag"]),

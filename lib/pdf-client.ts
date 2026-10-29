@@ -1,6 +1,7 @@
 "use client";
 
 import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
+import { pdfRenderScale } from "./pdf-ops";
 
 export async function getPdfjs() {
   const pdfjs = await import("pdfjs-dist");
@@ -11,7 +12,9 @@ export async function getPdfjs() {
   return pdfjs;
 }
 
-export async function loadPdfDocument(data: ArrayBuffer): Promise<PDFDocumentProxy> {
+export async function loadPdfDocument(
+  data: ArrayBuffer,
+): Promise<PDFDocumentProxy> {
   const pdfjs = await getPdfjs();
   // pdf.js transfers the buffer it's given to its worker, detaching it from
   // the caller. Hand it a copy so `data` stays usable for repeat calls or
@@ -59,7 +62,9 @@ export async function extractPdfText(data: ArrayBuffer): Promise<string> {
 }
 
 /** Group pdf.js text items into lines using Y positions for better reading order. */
-export async function extractPdfTextByPage(data: ArrayBuffer): Promise<string[]> {
+export async function extractPdfTextByPage(
+  data: ArrayBuffer,
+): Promise<string[]> {
   const pdf = await loadPdfDocument(data);
   try {
     const pages: string[] = [];
@@ -78,7 +83,10 @@ export async function extractPdfTextByPage(data: ArrayBuffer): Promise<string[]>
 
 async function extractPageTextStructured(page: PDFPageProxy): Promise<string> {
   const content = await page.getTextContent();
-    type Row = { y: number; parts: Array<{ x: number; width: number; text: string }> };
+  type Row = {
+    y: number;
+    parts: Array<{ x: number; width: number; text: string }>;
+  };
   const rows: Row[] = [];
 
   for (const item of content.items) {
@@ -87,14 +95,15 @@ async function extractPageTextStructured(page: PDFPageProxy): Promise<string> {
     if (!transform) continue;
 
     const x = transform[4] as number;
-      const width = "width" in item && typeof item.width === "number" ? item.width : 0;
+    const width =
+      "width" in item && typeof item.width === "number" ? item.width : 0;
     const y = Math.round((transform[5] as number) * 10) / 10;
     const existing = rows.find((row) => Math.abs(row.y - y) < 2.5);
 
     if (existing) {
-        existing.parts.push({ x, width, text: item.str });
+      existing.parts.push({ x, width, text: item.str });
     } else {
-        rows.push({ y, parts: [{ x, width, text: item.str }] });
+      rows.push({ y, parts: [{ x, width, text: item.str }] });
     }
   }
 
@@ -104,11 +113,11 @@ async function extractPageTextStructured(page: PDFPageProxy): Promise<string> {
     .map((row) =>
       row.parts
         .sort((a, b) => a.x - b.x)
-          .map((part, index, parts) => {
-            const previous = parts[index - 1];
-            const gap = previous ? part.x - (previous.x + previous.width) : 0;
-            return `${gap > 2 && previous && !/\s$/.test(previous.text) && !/^\s/.test(part.text) ? " " : ""}${part.text}`;
-          })
+        .map((part, index, parts) => {
+          const previous = parts[index - 1];
+          const gap = previous ? part.x - (previous.x + previous.width) : 0;
+          return `${gap > 2 && previous && !/\s$/.test(previous.text) && !/^\s/.test(part.text) ? " " : ""}${part.text}`;
+        })
         .join("")
         .replace(/\s+/g, " ")
         .trim(),
@@ -126,7 +135,7 @@ export interface RenderedPdfPage {
   heightPts: number;
 }
 
-async function renderLoadedPageToBlob(
+export async function renderLoadedPageToBlob(
   page: PDFPageProxy,
   format: "png" | "jpg",
   scale: number,
@@ -134,8 +143,7 @@ async function renderLoadedPageToBlob(
 ): Promise<Blob> {
   const maxEdge = options?.maxEdgePx ?? 4096;
   const base = page.getViewport({ scale: 1 });
-  const longest = Math.max(base.width, base.height) || 1;
-  const cappedScale = Math.min(scale, maxEdge / longest);
+  const cappedScale = pdfRenderScale(base.width, base.height, scale, maxEdge);
   const viewport = page.getViewport({ scale: cappedScale });
 
   const canvas = document.createElement("canvas");
@@ -158,7 +166,8 @@ async function renderLoadedPageToBlob(
     }).promise;
 
     const mime = format === "jpg" ? "image/jpeg" : "image/png";
-    const quality = format === "jpg" ? (options?.jpegQuality ?? 0.85) : undefined;
+    const quality =
+      format === "jpg" ? (options?.jpegQuality ?? 0.85) : undefined;
 
     const encoded = await new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(
@@ -179,10 +188,12 @@ async function renderLoadedPageToBlob(
       return new Blob([await encoded.arrayBuffer()], { type: mime });
     } catch {
       const data = canvas.toDataURL(mime, quality);
-      if (!data.startsWith(`data:${mime};base64,`)) throw new Error("Failed to export page image");
+      if (!data.startsWith(`data:${mime};base64,`))
+        throw new Error("Failed to export page image");
       const binary = atob(data.slice(data.indexOf(",") + 1));
       const bytes = new Uint8Array(binary.length);
-      for (let index = 0; index < binary.length; index++) bytes[index] = binary.charCodeAt(index);
+      for (let index = 0; index < binary.length; index++)
+        bytes[index] = binary.charCodeAt(index);
       return new Blob([bytes], { type: mime });
     }
   } finally {
@@ -388,8 +399,13 @@ export async function renderFirstPdfPages(
   }
 }
 
-export type ReconstructedPdfPage = import("./pdf-layout").PdfPageLayout & { widthPts: number; heightPts: number };
-export async function extractPdfLayoutPages(data: ArrayBuffer): Promise<ReconstructedPdfPage[]> {
+export type ReconstructedPdfPage = import("./pdf-layout").PdfPageLayout & {
+  widthPts: number;
+  heightPts: number;
+};
+export async function extractPdfLayoutPages(
+  data: ArrayBuffer,
+): Promise<ReconstructedPdfPage[]> {
   const { extractPdfLayout } = await import("./pdf-layout");
   const pdf = await loadPdfDocument(data);
   try {
@@ -398,13 +414,36 @@ export async function extractPdfLayoutPages(data: ArrayBuffer): Promise<Reconstr
       const page = await pdf.getPage(number);
       try {
         const content = await page.getTextContent();
-        const items = content.items.flatMap(item => "str" in item && item.str.length > 0 ? [{ str: item.str, width: item.width, transform: item.transform, fontName: item.fontName, height: item.height }] : []);
+        const items = content.items.flatMap((item) =>
+          "str" in item && item.str.length > 0
+            ? [
+                {
+                  str: item.str,
+                  width: item.width,
+                  transform: item.transform,
+                  fontName: item.fontName,
+                  height: item.height,
+                },
+              ]
+            : [],
+        );
         const layout = extractPdfLayout(items);
-        if (layout.warnings.length) throw new Error("This PDF has text geometry that cannot be reconstructed reliably. Use page-image mode to preserve its appearance.");
+        if (layout.warnings.length)
+          throw new Error(
+            "This PDF has text geometry that cannot be reconstructed reliably. Use page-image mode to preserve its appearance.",
+          );
         const viewport = page.getViewport({ scale: 1 });
-        pages.push({ ...layout, widthPts: viewport.width, heightPts: viewport.height });
-      } finally { releasePdfPage(page); }
+        pages.push({
+          ...layout,
+          widthPts: viewport.width,
+          heightPts: viewport.height,
+        });
+      } finally {
+        releasePdfPage(page);
+      }
     }
     return pages;
-  } finally { await releasePdfDocument(pdf); }
+  } finally {
+    await releasePdfDocument(pdf);
+  }
 }

@@ -132,14 +132,16 @@ test("all PDF routes reject malformed bytes before preview or processing", async
     await expect(page.getByRole("button", { name: "Download", exact: true })).toHaveCount(0);
   }
 });
-test("PDF uploads enforce page and byte budgets", async ({ page }) => {
+test("PDF uploads accept long documents and enforce the displayed byte limit", async ({ page }) => {
   await page.goto("/tools/split-pdf"); await upload(page, await pdfFixture(51));
-  await expect(page.locator('[role="alert"]:not(#__next-route-announcer__)')).toContainText("50-page");
-  // Select a real oversized file rather than serializing 41MB through CDP.
+  await page.getByLabel("Page range", { exact: true }).fill("1-51");
+  await page.getByRole("button", { name: "Extract pages", exact: true }).click();
+  expect((await PDFDocument.load(await output(page))).getPageCount()).toBe(51);
+  // Select a sparse file rather than serializing 101MB through CDP.
   await mkdir(test.info().outputDir, { recursive: true });
   const oversizedPath = test.info().outputPath("oversized.pdf");
   const oversized = await open(oversizedPath, "w");
-  try { await oversized.truncate(41 * 1024 * 1024); } finally { await oversized.close(); }
+  try { await oversized.truncate(101 * 1024 * 1024); } finally { await oversized.close(); }
   await page.locator('input[type="file"]').first().setInputFiles(oversizedPath);
-  await expect(page.getByText(/too large|40MB|40 MB/i).first()).toBeVisible();
+  await expect(page.getByText(/too large|100MB|100 MB/i).first()).toBeVisible();
 });

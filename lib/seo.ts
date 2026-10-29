@@ -22,7 +22,7 @@ export function isToolIndexable(tool: Tool): boolean {
     ((provider === "auto" || provider === "ollama") && Boolean(process.env.OLLAMA_BASE_URL?.trim() && process.env.OLLAMA_MODEL?.trim()));
 }
 
-const siteName = "Quiet Workshop Tools";
+const siteName = "ALETOOL";
 const siteDescription =
   "137 free online tools: merge, split, and compress PDFs, convert images, check AI writing, calculate loans, and more. No signup, no watermark. Most tools run in your browser.";
 
@@ -61,6 +61,7 @@ export function buildSiteMetadata(): Metadata {
     "PDF, image, AI, text, developer, SEO, security, converter, calculator & utility tools.",
   );
   return {
+    applicationName: siteName,
     metadataBase: new URL(siteOrigin()),
     title: {
       default: `${siteName} — 137 Free Online Tools, No Signup`,

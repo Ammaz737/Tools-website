@@ -97,7 +97,7 @@ const knownLimitations: Record<string, string> = {
   "pdf-to-word": "Page-image mode is not editable; horizontal text and detected tables reconstructed in editable mode, with original graphics/styles/complex layouts unsupported.",
   "pdf-to-excel": "Horizontal aligned tables reconstructed as text cells; formulas, source graphics/styles and arbitrary complex layouts unsupported.",
   "pdf-to-powerpoint": "Raster page images; output is not editable slide content.",
-  "compress-pdf": "Raster compression can remove selectable text.",
+  "compress-pdf": "Default mode preserves text, links and page geometry while optimizing eligible embedded JPEGs. Optional Flatten pages removes selectable text/links. Other image encodings are retained and may not shrink; output is never larger than input.",
   "plagiarism-checker": "Dedicated Copyleaks integration requires credentials, authenticated HTTPS webhook, Atlas and live acceptance; sandbox scores are not real checks.",
 };
 const matrixPath = path.resolve(root, "docs/tool-test-matrix.json");

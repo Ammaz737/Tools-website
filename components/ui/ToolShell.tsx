@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { Tool, getRelatedTools } from "@/lib/tools";
+import { getToolAccent, getToolIcon } from "@/components/tool-cards/toolIcon";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { Badge } from "./Badge";
 import { Card } from "./Card";
-import { AdSlot } from "@/components/layout/AdSlot";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { ToolUsageBadge } from "@/components/tools/ToolUsageBadge";
 import { ShieldCheck, Cpu, Zap, Lock } from "lucide-react";
@@ -39,18 +39,24 @@ export const ToolShell: React.FC<ToolShellProps> = ({
   relatedTools,
 }) => {
   const related = relatedTools ?? getRelatedTools(tool);
+  const Icon = getToolIcon(tool);
+  const accent = getToolAccent(tool);
 
-  const trustNotice =
-    ["word-to-pdf", "excel-to-pdf", "powerpoint-to-pdf"].includes(tool.id)
-      ? "Browser conversion stays on this device. Choosing the server option uploads your document."
-      : tool.runtime === "client"
+  const trustNotice = [
+    "word-to-pdf",
+    "excel-to-pdf",
+    "powerpoint-to-pdf",
+  ].includes(tool.id)
+    ? "Browser conversion stays on this device. Choosing the server option uploads your document."
+    : tool.runtime === "client"
       ? "Your input stays on this device for this operation."
       : "Your input is sent to complete this request. Avoid submitting sensitive information.";
 
   const defaultSteps: ToolStep[] = steps || [
     {
       title: "Select or input data",
-      description: "Upload your files or paste your text into the workspace above.",
+      description:
+        "Upload your files or paste your text into the workspace above.",
     },
     {
       title: "Adjust settings (optional)",
@@ -58,7 +64,8 @@ export const ToolShell: React.FC<ToolShellProps> = ({
     },
     {
       title: "Get instant result",
-      description: "Download the generated output file or copy the result to your clipboard.",
+      description:
+        "Download the generated output file or copy the result to your clipboard.",
     },
   ];
 
@@ -73,12 +80,13 @@ export const ToolShell: React.FC<ToolShellProps> = ({
     },
     {
       question: "Does this work on mobile devices?",
-      answer: "Yes, every tool in our workshop is optimized for smartphones, tablets, and desktop computers.",
+      answer:
+        "Yes, every tool in our workshop is optimized for smartphones, tablets, and desktop computers.",
     },
   ];
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -90,7 +98,13 @@ export const ToolShell: React.FC<ToolShellProps> = ({
       />
 
       {/* Tool Header — centered, like a SmallPDF tool page */}
-      <header className="mx-auto mt-6 max-w-3xl text-center">
+      <header className="tool-page-heading mx-auto mt-7 max-w-3xl text-center">
+        <span
+          className="tool-page-icon mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg shadow-sm"
+          style={{ backgroundColor: accent, color: "white" }}
+        >
+          <Icon className="h-8 w-8" aria-hidden="true" strokeWidth={1.7} />
+        </span>
         <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
           <Badge variant="accent">{tool.category}</Badge>
           <ToolUsageBadge
@@ -100,7 +114,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           />
         </div>
 
-        <h1 className="text-4xl font-bold tracking-tight text-[var(--ink)] sm:text-5xl">
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--ink)] sm:text-[42px]">
           {tool.name}
         </h1>
 
@@ -125,18 +139,13 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         </div>
       </header>
 
-      {/* Ad Slot Top */}
-      <div className="mt-8">
-        <AdSlot label="Ad slot: tool top" />
-      </div>
-
       {/* Main Workspace Surface */}
-      <main className="mt-8">{children}</main>
-
-      {/* Ad Slot Middle */}
-      <div className="mt-10">
-        <AdSlot label="Ad slot: tool middle" />
-      </div>
+      <section
+        aria-label={`${tool.name} workspace`}
+        className="tool-workspace mx-auto mt-7 max-w-5xl rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_8px_40px_-20px_rgba(15,32,64,0.18)] sm:p-6 lg:p-8"
+      >
+        {children}
+      </section>
 
       {/* Info & FAQ Grid */}
       <section className="mt-14 grid gap-8 lg:grid-cols-2">
@@ -153,15 +162,22 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           <div className="mt-6 space-y-3">
             <div className="flex items-start gap-3 text-xs text-[var(--ink-soft)]">
               <Zap className="w-4 h-4 text-[var(--accent)] shrink-0 mt-0.5" />
-              <span>Adjust the options and review your result before downloading.</span>
+              <span>
+                Adjust the options and review your result before downloading.
+              </span>
             </div>
             <div className="flex items-start gap-3 text-xs text-[var(--ink-soft)]">
               <Lock className="w-4 h-4 text-[var(--success)] shrink-0 mt-0.5" />
-              <span>See our privacy policy for input handling and usage information.</span>
+              <span>
+                See our privacy policy for input handling and usage information.
+              </span>
             </div>
             <div className="flex items-start gap-3 text-xs text-[var(--ink-soft)]">
               <Cpu className="w-4 h-4 text-[var(--focus)] shrink-0 mt-0.5" />
-              <span>Use a modern browser. Availability and performance depend on your device and the selected tool.</span>
+              <span>
+                Use a modern browser. Availability and performance depend on
+                your device and the selected tool.
+              </span>
             </div>
           </div>
         </Card>
@@ -231,7 +247,8 @@ export const ToolShell: React.FC<ToolShellProps> = ({
                 key={relTool.id}
                 tool={relTool}
                 usageCount={
-                  "usageCount" in relTool && typeof relTool.usageCount === "number"
+                  "usageCount" in relTool &&
+                  typeof relTool.usageCount === "number"
                     ? relTool.usageCount
                     : undefined
                 }

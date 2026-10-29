@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { Download, Images } from "lucide-react";
 import {
   Dropzone as BaseDropzone,
   ResultPanel,
@@ -24,6 +25,10 @@ import {
   toObjectUrl,
   toPdfBlob,
   validatePdfBytes,
+  PDF_FILE_LIMIT_MB,
+  PDF_COMPRESS_LIMIT_MB,
+  PDF_BATCH_LIMIT_MB,
+  PDF_BATCH_FILES,
 } from "@/lib/pdf-ops";
 import {
   buildPdfPreviewUrls,
@@ -35,14 +40,15 @@ import {
 function Dropzone(props: React.ComponentProps<typeof BaseDropzone>) {
   const [validationError, setValidationError] = useState<string | null>(null);
   const revision = useRef(0);
-  return <div className="space-y-2"><BaseDropzone {...props} maxSizeMB={40} onFilesChange={(next) => {
+  const maximum = Number.isFinite(props.maxSizeMB) && (props.maxSizeMB ?? 0) > 0 ? props.maxSizeMB! : PDF_FILE_LIMIT_MB;
+  return <div className="space-y-2"><BaseDropzone {...props} maxSizeMB={maximum} onFilesChange={(next) => {
     const current = ++revision.current;
     setValidationError(null);
     if (!next.length) { props.onFilesChange([]); return; }
     void (async () => {
       try {
-        if (next.length > 10 || next.reduce((sum, file) => sum + file.size, 0) > 80 * 1024 * 1024) throw new Error("Use up to 10 PDFs with a combined size up to 80 MB.");
-        for (const file of next) await validatePdfBytes(await file.arrayBuffer());
+        if (next.length > PDF_BATCH_FILES || (next.length > 1 && next.reduce((sum, file) => sum + file.size, 0) > PDF_BATCH_LIMIT_MB * 1024 * 1024)) throw new Error(`Choose up to ${PDF_BATCH_FILES} PDFs with a combined size up to ${PDF_BATCH_LIMIT_MB} MB.`);
+        for (const file of next) await validatePdfBytes(await file.arrayBuffer(), { maxSizeMB: maximum });
         if (current === revision.current) props.onFilesChange(next);
       } catch (error) { if (current === revision.current) { props.onFilesChange([]); setValidationError(friendlyPdfError(error)); } }
     })();
@@ -231,7 +237,6 @@ export const MergePdfTool: React.FC = () => {
       for (const file of files) {
         const bytes = await file.arrayBuffer();
         const src = await PDFDocument.load(bytes, { ignoreEncryption: true });
-        if (merged.getPageCount() + src.getPageCount() > 50) throw new Error("Merged output exceeds the 50-page processing limit.");
         const pages = await merged.copyPages(src, src.getPageIndices());
         pages.forEach((page) => merged.addPage(page));
       }
@@ -1504,7 +1509,7 @@ export const PdfToImageTool: React.FC<{ lockedFormat?: "png" | "jpg" }> = ({
         accept="application/pdf,.pdf"
         multiple={false}
         maxSizeMB={Infinity}
-        hint={`Upload a PDF to render pages as ${activeFormat.toUpperCase()} images — up to 40 MB and 50 pages`}
+        hint={`Upload a PDF up to ${PDF_FILE_LIMIT_MB} MB. Every page is included in your ${activeFormat.toUpperCase()} download.`}
       />
       {file && (
         <div className="space-y-4">
@@ -1512,7 +1517,8 @@ export const PdfToImageTool: React.FC<{ lockedFormat?: "png" | "jpg" }> = ({
             <Select
               label="Output format"
               value={format}
-              onChange={(e) => setFormat(e.target.value as "png" | "jpg")}
+              onChange={(e) => { setFormat(e.target.value as "png" | "jpg"); clearImages(); }}
+              disabled={processing}
               options={[
                 { value: "png", label: "PNG (lossless, more memory)" },
                 { value: "jpg", label: "JPG (smaller, recommended for big PDFs)" },
@@ -1522,14 +1528,15 @@ export const PdfToImageTool: React.FC<{ lockedFormat?: "png" | "jpg" }> = ({
           <Select
             label="Render quality"
             value={String(scale)}
-            onChange={(e) => setScale(Number(e.target.value))}
+            onChange={(e) => { setScale(Number(e.target.value)); clearImages(); }}
+            disabled={processing}
             options={[
               { value: "1", label: "Draft (1×) — best for large PDFs" },
               { value: "2", label: "Standard (2×)" },
               { value: "3", label: "High (3×)" },
             ]}
           />
-          <Button variant="primary" onClick={handleConvert} loading={processing}>
+          <Button variant="primary" onClick={handleConvert} loading={processing} leftIcon={<Images className="h-4 w-4" />}>
             Convert PDF pages
           </Button>
           {processing && <ProgressBar value={progress} label={`${progress}%`} />}
@@ -1557,22 +1564,23 @@ export const PdfToImageTool: React.FC<{ lockedFormat?: "png" | "jpg" }> = ({
                     Preview {images.length} of {pageCount} pages · full set in download
                   </p>
                 )}
-                <div className="flex flex-wrap justify-center gap-3">
-                  {images.map((img) => (
+                <div className={`grid gap-4 ${images.length === 1 ? "mx-auto max-w-lg" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
+                  {images.map((img, index) => (
                     <a
                       key={img.name}
                       href={img.url}
                       download={img.name}
-                      className="block overflow-hidden rounded-[10px] border border-[var(--line)] transition-opacity hover:opacity-90"
+                      className="group block min-w-0 overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface-sunk)] transition-colors hover:border-[var(--accent)] focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={img.url}
                         alt={img.name}
-                        className="h-40 w-auto bg-[var(--surface-sunk)] object-contain"
+                        className={`w-full bg-white object-contain ${images.length === 1 ? "max-h-[620px]" : "h-72"}`}
                       />
-                      <span className="block px-2 py-1 text-center font-mono text-[10px] text-[var(--ink-soft)]">
-                        {img.name}
+                      <span className="flex items-center justify-between gap-3 border-t border-[var(--line)] bg-white px-3 py-3 text-xs text-[var(--ink-soft)]">
+                        <span className="min-w-0"><span className="block font-semibold text-[var(--ink)]">Page {index + 1}</span><span className="mt-1 block truncate" title={img.name}>{img.name}</span></span>
+                        <Download aria-hidden="true" className="h-4 w-4 shrink-0 text-[var(--accent)]" />
                       </span>
                     </a>
                   ))}
@@ -1591,6 +1599,7 @@ export const PdfToImageTool: React.FC<{ lockedFormat?: "png" | "jpg" }> = ({
 export const CompressPdfTool: React.FC = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [level, setLevel] = useState<"high" | "medium" | "low">("medium");
+  const [mode, setMode] = useState<"preserve" | "flatten">("preserve");
   const [outputUrl, setOutputUrl] = useObjectUrlState();
   const preview = usePdfPreviewUrls();
   const [newSize, setNewSize] = useState<number | null>(null);
@@ -1622,73 +1631,8 @@ export const CompressPdfTool: React.FC = () => {
     setProgress(0);
 
     try {
-      const settings = {
-        high: { scale: 1.5, quality: 0.82 },
-        medium: { scale: 1.15, quality: 0.68 },
-        low: { scale: 0.9, quality: 0.52 },
-      }[level];
-
-      const { loadPdfDocument } = await import("@/lib/pdf-client");
-      const bytes = await file.arrayBuffer();
-      const src = await loadPdfDocument(bytes);
-      const out = await PDFDocument.create();
-
-      for (let i = 1; i <= src.numPages; i += 1) {
-        const page = await src.getPage(i);
-        const viewport = page.getViewport({ scale: settings.scale });
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        if (!ctx) throw new Error("Could not create canvas");
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        await page.render({ canvasContext: ctx, viewport, canvas }).promise;
-
-        const jpegBlob: Blob = await new Promise((resolve, reject) => {
-          canvas.toBlob(
-            (blob) => (blob ? resolve(blob) : reject(new Error("JPEG encode failed"))),
-            "image/jpeg",
-            settings.quality,
-          );
-        });
-
-        const jpg = await out.embedJpg(await jpegBlob.arrayBuffer());
-        const pdfPage = out.addPage([jpg.width, jpg.height]);
-        pdfPage.drawImage(jpg, {
-          x: 0,
-          y: 0,
-          width: jpg.width,
-          height: jpg.height,
-        });
-        setProgress(Math.round((i / src.numPages) * 100));
-      }
-
-      let finalBytes: Uint8Array = await out.save({ useObjectStreams: true });
-      let finalMethod: "image" | "lossless" | "original" = "image";
-
-      // Rasterizing can bloat already-efficient, mostly-text PDFs. Never ship
-      // a "compressed" file that's larger than the original.
-      if (finalBytes.byteLength >= file.size) {
-        const lossless = await PDFDocument.load(bytes, { ignoreEncryption: true });
-        lossless.setTitle("");
-        lossless.setAuthor("");
-        lossless.setSubject("");
-        lossless.setKeywords([]);
-        lossless.setProducer("");
-        lossless.setCreator("");
-        const losslessBytes = await lossless.save({ useObjectStreams: true });
-
-        if (losslessBytes.byteLength < finalBytes.byteLength) {
-          finalBytes = losslessBytes;
-          finalMethod = "lossless";
-        }
-
-        if (finalBytes.byteLength >= file.size) {
-          finalBytes = new Uint8Array(bytes);
-          finalMethod = "original";
-        }
-      }
+      const { compressPdfDocument } = await import("@/lib/pdf-compress");
+      const { bytes: finalBytes, method: finalMethod } = await compressPdfDocument(await file.arrayBuffer(), level, mode, setProgress);
 
       const blob = toPdfBlob(finalBytes);
       setNewSize(blob.size);
@@ -1710,9 +1654,9 @@ export const CompressPdfTool: React.FC = () => {
   return (
     <div className="space-y-6">
       <PrivacyNote>
-        Compression re-encodes each page as a JPEG and rebuilds the PDF in your
-        browser, so text becomes non-selectable. If that would make the file
-        larger (common for text-heavy PDFs), a lossless fallback is used instead.
+        Keep text selectable optimizes embedded JPEG images while preserving
+        page sizes, text and links. Choose Flatten pages only for an image-only
+        copy. Your download is never larger than the original.
       </PrivacyNote>
       <Dropzone
         files={files}
@@ -1725,14 +1669,26 @@ export const CompressPdfTool: React.FC = () => {
         }}
         accept="application/pdf,.pdf"
         multiple={false}
-        hint="Upload a PDF to reduce file size"
+        maxSizeMB={PDF_COMPRESS_LIMIT_MB}
+        hint={`Choose a PDF up to ${PDF_COMPRESS_LIMIT_MB} MB. Long documents are processed without a total page-area limit.`}
       />
       {file && (
         <div className="space-y-4">
           <Select
+            label="Compression mode"
+            value={mode}
+            disabled={processing}
+            onChange={(event) => { setMode(event.target.value as typeof mode); setOutputUrl(null); preview.clear(); }}
+            options={[
+              { value: "preserve", label: "Keep text selectable (recommended)" },
+              { value: "flatten", label: "Flatten pages (removes selectable text and links)" },
+            ]}
+          />
+          <Select
             label="Compression level"
             value={level}
-            onChange={(e) => setLevel(e.target.value as typeof level)}
+            disabled={processing}
+            onChange={(e) => { setLevel(e.target.value as typeof level); setOutputUrl(null); preview.clear(); }}
             options={[
               { value: "high", label: "High quality (lighter shrink)" },
               { value: "medium", label: "Balanced" },
@@ -1756,7 +1712,7 @@ export const CompressPdfTool: React.FC = () => {
               onClear={reset}
             >
               <SuccessBody
-                label="PDF compressed"
+                label={method === "original" ? "Original retained" : "PDF ready"}
                 detail={
                   <div className="space-y-2">
                     <span className="block font-mono">
@@ -1765,12 +1721,12 @@ export const CompressPdfTool: React.FC = () => {
                     </span>
                     {method === "lossless" && (
                       <span className="block text-[var(--ink-faint)]">
-                        This PDF was already efficient — text stayed selectable and only metadata was stripped.
+                        Lossless optimization kept text, links and page layout intact.
                       </span>
                     )}
                     {method === "original" && (
                       <span className="block text-[var(--ink-faint)]">
-                        This PDF is already about as small as it can get — the original was kept unchanged.
+                        These settings did not produce a smaller file, so the original was kept unchanged. For scans, try Flatten pages if you do not need selectable text or links.
                       </span>
                     )}
                   </div>

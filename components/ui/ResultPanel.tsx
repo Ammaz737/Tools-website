@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Download, RefreshCw, Trash2 } from "lucide-react";
+import { CheckCircle2, Download, FileCheck2, RefreshCw, Trash2 } from "lucide-react";
 import { Button } from "./Button";
 import { CopyButton } from "./CopyButton";
 import { Badge } from "./Badge";
@@ -48,18 +48,22 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({
       const a = document.createElement("a");
       a.href = downloadBlobUrl;
       a.download = downloadFileName;
+      document.body.appendChild(a);
       a.click();
+      a.remove();
     }
   };
 
   return (
     <div
-      className={`rounded-[14px] border border-[var(--line)] bg-[var(--surface)] shadow-xs overflow-hidden flex flex-col ${className}`}
+      aria-label={title}
+      className={`result-panel min-w-0 rounded-[14px] border border-[var(--line)] bg-[var(--surface)] shadow-xs overflow-hidden flex flex-col ${className}`}
     >
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--line)] bg-[var(--surface-sunk)]/60">
-        <div className="flex items-center gap-2.5">
-          <span className="font-semibold text-xs uppercase tracking-wider text-[var(--ink-soft)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-b border-[var(--line)] bg-[var(--surface-sunk)]/60">
+        <div className="flex min-w-0 flex-wrap items-center gap-2.5">
+          {status === "done" && <CheckCircle2 aria-hidden="true" className="h-4 w-4 shrink-0 text-[var(--success)]" />}
+          <span className="font-semibold text-sm text-[var(--ink)]">
             {title}
           </span>
           {statusBadge}
@@ -95,13 +99,14 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({
       </div>
 
       {/* Body */}
-      <div className="p-4 flex-1 overflow-auto min-h-[160px] bg-[var(--surface)] text-[var(--ink)]">
+      <div className="result-content p-4 sm:p-5 flex-1 overflow-auto min-h-[160px] bg-[var(--surface)] text-[var(--ink)]">
         {children}
       </div>
 
       {/* Footer Actions */}
-      {(copyValue || downloadBlobUrl || onDownload) && (
-        <div className="flex flex-wrap items-center justify-end gap-2.5 px-4 py-3 border-t border-[var(--line)] bg-[var(--surface-sunk)]/30">
+      {(copyValue !== undefined || downloadBlobUrl || onDownload) && (
+        <div className="flex flex-wrap items-center justify-end gap-3 px-4 py-4 border-t border-[var(--line)] bg-[var(--surface-sunk)]/30">
+          {downloadFileName && <div className="mr-auto flex min-w-0 max-w-full items-center gap-2 text-xs text-[var(--ink-soft)]"><FileCheck2 aria-hidden="true" className="h-4 w-4 shrink-0 text-[var(--success)]" /><span className="break-all">{downloadFileName}</span></div>}
           {copyValue !== undefined && (
             <CopyButton value={copyValue} size="sm" variant="secondary" />
           )}
@@ -109,11 +114,13 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({
           {(downloadBlobUrl || onDownload) && (
             <Button
               variant="primary"
-              size="sm"
+              size="md"
               onClick={handleDownloadClick}
+              aria-label="Download"
+              disabled={status === "processing" || status === "error"}
               leftIcon={<Download className="w-4 h-4" />}
             >
-              Download
+              {downloadFileName?.includes(".") ? `Download ${downloadFileName.split(".").pop()?.toUpperCase()}` : "Download"}
             </Button>
           )}
         </div>

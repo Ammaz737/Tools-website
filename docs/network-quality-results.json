@@ -1,57 +1,77 @@
 {
+  "sourceHashes": {
+    "package-lock.json": "ab1f82780a07cd661d76f4cb2821a01aab2919b17c417212bd4ac1fab2d4bdbb",
+    "app/api/crawl/route.ts": "ccd7b62701d55f61b97a51be1c732446f7de8818e740aca75f054f6f6690ea65",
+    "app/api/dns/route.ts": "05fd9e69c530cb3d67e30f49ec501cd42ec7e5c5b4ff7e6f68085fc944fb7036",
+    "app/api/email-check/route.ts": "7c5689a65e52cd1b533826409950de71b460a9a65d02d793107e3d67234d45b3",
+    "app/api/ssl/route.ts": "a89b46589558c79dad296b128b8ac956cf67bffe274424f87d333af930d1800b",
+    "app/api/whois/route.ts": "2ffa49a53ba6e22aefefa06b8f2220dd792bb4beb22b86eb290297f9022fb1f1",
+    "app/api/ip/route.ts": "058263dbad6ce0dd5263d1d33164ff93faface0a7f6f76e062e5c16ceb279c05",
+    "app/api/rates/route.ts": "1a8e6f673213ee9fb59c15cb173ed432a094cfd474c9569ca75ab5ee3f6f4042",
+    "lib/server/safe-request.ts": "5a9dc5cfa7e9fd725059951f7224ec2f1b31bd34a930b0cb710a2753ce8b7d9b",
+    "lib/server/ssrf.ts": "9ff0104bce2cdd6860898c6249bbfc583dadb86346fd80dd42114d09ef1dbabf",
+    "lib/server/html-links.ts": "c3e9e48bbf39466906393db612f2c24eb075a7db47f8e303baeded0da20f4ec8",
+    "lib/server/dns-resolver.ts": "43e23b20436d44f4f6986f7f91b6c514be63a28add6cfb8f1578f4c06fcad365",
+    "lib/server/rate-limit.ts": "976396e8335427bebed7123e91eb48af4a6c45666df14d75b41e2ad8bc8965f5",
+    "lib/server/tool-access.ts": "b11933615ce3a45df7a77ae5173a43de62310612904683cc4aee0a5ee778e497",
+    "lib/server/cache.ts": "f30b3553b28ec5aacc53274d8baac70c299314ec4a10029ce5f69cdc19129640",
+    "lib/tool-status.ts": "85cff3ab842e41b1e2af18edba02eee4d6d2f248193212531b9404ceebc2c627",
+    "lib/db.ts": "d3bc46db3896fa925e34f950f1025cb36ffe06d4f93aca2269bc574446bda3cd",
+    "lib/tools.ts": "3f80fff311383a5202a1cbc848c1c1c3312dc505f820dfa90db78b7f5296826a"
+  },
   "dnsMode": "System resolver (no override)",
-  "checkedAt": "2026-10-15T19:10:01.288Z",
+  "checkedAt": "2026-10-29T13:48:05.093Z",
   "scope": "Actual production GET handlers with live read-only public requests; defaults only, no Atlas connection. A pass covers these targets and invariants, not UI behavior or exhaustive provider accuracy.",
   "results": [
     {
       "id": "website-speed-test",
       "status": "PASS",
       "httpStatus": 200,
-      "durationMs": 282
+      "durationMs": 208
     },
     {
       "id": "broken-link-checker",
       "status": "PASS",
       "httpStatus": 200,
-      "durationMs": 515
+      "durationMs": 4580
     },
     {
       "id": "dns-lookup",
       "status": "BLOCKED",
       "httpStatus": 500,
-      "durationMs": 102,
+      "durationMs": 66,
       "error": "DNS service could not complete the lookup"
     },
     {
       "id": "email-validator",
       "status": "BLOCKED",
       "httpStatus": 502,
-      "durationMs": 101,
+      "durationMs": 65,
       "error": "Mail routing lookup unavailable or timed out"
     },
     {
       "id": "ssl-checker",
       "status": "PASS",
       "httpStatus": 200,
-      "durationMs": 154
+      "durationMs": 176
     },
     {
       "id": "whois-lookup",
       "status": "PASS",
       "httpStatus": 200,
-      "durationMs": 693
+      "durationMs": 1119
     },
     {
       "id": "ip-lookup",
       "status": "PASS",
       "httpStatus": 200,
-      "durationMs": 598
+      "durationMs": 1123
     },
     {
       "id": "currency-converter",
       "status": "PASS",
       "httpStatus": 200,
-      "durationMs": 279
+      "durationMs": 291
     }
   ]
 }

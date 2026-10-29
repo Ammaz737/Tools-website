@@ -181,7 +181,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
   },
   "compress-pdf": {
     aboutText:
-      "Compress PDF shrinks file size by re-rendering pages at a lower image quality. If a file is already efficient, the tool automatically falls back to a lossless pass so the result is never larger than what you started with.",
+      "Compress PDF optimizes embedded JPEG images and PDF structure in your browser while keeping text, links and page sizes intact. An optional Flatten pages mode creates an image-only copy. Files up to 200 MB are accepted; processing depends on your device's memory, and the output is never larger than the original.",
     steps: [
       { title: "Upload a PDF", description: "Check the original file size shown after upload." },
       { title: "Pick a compression level", description: "Balanced works for most files; Smallest file trades more quality for size." },
@@ -189,7 +189,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
     ],
     faqs: [
       { question: "Is Compress PDF free to use?", answer: "Yes, Compress PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
-      { question: "Will text stay selectable?", answer: "Rasterized compression flattens each page to an image, so text stops being selectable. Skip compression if you need to keep text selectable." },
+      { question: "Will text stay selectable?", answer: "Yes, the recommended Keep text selectable mode preserves text and links. The optional Flatten pages mode converts pages to images and removes selectable text and interactive links." },
       { question: "What if the file doesn't shrink?", answer: "For text-heavy PDFs that are already small, the tool falls back to a lossless optimization pass instead of producing a larger file." },
     ],
   },

@@ -316,7 +316,8 @@ export const OfficeConverterTool: React.FC<{
         }}
         multiple={false}
         accept={accept}
-        hint={hint}
+        maxSizeMB={40}
+        hint={`${hint} Maximum file size: 40 MB.`}
       />
 
       {file && (

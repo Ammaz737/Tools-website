@@ -1,0 +1,972 @@
+{
+  "counts": {
+    "total": 137,
+    "clientDefault": 118,
+    "serverDependent": 19,
+    "pureClient": 115,
+    "hybrid": 3
+  },
+  "sourceHash": "3f80fff311383a5202a1cbc848c1c1c3312dc505f820dfa90db78b7f5296826a",
+  "scope": "Execution of user input, not SSR/HTML delivery. All tool pages are served by Next.js; usage counters may contact the server without sending files.",
+  "tools": [
+    {
+      "id": "pdf-to-word",
+      "name": "PDF to Word",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "word-to-pdf",
+      "name": "Word to PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "browser-default, optional server conversion"
+    },
+    {
+      "id": "pdf-to-excel",
+      "name": "PDF to Excel",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "excel-to-pdf",
+      "name": "Excel to PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "browser-default, optional server conversion"
+    },
+    {
+      "id": "pdf-to-powerpoint",
+      "name": "PDF to PowerPoint",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "powerpoint-to-pdf",
+      "name": "PowerPoint to PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "browser-default, optional server conversion"
+    },
+    {
+      "id": "pdf-to-jpg",
+      "name": "PDF to JPG",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "jpg-to-pdf",
+      "name": "JPG to PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "png-to-pdf",
+      "name": "PNG to PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "pdf-to-png",
+      "name": "PDF to PNG",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "merge-pdf",
+      "name": "Merge PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "split-pdf",
+      "name": "Split PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "compress-pdf",
+      "name": "Compress PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "rotate-pdf",
+      "name": "Rotate PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "unlock-pdf",
+      "name": "Unlock PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "protect-pdf",
+      "name": "Protect PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "edit-pdf",
+      "name": "Edit PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "ocr-pdf",
+      "name": "OCR PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "sign-pdf",
+      "name": "Sign PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "watermark-pdf",
+      "name": "Watermark PDF",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "delete-pdf-pages",
+      "name": "Delete PDF Pages",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "rearrange-pdf-pages",
+      "name": "Rearrange PDF Pages",
+      "category": "pdf",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "image-compressor",
+      "name": "Image Compressor",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "image-resizer",
+      "name": "Image Resizer",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "crop-image",
+      "name": "Crop Image",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "rotate-image",
+      "name": "Rotate Image",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "convert-image",
+      "name": "Convert Image",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "jpg-to-png",
+      "name": "JPG to PNG",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "png-to-jpg",
+      "name": "PNG to JPG",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "webp-converter",
+      "name": "WebP Converter",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "webp-to-jpg",
+      "name": "WebP to JPG",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "webp-to-png",
+      "name": "WebP to PNG",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "jfif-to-png",
+      "name": "JFIF to PNG",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "jpeg-to-jpg",
+      "name": "JPEG to JPG",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "heic-to-jpg",
+      "name": "HEIC to JPG",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "svg-converter",
+      "name": "SVG Converter",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "background-remover",
+      "name": "Background Remover",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "image-upscaler",
+      "name": "Image Upscaler",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "image-to-pdf",
+      "name": "Image to PDF",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "screenshot-tool",
+      "name": "Screenshot Tool",
+      "category": "image",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "ai-detector",
+      "name": "AI Detector",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "plagiarism-checker",
+      "name": "Plagiarism Checker",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "grammar-checker",
+      "name": "Grammar Checker",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "spell-checker",
+      "name": "Spell Checker",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "paraphrasing-tool",
+      "name": "Paraphrasing Tool",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "article-rewriter",
+      "name": "Article Rewriter",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "ai-summarizer",
+      "name": "AI Summarizer",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "ai-writer",
+      "name": "AI Writer",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "ai-humanizer",
+      "name": "AI Humanizer",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "ai-translator",
+      "name": "AI Translator",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "ai-email-writer",
+      "name": "AI Email Writer",
+      "category": "ai",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "case-converter",
+      "name": "Case Converter",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "word-counter",
+      "name": "Word Counter",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "character-counter",
+      "name": "Character Counter",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "sentence-counter",
+      "name": "Sentence Counter",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "remove-duplicate-lines",
+      "name": "Remove Duplicate Lines",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "text-sorter",
+      "name": "Text Sorter",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "text-cleaner",
+      "name": "Text Cleaner",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "lorem-ipsum-generator",
+      "name": "Lorem Ipsum Generator",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "random-text-generator",
+      "name": "Random Text Generator",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "remove-extra-spaces",
+      "name": "Remove Extra Spaces",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "reverse-text",
+      "name": "Reverse Text",
+      "category": "text",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "json-formatter",
+      "name": "JSON Formatter",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "json-validator",
+      "name": "JSON Validator",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "json-minifier",
+      "name": "JSON Minifier",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "xml-formatter",
+      "name": "XML Formatter",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "xml-validator",
+      "name": "XML Validator",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "html-formatter",
+      "name": "HTML Formatter",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "html-minifier",
+      "name": "HTML Minifier",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "css-minifier",
+      "name": "CSS Minifier",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "javascript-minifier",
+      "name": "JavaScript Minifier",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "sql-formatter",
+      "name": "SQL Formatter",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "base64-encoder",
+      "name": "Base64 Encoder",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "base64-decoder",
+      "name": "Base64 Decoder",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "url-encoder",
+      "name": "URL Encoder",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "url-decoder",
+      "name": "URL Decoder",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "jwt-decoder",
+      "name": "JWT Decoder",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "uuid-generator",
+      "name": "UUID Generator",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "hash-generator",
+      "name": "Hash Generator",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "md5-generator",
+      "name": "MD5 Generator",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "sha256-generator",
+      "name": "SHA-256 Generator",
+      "category": "developer",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "meta-tag-generator",
+      "name": "Meta Tag Generator",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "robots-txt-generator",
+      "name": "Robots.txt Generator",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "sitemap-generator",
+      "name": "Sitemap Generator",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "keyword-density-checker",
+      "name": "Keyword Density Checker",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "serp-preview-tool",
+      "name": "SERP Preview Tool",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "open-graph-generator",
+      "name": "Open Graph Generator",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "canonical-tag-generator",
+      "name": "Canonical Tag Generator",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "schema-markup-generator",
+      "name": "Schema Markup Generator",
+      "category": "seo",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "website-speed-test",
+      "name": "Website Speed Test",
+      "category": "seo",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "broken-link-checker",
+      "name": "Broken Link Checker",
+      "category": "seo",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator",
+      "category": "security",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "password-strength-checker",
+      "name": "Password Strength Checker",
+      "category": "security",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "ssl-checker",
+      "name": "SSL Checker",
+      "category": "security",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "whois-lookup",
+      "name": "WHOIS Lookup",
+      "category": "security",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "dns-lookup",
+      "name": "DNS Lookup",
+      "category": "security",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "ip-lookup",
+      "name": "IP Lookup",
+      "category": "security",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "email-validator",
+      "name": "Email Validator",
+      "category": "security",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "currency-converter",
+      "name": "Currency Converter",
+      "category": "converters",
+      "runtime": "server",
+      "processing": "server"
+    },
+    {
+      "id": "length-converter",
+      "name": "Length Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "weight-converter",
+      "name": "Weight Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "area-converter",
+      "name": "Area Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "temperature-converter",
+      "name": "Temperature Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "time-zone-converter",
+      "name": "Time Zone Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "data-storage-converter",
+      "name": "Data Storage Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "binary-converter",
+      "name": "Binary Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "roman-numeral-converter",
+      "name": "Roman Numeral Converter",
+      "category": "converters",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "age-calculator",
+      "name": "Age Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "bmi-calculator",
+      "name": "BMI Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "emi-calculator",
+      "name": "EMI Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "loan-calculator",
+      "name": "Loan Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "gst-calculator",
+      "name": "GST Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "vat-calculator",
+      "name": "VAT Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "discount-calculator",
+      "name": "Discount Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "profit-calculator",
+      "name": "Profit Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "scientific-calculator",
+      "name": "Scientific Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "date-calculator",
+      "name": "Date Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "mortgage-calculator",
+      "name": "Mortgage Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "roi-calculator",
+      "name": "ROI Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "tip-calculator",
+      "name": "Tip Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "margin-calculator",
+      "name": "Margin Calculator",
+      "category": "calculators",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "qr-code-generator",
+      "name": "QR Code Generator",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "barcode-generator",
+      "name": "Barcode Generator",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "color-picker",
+      "name": "Color Picker",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "color-converter",
+      "name": "Color Converter",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "uuid-generator-util",
+      "name": "UUID Generator",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "random-number-generator",
+      "name": "Random Number Generator",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "random-password-generator",
+      "name": "Random Password Generator",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "timestamp-converter",
+      "name": "Timestamp Converter",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "unix-time-converter",
+      "name": "Unix Time Converter",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "coin-flipper",
+      "name": "Coin Flipper",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "dice-roller",
+      "name": "Dice Roller",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "stopwatch",
+      "name": "Stopwatch",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "timer",
+      "name": "Timer",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "notepad-online",
+      "name": "Notepad Online",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    },
+    {
+      "id": "todo-list-online",
+      "name": "Todo List Online",
+      "category": "utilities",
+      "runtime": "client",
+      "processing": "client"
+    }
+  ]
+}

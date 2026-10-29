@@ -14,13 +14,10 @@ export function CategoryCard({ category, count }: CategoryCardProps) {
   const Icon = getCategoryIcon(category);
 
   return (
-    <Link
-      href={`/category/${category}`}
-      className="group block rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:shadow-md"
-    >
+    <Link href={`/category/${category}`} className="category-card group">
       <div className="flex items-start justify-between gap-3">
         <span
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg"
+          className="category-card-icon"
           style={{ backgroundColor: `${meta.accent}1a`, color: meta.accent }}
         >
           <Icon className="h-6 w-6" />
@@ -29,7 +26,7 @@ export function CategoryCard({ category, count }: CategoryCardProps) {
           {toolCount} tools
         </span>
       </div>
-      <h3 className="mt-4 text-xl font-bold text-[var(--ink)]">
+      <h3 className="mt-4 text-base font-semibold text-[var(--ink)]">
         {meta.name}
       </h3>
       <p className="mt-1.5 text-sm leading-6 text-[var(--ink-soft)]">

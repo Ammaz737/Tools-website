@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -11,16 +11,19 @@ import "./globals.css";
 // Headings share the Inter body font (SmallPDF-style clean sans), so no
 // separate display font is loaded. --font-display maps to --font-body
 // in globals.css, keeping every existing font-display usage working.
-const body = Inter({
+// Bundle fonts locally so builds do not depend on Google's font service.
+const body = localFont({
+  src: "./fonts/Inter-Variable.ttf",
+  weight: "100 900",
   variable: "--font-body",
-  subsets: ["latin"],
   display: "swap",
   preload: true,
 });
 
-const mono = JetBrains_Mono({
+const mono = localFont({
+  src: "./fonts/JetBrainsMono-Variable.ttf",
+  weight: "100 800",
   variable: "--font-mono",
-  subsets: ["latin"],
   display: "swap",
   preload: false,
 });

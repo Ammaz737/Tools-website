@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { AdSlot } from "@/components/layout/AdSlot";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { getPublicTools } from "@/lib/public-tools";
 
@@ -38,12 +37,15 @@ export default async function ToolsPage({ searchParams }: ToolsPageProps) {
           {query ? (
             <>
               Showing tools matching your search.{" "}
-              <Link href="/tools" className="font-medium text-[var(--accent)] hover:underline">
+              <Link
+                href="/tools"
+                className="font-medium text-[var(--accent)] hover:underline"
+              >
                 Clear search
               </Link>
             </>
           ) : (
-            "Browse every active tool in the workshop. Inactive tools are hidden from this list by the admin panel."
+            "All your everyday tools in one place. Pick a task or search to get started."
           )}
         </p>
       </div>
@@ -70,14 +72,13 @@ export default async function ToolsPage({ searchParams }: ToolsPageProps) {
         </button>
       </form>
 
-      <div className="mt-10">
-        <AdSlot label="Ad slot: tools listing" />
-      </div>
-
       {publicTools.length === 0 ? (
         <p className="mt-10 text-lg text-[var(--ink-soft)]">
           No tools match that search. Try another keyword, or{" "}
-          <Link href="/tools" className="font-medium text-[var(--accent)] hover:underline">
+          <Link
+            href="/tools"
+            className="font-medium text-[var(--accent)] hover:underline"
+          >
             browse all tools
           </Link>
           .
@@ -85,11 +86,7 @@ export default async function ToolsPage({ searchParams }: ToolsPageProps) {
       ) : (
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {publicTools.map((tool) => (
-            <ToolCard
-              key={tool.id}
-              tool={tool}
-              usageCount={tool.usageCount}
-            />
+            <ToolCard key={tool.id} tool={tool} usageCount={tool.usageCount} />
           ))}
         </div>
       )}

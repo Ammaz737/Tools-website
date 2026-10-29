@@ -1,0 +1,24 @@
+{
+  "measuredAt": "2026-10-29T13:51:16.185Z",
+  "scope": "Chromium, next start with gzip, HTTP response wire bytes (including headers), browser HTTP cache enabled, one small generated PDF. Excludes blob downloads, provider traffic, OCR/HEIC engines and CDN-specific compression. Not a concurrent-user load test.",
+  "scenarios": [
+    {
+      "name": "cold-home",
+      "responseWireBytes": 693130,
+      "fileUploadBytes": 0,
+      "requests": 29
+    },
+    {
+      "name": "compress-after-home-with-cache",
+      "responseWireBytes": 1021995,
+      "fileUploadBytes": 0,
+      "requests": 42
+    },
+    {
+      "name": "cold-compress-with-preview",
+      "responseWireBytes": 1656809,
+      "fileUploadBytes": 0,
+      "requests": 41
+    }
+  ]
+}

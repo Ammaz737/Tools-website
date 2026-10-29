@@ -16,22 +16,22 @@ export function generateMetadata(): Metadata {
     robots: { index: true, follow: true },
     title: {
       absolute:
-        "Tool Guides & How-Tos — Free Online Tools Blog | Quiet Workshop Tools",
+        "Tool Guides & How-Tos — Free Online Tools Blog | ALETOOL",
     },
     description:
-      "Step-by-step guides for all 137 free Quiet Workshop tools: merge PDFs, compress images, format JSON, calculate loans, and more. No signup, most tools run in your browser.",
+      "Step-by-step guides for all 137 free ALETOOL tools: merge PDFs, compress images, format JSON, calculate loans, and more. No signup, most tools run in your browser.",
     alternates: {
       canonical: path,
       languages: languageAlternates(path),
     },
     openGraph: {
-      title: "Tool Guides & How-Tos — Quiet Workshop Tools Blog",
+      title: "Tool Guides & How-Tos — ALETOOL Blog",
       description:
-        "Step-by-step guides for all 137 free Quiet Workshop tools, grouped by category.",
+        "Step-by-step guides for all 137 free ALETOOL tools, grouped by category.",
       type: "website",
       url: path,
       locale: "en_US",
-      siteName: "Quiet Workshop Tools",
+      siteName: "ALETOOL",
     },
   };
 }

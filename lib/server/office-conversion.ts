@@ -88,14 +88,11 @@ export async function convertNativeOffice(bytes: Uint8Array, format: OfficeForma
     try {
       const document = await Promise.race([PDFDocument.load(pdf), expired]);
       const pages = document.getPages();
-      if (!pages.length || pages.length > 50 || document.isEncrypted) throw new Error("Unsupported PDF");
-      let area = 0;
+      if (!pages.length || document.isEncrypted) throw new Error("Unsupported PDF");
       for (const page of pages) {
         const { width, height } = page.getSize();
-        if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0 || width > 4000 || height > 4000 || width * height > 2000000) throw new Error("Invalid page dimensions");
-        area += width * height;
+        if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) throw new Error("Invalid page dimensions");
       }
-      if (area > 10000000) throw new Error("Output rendering budget exceeded");
     } catch (error) { if (error instanceof OfficeConversionError) throw error; throw new OfficeConversionError("Converted PDF exceeds the safe page budget or is invalid", 502); }
     return pdf;
   } catch (error) {

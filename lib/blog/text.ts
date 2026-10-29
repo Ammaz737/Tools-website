@@ -14,7 +14,7 @@ export const textPosts: BlogPost[] = [
       "Because the tool only changes casing, your wording, punctuation, and line breaks stay as you wrote them. You stay in control of the final text, and you can check the result before you use it anywhere else.",
     ],
     steps: [
-      "Open the Case Converter tool on the Quiet Workshop site.",
+      "Open the Case Converter tool on the ALETOOL site.",
       "Paste or type the text you want to change into the input box.",
       "Choose the casing style you need from the available options.",
       "Review the converted text in the output area.",
@@ -63,7 +63,7 @@ export const textPosts: BlogPost[] = [
       "The reading time estimate helps you judge how long your text will take someone else to read. That makes it easier to trim a long draft, expand a short one, or decide whether a post is the right length for its audience.",
     ],
     steps: [
-      "Open the Word Counter tool on the Quiet Workshop site.",
+      "Open the Word Counter tool on the ALETOOL site.",
       "Paste or type your text into the input box.",
       "Read the word count shown for your text.",
       "Check the character count and the estimated reading time beside it.",
@@ -112,7 +112,7 @@ export const textPosts: BlogPost[] = [
       "Knowing the count without spaces is especially handy for translated text, compact copy, and fields where spaces do not count toward the limit. You can trim filler words or shorten a phrase and watch the count fall in real time.",
     ],
     steps: [
-      "Open the Character Counter tool on the Quiet Workshop site.",
+      "Open the Character Counter tool on the ALETOOL site.",
       "Paste or type your text into the input box.",
       "Read the character count including spaces.",
       "Read the character count excluding spaces.",
@@ -161,7 +161,7 @@ export const textPosts: BlogPost[] = [
       "Teachers and editors also use sentence counts to check student work and to compare drafts. A rising average length across revisions, for example, can signal that sentences are getting harder to read rather than better.",
     ],
     steps: [
-      "Open the Sentence Counter tool on the Quiet Workshop site.",
+      "Open the Sentence Counter tool on the ALETOOL site.",
       "Paste or type your text into the input box.",
       "Read the total number of sentences in your text.",
       "Check the average sentence length shown beside the count.",
@@ -210,7 +210,7 @@ export const textPosts: BlogPost[] = [
       "The tool works line by line, so each line is treated as one item. That makes it ideal for lists where every entry sits on its own line, and it keeps the remaining lines in a clean form you can copy straight into another document or tool.",
     ],
     steps: [
-      "Open the Remove Duplicate Lines tool on the Quiet Workshop site.",
+      "Open the Remove Duplicate Lines tool on the ALETOOL site.",
       "Paste your list into the input box, one item per line.",
       "Run the deduplication on your pasted text.",
       "Review the cleaned list in the output area.",
@@ -259,7 +259,7 @@ export const textPosts: BlogPost[] = [
       "Sorting also makes duplicates and near-duplicates easier to spot, since similar lines end up next to each other. Combined with a quick review, it turns a jumbled paste into a list you can actually work with.",
     ],
     steps: [
-      "Open the Text Sorter tool on the Quiet Workshop site.",
+      "Open the Text Sorter tool on the ALETOOL site.",
       "Paste your text into the input box, one item per line.",
       "Choose how to sort: alphabetically, numerically, or by length.",
       "Run the sort on your pasted text.",
@@ -308,7 +308,7 @@ export const textPosts: BlogPost[] = [
       "Clean text is also easier to reuse. Whether you are preparing a quote, a draft, or content for another app, starting from tidy text means less manual fixing and fewer formatting surprises later.",
     ],
     steps: [
-      "Open the Text Cleaner tool on the Quiet Workshop site.",
+      "Open the Text Cleaner tool on the ALETOOL site.",
       "Paste the messy text into the input box.",
       "Run the cleaning step on your pasted text.",
       "Review the cleaned text in the output area.",
@@ -357,7 +357,7 @@ export const textPosts: BlogPost[] = [
       "Because lorem ipsum reads like natural language without carrying meaning, readers focus on the design rather than the words. That makes it ideal for presentations, client previews, and early-stage layouts.",
     ],
     steps: [
-      "Open the Lorem Ipsum Generator tool on the Quiet Workshop site.",
+      "Open the Lorem Ipsum Generator tool on the ALETOOL site.",
       "Choose whether you want placeholder paragraphs or sentences.",
       "Set how much placeholder text you need.",
       "Generate the lorem ipsum text.",
@@ -406,7 +406,7 @@ export const textPosts: BlogPost[] = [
       "Because the output is random, every generation is different. That makes it easy to run repeated tests with fresh content or to get a starting point for brainstorming when a blank page is slowing you down.",
     ],
     steps: [
-      "Open the Random Text Generator tool on the Quiet Workshop site.",
+      "Open the Random Text Generator tool on the ALETOOL site.",
       "Choose the kind of random text you need, such as words or strings.",
       "Set how much random text you want to generate.",
       "Generate the random text.",
@@ -455,7 +455,7 @@ export const textPosts: BlogPost[] = [
       "Even spacing also matters for publishing and data work. Clean spacing looks professional in a document, and it avoids odd gaps when text is copied into another app, a form, or a content system.",
     ],
     steps: [
-      "Open the Remove Extra Spaces tool on the Quiet Workshop site.",
+      "Open the Remove Extra Spaces tool on the ALETOOL site.",
       "Paste your text with extra spaces or blank lines into the input box.",
       "Run the spacing cleanup on your pasted text.",
       "Review the tidied text in the output area.",
@@ -504,7 +504,7 @@ export const textPosts: BlogPost[] = [
       "The two modes give you different results from the same input, so you can pick the one that fits your purpose. Character reversal is best for codes and puzzles, while word reversal keeps the text readable in a new order.",
     ],
     steps: [
-      "Open the Reverse Text tool on the Quiet Workshop site.",
+      "Open the Reverse Text tool on the ALETOOL site.",
       "Paste or type your text into the input box.",
       "Choose whether to reverse by characters or by words.",
       "Run the reversal on your text.",

@@ -53,7 +53,7 @@ test("sitemap and private pages follow the indexing policy", async ({ request })
 test("logout rejects cross-origin requests", async ({ request }) => {
   const denied = await request.post("/api/admin/logout", { headers: { Origin: "https://untrusted.example" } });
   expect(denied.status()).toBe(403);
-  const allowed = await request.post("/api/admin/logout", { headers: { Origin: "http://127.0.0.1:3100" } });
+  const allowed = await request.post("/api/admin/logout", { headers: { Origin: String(test.info().project.use.baseURL) } });
   expect(allowed.status()).toBe(200);
 });
 

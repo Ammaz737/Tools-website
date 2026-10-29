@@ -22,7 +22,7 @@ export function PdfPagePreview({
             key={url}
             src={url}
             alt={`Page ${index + 1} preview`}
-            className="h-48 w-auto max-w-full rounded-[8px] border border-[var(--line)] bg-white object-contain shadow-[0_1px_0_rgba(0,0,0,.03)]"
+            className={`${urls.length === 1 ? "max-h-[600px] w-full max-w-lg" : "h-72 w-auto"} max-w-full rounded-[8px] border border-[var(--line)] bg-white object-contain shadow-sm`}
           />
         ))}
       </div>

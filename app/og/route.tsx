@@ -11,7 +11,7 @@ export const runtime = "edge";
  */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const rawTitle = searchParams.get("title") || "Quiet Workshop Tools";
+  const rawTitle = searchParams.get("title") || "ALETOOL";
   const title = rawTitle.length > 90 ? `${rawTitle.slice(0, 87)}…` : rawTitle;
   const subtitle = searchParams.get("subtitle") || "";
   const tag = searchParams.get("tag") || "Free online tools";
@@ -96,7 +96,7 @@ export async function GET(request: Request) {
           }}
         >
           <span style={{ fontSize: "28px", fontWeight: 600, color: "#0f2040" }}>
-            Quiet Workshop Tools
+            ALETOOL
           </span>
           <span style={{ fontSize: "26px", color: "#4a5568" }}>
             No signup · No watermark

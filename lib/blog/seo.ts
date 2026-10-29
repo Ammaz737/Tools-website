@@ -14,7 +14,7 @@ export const seoPosts: BlogPost[] = [
       "Good meta tags help your page present itself well. The title and description shape how it appears in search results, while Open Graph and Twitter tags control how it looks when shared on social media.",
     ],
     steps: [
-      "Open the Meta Tag Generator tool on the Quiet Workshop site.",
+      "Open the Meta Tag Generator tool on the ALETOOL site.",
       "Enter your page title and description.",
       "Add the other details the form asks for, such as the page URL.",
       "Generate the title, meta, Open Graph, and Twitter tags.",
@@ -63,7 +63,7 @@ export const seoPosts: BlogPost[] = [
       "A well-built robots.txt helps crawlers spend their time on the pages that matter, such as your main content, instead of admin areas, staging pages, or duplicate sections. It is a basic but important part of making a site search-friendly.",
     ],
     steps: [
-      "Open the Robots.txt Generator tool on the Quiet Workshop site.",
+      "Open the Robots.txt Generator tool on the ALETOOL site.",
       "Decide which parts of your site crawlers should be allowed to visit.",
       "Enter the rules for the sections you want to allow or disallow.",
       "Generate the robots.txt content.",
@@ -112,7 +112,7 @@ export const seoPosts: BlogPost[] = [
       "Generating a sitemap by hand is slow and error-prone for anything beyond a handful of pages. The generator builds the list for you, so you can submit it to search engines and focus on content instead of file formatting.",
     ],
     steps: [
-      "Open the Sitemap Generator tool on the Quiet Workshop site.",
+      "Open the Sitemap Generator tool on the ALETOOL site.",
       "Provide your URLs, or start from a crawl of your site.",
       "Wait for the generator to collect the pages for your sitemap.",
       "Review the list of URLs included in the sitemap.",
@@ -161,7 +161,7 @@ export const seoPosts: BlogPost[] = [
       "The goal is not to hit a magic percentage. It is to write naturally for readers while making sure the topic is clear. Density is one editing signal among many, best used alongside a careful read of the draft itself.",
     ],
     steps: [
-      "Open the Keyword Density Checker tool on the Quiet Workshop site.",
+      "Open the Keyword Density Checker tool on the ALETOOL site.",
       "Paste your text, or enter the URL you want to check.",
       "Submit the text or URL for analysis.",
       "Read the keyword density results for your content.",
@@ -210,7 +210,7 @@ export const seoPosts: BlogPost[] = [
       "Small changes to a title or description can change whether someone clicks your result or a competitor's. The preview helps you use the available space well, put the important words early, and keep the snippet readable.",
     ],
     steps: [
-      "Open the SERP Preview Tool on the Quiet Workshop site.",
+      "Open the SERP Preview Tool on the ALETOOL site.",
       "Enter the title you plan to use for your page.",
       "Enter the meta description you plan to use.",
       "View the search-result preview for your title and description.",
@@ -259,7 +259,7 @@ export const seoPosts: BlogPost[] = [
       "Seeing the preview card before you publish is the key benefit. You can fix a dull title, a cropped image reference, or a missing description while it is still easy to change, instead of discovering the problem after the link has been shared.",
     ],
     steps: [
-      "Open the Open Graph Generator tool on the Quiet Workshop site.",
+      "Open the Open Graph Generator tool on the ALETOOL site.",
       "Enter your page title, description, and page URL.",
       "Add the image details for the share card if asked.",
       "Generate the Open Graph social meta tags.",
@@ -308,7 +308,7 @@ export const seoPosts: BlogPost[] = [
       "Pointing search engines to one preferred URL helps consolidate signals for that page and avoids splitting attention across duplicates. It is a small tag with a clear job, and generating it correctly takes seconds.",
     ],
     steps: [
-      "Open the Canonical Tag Generator tool on the Quiet Workshop site.",
+      "Open the Canonical Tag Generator tool on the ALETOOL site.",
       "Enter the preferred, canonical URL for your page.",
       "Generate the canonical link tag.",
       "Review the tag to make sure the URL is exactly right.",
@@ -357,7 +357,7 @@ export const seoPosts: BlogPost[] = [
       "Writing JSON-LD by hand is easy to break: a missing comma or bracket invalidates the whole block. The generator builds the markup from the details you enter, so you get clean code you can paste into your page.",
     ],
     steps: [
-      "Open the Schema Markup Generator tool on the Quiet Workshop site.",
+      "Open the Schema Markup Generator tool on the ALETOOL site.",
       "Choose the common content type that matches your page.",
       "Enter the details the form asks for, such as title and description.",
       "Generate the JSON-LD markup.",
@@ -406,7 +406,7 @@ export const seoPosts: BlogPost[] = [
       "Use it before and after changes to see whether an optimisation actually helped. Test a homepage after compressing images, or compare a page before and after a redesign, and the metrics show whether load behaviour improved.",
     ],
     steps: [
-      "Open the Website Speed Test tool on the Quiet Workshop site.",
+      "Open the Website Speed Test tool on the ALETOOL site.",
       "Enter the full URL of the page you want to test.",
       "Run the speed test for that URL.",
       "Wait for the test to complete and collect its timing metrics.",
@@ -455,7 +455,7 @@ export const seoPosts: BlogPost[] = [
       "Broken links hurt in two ways: visitors hit error pages and lose trust, and search crawlers waste effort on dead paths. A regular check keeps your content reliable and your site easier to navigate.",
     ],
     steps: [
-      "Open the Broken Link Checker tool on the Quiet Workshop site.",
+      "Open the Broken Link Checker tool on the ALETOOL site.",
       "Enter the URL of the page you want to check.",
       "Start the crawl of that page.",
       "Wait for the crawl to finish and collect its link results.",

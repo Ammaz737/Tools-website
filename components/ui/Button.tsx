@@ -1,8 +1,7 @@
 import React from "react";
 import { Spinner } from "./Spinner";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "ghost" | "danger";
   size?: "sm" | "md" | "lg";
   loading?: boolean;
@@ -26,10 +25,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type = "button",
       ...props
     },
-    ref
+    ref,
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium rounded-[10px] transition-colors focus-visible:outline-2 focus-visible:outline-[var(--focus)] focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
+      "ui-button inline-flex items-center justify-center font-semibold rounded-md focus-visible:outline-2 focus-visible:outline-[var(--focus)] focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
 
     const sizeStyles = {
       sm: "px-3 py-1.5 text-xs gap-1.5 h-8",
@@ -39,7 +38,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        "bg-[var(--accent)] text-[var(--accent-ink)] hover:opacity-95 active:scale-[0.99] border border-transparent shadow-xs",
+        "bg-[var(--accent)] text-[var(--accent-ink)] hover:bg-[var(--accent-hover)] active:scale-[0.98] border border-transparent shadow-xs hover:shadow-md",
       secondary:
         "bg-[var(--surface)] text-[var(--ink)] border border-[var(--line-strong)] hover:bg-[var(--surface-sunk)] active:bg-[var(--surface-sunk)]",
       ghost:
@@ -61,7 +60,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {loading ? (
           <Spinner
             size={size === "lg" ? "md" : "sm"}
-            variant={variant === "primary" || variant === "danger" ? "current" : "primary"}
+            variant={
+              variant === "primary" || variant === "danger"
+                ? "current"
+                : "primary"
+            }
           />
         ) : (
           leftIcon
@@ -70,7 +73,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {!loading && rightIcon}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

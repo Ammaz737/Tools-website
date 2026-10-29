@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 test("HEIC primary image decodes locally to real JPEG with reference colors", async ({ page }) => {
   const external: string[] = [];
-  page.on("request", request => { if (!request.url().startsWith("http://127.0.0.1:3100") && /^https?:/.test(request.url())) external.push(request.url()); });
+  page.on("request", request => { if (!request.url().startsWith(String(test.info().project.use.baseURL)) && /^https?:/.test(request.url())) external.push(request.url()); });
   await page.goto("/tools/heic-to-jpg");
   await page.locator('input[type="file"]').setInputFiles("tests/fixtures/heic/example.heic");
   await expect(page.getByAltText("Converted preview")).toBeVisible({ timeout: 45_000 });

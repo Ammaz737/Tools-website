@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { UploadCloud, File as FileIcon, X, ArrowUp, ArrowDown } from "lucide-react";
+import {
+  UploadCloud,
+  File as FileIcon,
+  X,
+  ArrowUp,
+  ArrowDown,
+} from "lucide-react";
 import { Button } from "./Button";
 
 export interface DropzoneProps {
@@ -37,27 +43,32 @@ export const Dropzone: React.FC<DropzoneProps> = ({
       ? `PDF, Images, or Text files up to ${maxSizeMB}MB`
       : "PDF, Images, or Text files — no file size limit");
 
-  const validateAndAddFiles = useCallback((incomingFiles: FileList | File[]) => {
-    setErrorMessage(null);
-    const valid: File[] = [];
-    const maxSizeBytes = hasSizeLimit ? maxSizeMB * 1024 * 1024 : null;
+  const validateAndAddFiles = useCallback(
+    (incomingFiles: FileList | File[]) => {
+      setErrorMessage(null);
+      const valid: File[] = [];
+      const maxSizeBytes = hasSizeLimit ? maxSizeMB * 1024 * 1024 : null;
 
-    Array.from(incomingFiles).forEach((file) => {
-      if (maxSizeBytes != null && file.size > maxSizeBytes) {
-        setErrorMessage(`File "${file.name}" exceeds limit of ${maxSizeMB}MB.`);
-        return;
-      }
-      valid.push(file);
-    });
+      Array.from(incomingFiles).forEach((file) => {
+        if (maxSizeBytes != null && file.size > maxSizeBytes) {
+          setErrorMessage(
+            `File "${file.name}" exceeds limit of ${maxSizeMB}MB.`,
+          );
+          return;
+        }
+        valid.push(file);
+      });
 
-    if (valid.length > 0) {
-      if (multiple) {
-        onFilesChange([...files, ...valid]);
-      } else {
-        onFilesChange([valid[0]]);
+      if (valid.length > 0) {
+        if (multiple) {
+          onFilesChange([...files, ...valid]);
+        } else {
+          onFilesChange([valid[0]]);
+        }
       }
-    }
-  }, [files, multiple, onFilesChange, hasSizeLimit, maxSizeMB]);
+    },
+    [files, multiple, onFilesChange, hasSizeLimit, maxSizeMB],
+  );
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
@@ -111,14 +122,23 @@ export const Dropzone: React.FC<DropzoneProps> = ({
     <div className={`w-full space-y-4 ${className}`}>
       {/* Drop Surface */}
       <div
+        role="button"
+        tabIndex={0}
+        aria-label="Choose files to upload"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            inputRef.current?.click();
+          }
+        }}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onClick={() => inputRef.current?.click()}
-        className={`relative flex flex-col items-center justify-center p-8 text-center rounded-[14px] border-2 border-dashed transition-all duration-200 cursor-pointer ${
+        className={`upload-surface relative flex min-h-64 flex-col items-center justify-center px-5 py-9 text-center rounded-lg border-2 border-dashed transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] ${
           isDragOver
             ? "border-[var(--accent)] bg-[var(--accent-soft)]/50 scale-[1.005]"
-            : "border-[var(--line-strong)] bg-[var(--surface-sunk)]/50 hover:border-[var(--ink-faint)] hover:bg-[var(--surface-sunk)]"
+            : "border-[var(--accent)]/25 bg-[var(--accent-soft)]/40 hover:border-[var(--accent)] hover:bg-[var(--accent-soft)]/70"
         }`}
       >
         <input
@@ -126,22 +146,31 @@ export const Dropzone: React.FC<DropzoneProps> = ({
           type="file"
           accept={accept}
           multiple={multiple}
-          onChange={(e) => e.target.files && validateAndAddFiles(e.target.files)}
+          onChange={(e) => {
+            if (e.target.files) validateAndAddFiles(e.target.files);
+            e.target.value = "";
+          }}
           className="hidden"
         />
 
-        <div className="p-3.5 mb-3 rounded-full bg-[var(--surface)] border border-[var(--line)] shadow-xs">
-          <UploadCloud className="w-8 h-8 text-[var(--accent)]" />
+        <div className="mb-5 text-[var(--accent)]/65" aria-hidden="true">
+          <UploadCloud className="w-10 h-10" strokeWidth={1.4} />
         </div>
 
-        <h3 className="font-semibold text-base text-[var(--ink)]">
-          Drag & drop files here or click to browse
+        <h3 className="choose-file-label">
+          <FileIcon className="h-4 w-4" aria-hidden="true" />
+          {multiple ? "Choose files" : "Choose a file"}
         </h3>
 
-        <p className="mt-1 text-xs text-[var(--ink-soft)]">{resolvedHint}</p>
+        <p className="mt-3 text-sm text-[var(--ink-soft)]">
+          or drag and drop here
+        </p>
+        <p className="mt-3 max-w-lg text-xs leading-5 text-[var(--ink-soft)]">
+          {resolvedHint}
+        </p>
 
-        <p className="mt-2 text-[11px] font-mono text-[var(--ink-faint)]">
-          Tip: You can also paste files directly (Ctrl+V / Cmd+V)
+        <p className="mt-2 text-[11px] text-[var(--ink-faint)]">
+          You can also paste a file with Ctrl+V / Cmd+V
         </p>
       </div>
 
@@ -155,9 +184,7 @@ export const Dropzone: React.FC<DropzoneProps> = ({
       {files.length > 0 && (
         <div className="space-y-2">
           <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)] px-1">
-            <span>
-              Selected Files ({files.length})
-            </span>
+            <span>Selected Files ({files.length})</span>
             {multiple && files.length > 1 && (
               <Button
                 variant="ghost"

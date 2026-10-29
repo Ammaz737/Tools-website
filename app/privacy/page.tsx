@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-export const metadata: Metadata = { title: "Privacy Policy", description: "How Quiet Workshop handles files, AI prompts, lookup requests, browser storage and usage information." };
+export const metadata: Metadata = { title: "Privacy Policy", description: "How ALETOOL handles files, AI prompts, lookup requests, browser storage and usage information." };
 export default function PrivacyPage() {
   return <article className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-6 text-sm leading-relaxed text-[var(--ink)]">
     <h1 className="text-3xl font-bold">Privacy Policy</h1><p>Updated October 18, 2026.</p>

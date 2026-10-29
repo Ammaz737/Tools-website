@@ -32,12 +32,12 @@ export function generateBlogPostingJsonLd(post: BlogPost, origin: string = siteO
     inLanguage: "en",
     author: {
       "@type": "Organization",
-      name: "Quiet Workshop Tools",
+      name: "ALETOOL",
       url: origin,
     },
     publisher: {
       "@type": "Organization",
-      name: "Quiet Workshop Tools",
+      name: "ALETOOL",
       url: origin,
     },
   };
@@ -154,7 +154,7 @@ export function generateWebSiteJsonLd(origin: string = siteOrigin()) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Quiet Workshop Tools",
+    name: "ALETOOL",
     url: origin,
     inLanguage: "en",
     potentialAction: {

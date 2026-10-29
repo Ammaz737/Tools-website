@@ -9,7 +9,7 @@ async function download(page: Page) {
 test("ocr-pdf reads image-only English pages and preserves searchable page dimensions", async ({ page }) => {
   test.setTimeout(180_000);
   const external: string[] = []; const workers: string[] = [];
-  page.on("request", (r) => { if (!r.url().startsWith("http://127.0.0.1:3100/") && /^https?:/.test(r.url())) external.push(r.url()); });
+  page.on("request", (r) => { if (!r.url().startsWith(String(test.info().project.use.baseURL)) && /^https?:/.test(r.url())) external.push(r.url()); });
   page.on("worker", (w) => workers.push(w.url()));
   await page.goto("/tools/ocr-pdf");
   const images = await page.evaluate(() => ["INVOICE NUMBER 4821", "TOTAL AMOUNT 1250"].map((text) => {

@@ -91,7 +91,9 @@ test("worker failures, wrong signatures/formats and oversized or invalid PDF res
   await assert.rejects(convertNativeOffice(new Uint8Array([1, 2]), "docx"), (e: OfficeConversionError) => e.status === 400);
   await assert.rejects(convertNativeOffice(await office("xlsx"), "docx"), (e: OfficeConversionError) => e.status === 400);
   assert.equal(calls, 0);
-  for (mode of ["upstream", "redirect", "type", "length", "stream", "pages", "malformed"]) await assert.rejects(convertNativeOffice(bytes, "docx"), (e: OfficeConversionError) => e.status === 502 && !/private-token|stack|office-converter/.test(e.message));
+  for (mode of ["upstream", "redirect", "type", "length", "stream", "malformed"]) await assert.rejects(convertNativeOffice(bytes, "docx"), (e: OfficeConversionError) => e.status === 502 && !/private-token|stack|office-converter/.test(e.message));
+  mode = "pages";
+  assert.equal((await PDFDocument.load(await convertNativeOffice(bytes, "docx"))).getPageCount(), 51);
 });
 
 test("worker fetch and response-body deadlines abort and release conversion capacity", async t => {

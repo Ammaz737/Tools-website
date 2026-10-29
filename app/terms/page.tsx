@@ -2,8 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Universal Web Tools",
-  description: "Read the Terms of Service and acceptable use policy for Universal Web Tools.",
+  title: "Terms of Service | ALETOOL",
+  description: "Read the Terms of Service and acceptable use policy for ALETOOL.",
 };
 
 export default function TermsPage() {
@@ -18,7 +18,7 @@ export default function TermsPage() {
         <section className="space-y-2">
           <h2 className="text-lg font-semibold text-[var(--ink)]">1. Acceptance of Terms</h2>
           <p>
-            By accessing and using Universal Web Tools, you agree to comply with and be bound by these Terms of Service. If you do not agree, please refrain from using the platform.
+            By accessing and using ALETOOL, you agree to comply with and be bound by these Terms of Service. If you do not agree, please refrain from using the platform.
           </p>
         </section>
 
@@ -39,7 +39,7 @@ export default function TermsPage() {
         <section className="space-y-2">
           <h2 className="text-lg font-semibold text-[var(--ink)]">4. Limitation of Liability</h2>
           <p>
-            In no event shall Universal Web Tools be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our tools.
+            In no event shall ALETOOL be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our tools.
           </p>
         </section>
       </div>
